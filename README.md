@@ -2,30 +2,37 @@
 
 This is a codebase that will allow energy.gov users to quickly get started developing new graphics and maps. By cloning this repo, you can immidiately begin coding. 
 
+This app frame is built using the [Foundation](http://foundation.zurb.com/) responsive framework. If you're looking for the original, pull down [the App_Frame repository](https://github.com/energyapps/app_frame).
+
+
+NOTE TO SELF, MUST DO MUCH UPDATING OF THIS README IN THE CONTENTS SECTION.
+
 ## Dependencies
-Download and install [Jekyll](http://jekyllrb.com/)
+- Download and install [Jekyll](http://jekyllrb.com/)
+- [Foundation](http://foundation.zurb.com/) is already installed within this repository
 
 ## Setup
 
-1. Clone the repo:
+- Clone the repo:
 
 `git clone https://github.com/energyapps/app_frame.git`
 
-2. Rename the folder to your project name
-3. On the [EnergyApps Github group](https://github.com/energyapps) create and name a new project repo.
-4. Change remote URL to new repo:
+- Rename the folder to your project name
+- On the [EnergyApps Github group](https://github.com/energyapps) create and name a new project repo.
+- cd into that folder in terminal and change remote URL to new repo:
 
 `git remote -v` List all remote urls
 
 `git remote set-url origin https://github.com/energyapps/NEW-REPO-NAME.git` -changes the remote url to your new URL
 
-5. Push to this new repo
+- Push to this new repo
 
 `git push -u origin master`
 
-6. Begin work in the `index.html` file.
-7. Build the Jekyll _site/ folder by running `jekyll build`
-8. Run the jekyll server by running `jekyll serve`. You can now see your page at `http://localhost:4000/`
+- Begin work in the `index.html` file.
+- Build the Jekyll _site/ folder by running `jekyll build`
+- Run the jekyll server by running `jekyll serve`. You can now see your page at `http://localhost:4000/`
+- Optional: Update Readme to reflect your current project.
 
 ## Contents
 
