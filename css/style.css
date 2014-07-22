@@ -24,7 +24,6 @@ Map
 
     	.row {
     		margin-bottom: 10px;
-/*    		border: 1px solid rgb(151,203,81);*/
     	}
 
     	.row .green-text	{
@@ -35,19 +34,28 @@ Map
 
     	.row h1, .row h2, .row h3, .row h4 {
     		text-align: center;
+    		border:none
+
     	}
 
     	.row h1 {
     		font-size: 52px;
-    		font-weight: bold;
     		letter-spacing: 15px;
     		color: rgb(51,51,51);
+    		line-height: normal;
+    		padding-top: 1rem;
+    		padding-bottom: 1rem;
     	}
 
     	.row h2 {
     		font-size: 38px;
-    		font-weight: bold;
     		color: #fff;
+    		text-transform: none;
+    		line-height: normal;
+    		padding-top: 1rem;
+    		padding-bottom: 1rem;
+    		font-family: "Avenir LT W02 35 Light",verdana,sans-serif;
+    		letter-spacing: .1rem;
     	}
 
     	.row h3 {
@@ -55,6 +63,8 @@ Map
     		color: #fff;
     		margin-top: 0.5rem;
     		margin-bottom: 0.6rem;
+    		text-transform: none;
+			line-height: normal;
     	}
 
     	.row h4 {
@@ -67,11 +77,15 @@ Map
     	.row .inner-text {
     		font-size: 28px;
     		text-transform: uppercase;
+    		font-family: "Avenir LT W02 85 Heavy",verdana,sans-serif;
+    		letter-spacing: .1rem;
+    		line-height: normal;	
+    		padding-top: 15px;
     	}
 
     	#select-text h4 {
     		color: #fff;
-    	}
+    	}    	
 
     /* The Colors duke, the colors*/
     	.header-color {
@@ -99,8 +113,9 @@ Map
     		padding-left: 0.56rem;
     	}
 
-    	.triple div {
+    	.third-blocks {
     		background-color: rgb(197,225,159);
+    		height: 300px;
     	}
 
     	.middle-block {
@@ -120,3 +135,41 @@ Map
     	.green {
 	    	background-color: rgb(197,225,159);	
     	}
+
+    	.outside {
+			height: 74px;
+    		background-color: rgb(140,198,63);
+    	}
+
+    	.outside:hover {
+    		cursor: pointer;
+    		background-color: #fff;
+    		background-color: rgb(197,225,159);
+    	}
+
+    	.triangle {
+    		position: relative;
+    		top: 20px;
+			border-top: 17px solid transparent;
+			border-bottom: 17px solid transparent; 
+			width: 0; 
+			height: 0; 			
+    	}
+
+    	.right-tri {    		
+			left: 10px;
+			border-left: 35px solid #fff; 
+    	}
+
+    	.left-tri {
+    		left: 8px;    		
+			border-right: 35px solid #fff; 
+    	}
+
+    	.full-size-blocks {
+    	    border: 1px solid rgb(151,203,81);
+    	    height: 300px;
+    	}    	
+    	
+    	/*@media only screen and (min-width: 64.063em)
+		@media only screen and (min-width: 40.063em)*/
