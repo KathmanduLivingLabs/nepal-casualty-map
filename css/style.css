@@ -75,12 +75,14 @@ Map
     	}
 
     	.row .inner-text {
+    		position: absolute;
     		font-size: 28px;
     		text-transform: uppercase;
     		font-family: "Avenir LT W02 85 Heavy",verdana,sans-serif;
     		letter-spacing: .1rem;
     		line-height: normal;	
     		padding-top: 15px;
+    		padding-left: 15px;
     	}
 
     	#select-text h4 {
@@ -168,8 +170,27 @@ Map
 
     	.full-size-blocks {
     	    border: 1px solid rgb(151,203,81);
-    	    height: 300px;
-    	}    	
+    	    height: 500px;
+    	}
+
+    	.full-size-blocks div.child {
+    		padding: 0px;
+    	}
+
     	
     	/*@media only screen and (min-width: 64.063em)
 		@media only screen and (min-width: 40.063em)*/
+
+
+
+		/*D3 map shiz*/
+		.graticule {
+		  fill: none;
+		  stroke: #777;
+		}
+
+		.boundary {
+		  fill: #ccc;
+		  fill-opacity: .8;
+		  stroke: #000;
+		}
