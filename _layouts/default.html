@@ -11,12 +11,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" />
 
-<link href='//api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css' rel='stylesheet' />
-  <!-- // <script src='http://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script> -->
-  <!-- <link href='http://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' /> -->
-  <!--[if lte IE 8]>
-    <link href='//api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.ie.css' rel='stylesheet'>
-  <![endif]-->
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+
 
 <!-- Begin Foundation  -->
     <link rel="stylesheet" href="/css/foundation/foundation.css" />
@@ -61,23 +58,26 @@
 
 <!-- Javascript references -->
   <!-- Libraries such as jquery, mapbox, highcharts. Can (probably should) be referenced from external setting-->
-<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
+  <!-- Leaflet -->
+  
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
     <!-- Foundation Libraries -->
       <script src="js/vendor/jquery.js"></script>
       <script src="js/foundation.min.js"></script>
-      <script src="http://d3js.org/d3.v3.min.js"></script>
-      <script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
-      <script src="http://d3js.org/topojson.v1.min.js"></script>
+<!--       // <script src="http://d3js.org/d3.v3.min.js"></script>
+      // <script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+      // <script src="http://d3js.org/topojson.v1.min.js"></script> -->
       <script>
         $(document).foundation();
       </script>
     <!-- Foundation libraries end -->
 
   <!-- Data (JSON, etc) -->
-  
+  <script type="text/javascript" src="js/data.js"></script>
 
   <!-- Scripts (get to work) like script.js -->
-  <script type="text/javascript" src="/js/script.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
 
 <!-- /End JS references -->
 

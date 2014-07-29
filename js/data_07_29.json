@@ -1,6 +1,4 @@
-// Insert data here as Json or geojson
-
-var general_data = [
+[
   {
     "state":"Alabama",
     "code":"AL",

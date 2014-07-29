@@ -16,9 +16,14 @@ Map
     position: relative;
     width: 100%;
     height: 800px;
- }
- #map { position:absolute; top:0; height: 500px; width:99%; border: 4px solid #333;}
-*/
+ }*/
+
+        #map { 
+            position:absolute; 
+            top:0; 
+            height: 100%; 
+            width:100%;
+        }
 
         .row {
             margin-bottom: 10px;
@@ -83,6 +88,7 @@ Map
             letter-spacing: .1rem;
             line-height: normal;    
             padding-top: 15px;
+            padding-left: 0.9375rem;
         }
 
         .inner-text p {
@@ -113,6 +119,11 @@ Map
         }
 
     /*Other*/
+
+        .sub-blocks-full {
+            padding-left: 0px;
+            height: 300px;
+        }
 
         .subheadline {
             background-color: rgb(197,225,159); 
@@ -182,7 +193,7 @@ Map
 
         .full-size-blocks {
             border: 1px solid rgb(151,203,81);
-            height: 300px;
+            /*height:300 px;*/
         }       
 
         .dropdown {
