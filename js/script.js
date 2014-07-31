@@ -1,4 +1,4 @@
-// Insert your scripts here
+var o = 0;
 
 // Initial Script
 
@@ -27,24 +27,43 @@
 
         $.each(data, function(i) {
             mySelect.append(
-                $('<li><a href="#"></a></li>').val(data[i]).html(data[i].state)
+                $('<li class="doink"></li>').val(data[i].id).html(data[i].state)
             );
         });
-        $('select').change(function (e){ 
-           var dataCurrent = this.value.origin;
-            console.log(this)
-            console.log(dataCurrent)
+
+        $('#dropdiv').click(function (e){             
+          $('#drop').toggleClass('open')
+          $('#drop').toggleClass('close')
+          $('#dropdiv').toggleClass('open')    
+        });          
+
+        $(document).click(function(event) {             
+          if(!$(event.target).closest('#drop').length && !$(event.target).closest('#dropdiv').length) {
+            if($('#drop').is(":visible")) {
+              $('#drop').addClass('close')
+              console.log('h')
+            }
+          }        
+        })
+
+        $('.doink').click(function (e){             
+          $('#drop').removeClass('open')
+          $('#drop').addClass('close')
+          $('#dropdiv').removeClass('open')           
+           // var dataCurrent = this.value.origin;
+           //  console.log(this)
+           //  console.log(dataCurrent)
         });
-           
 
-    (function ($) { 
-      $(document).ready(function() { 
-        for (var i = 0; i < data.length; i++) {
-          console.log(data[i])
 
-        };
-      });  
-    }(jQuery));  
+    // (function ($) { 
+    //   $(document).ready(function() { 
+    //     for (var i = 0; i < data.length; i++) {
+    //       console.log(data[i])
+
+    //     };
+    //   });  
+    // }(jQuery));  
 
 
 

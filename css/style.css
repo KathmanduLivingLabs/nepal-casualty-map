@@ -254,6 +254,32 @@ Map
             overflow: scroll;
         }
 
+        #dropdiv {
+            cursor: pointer;
+            transition: background-color 300ms ease-out;
+
+        }
+
+        #dropdiv:hover {
+            background-color: #d7eabd;
+            transition: background-color 300ms ease-out;            
+        }
+
+        .f-dropdown li {
+            padding-left: 5px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+        .f-dropdown {
+            left: 15px !important;
+        }
+
+        .close {
+            left: -99999px !important;            
+        }
+
+
 @media only screen and (min-width: 40.063em) { 
         .row h1 {
             font-size: 52px;        
