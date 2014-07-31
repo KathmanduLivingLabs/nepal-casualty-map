@@ -1,4 +1,9 @@
-var o = 0;
+// var o = 0;
+// var expend = document.getElementById('expend');
+// var statename = document.getElementById('statename');
+// var statename2 = document.getElementById('statename2');
+// var legend_name = document.getElementById('legend_name');
+
 
 // Initial Script
 
@@ -13,47 +18,52 @@ var o = 0;
             [42.461, -70.979],[32.536, -90.4]
             ]);
 
-		var cloudmade = L.tileLayer("http://a.tiles.mapbox.com/v3/energy.j3enm2ea/{z}/{x}/{y}.png", {
-			//attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
-			//key: 'BC9A493B41014CAABB98F0471D759707',
-			//styleId: 22677
-		}).addTo(map);
+		var cloudmade = L.tileLayer("http://a.tiles.mapbox.com/v3/energy.j3enm2ea/{z}/{x}/{y}.png").addTo(map);
 
 
     //Load/add the data        
+(function ($) { 
+$( document ).ready(function() {
 
-        var mySelect = $('#drop');
+  var mySelect = $('#drop');
+
+  $.each(data, function(i) {
+      mySelect.append(
+          $('<li class="doink"></li>').val(data[i].id).html(data[i].state)
+      );
+  });
+
+  // Turn stuff on when you click on the dropdown
+  $('#dropdiv').click(function (e){             
+    $('#drop').toggleClass('open')
+    $('#drop').toggleClass('close')
+    $('#dropdiv').toggleClass('open')    
+  });                  
+
+  $('.doink').click(function (e){             
+    $('#drop').removeClass('open')
+    $('#drop').addClass('close')
+    $('#dropdiv').removeClass('open')           
+     var dataCurrent = this.value;
+      console.log(this)
+      console.log(dataCurrent)
+
+  });
+  $(document).click(function(event) {             
+    if(!$(event.target).closest('#drop').length && !$(event.target).closest('#dropdiv').length) {
+      if($('#drop').is(":visible")) {
+        $('#drop').addClass('close')
+        console.log('h')
+      }
+    }        
+  })
+// onClickyhigh();
+
+});
+}(jQuery));  
 
 
-        $.each(data, function(i) {
-            mySelect.append(
-                $('<li class="doink"></li>').val(data[i].id).html(data[i].state)
-            );
-        });
 
-        $('#dropdiv').click(function (e){             
-          $('#drop').toggleClass('open')
-          $('#drop').toggleClass('close')
-          $('#dropdiv').toggleClass('open')    
-        });          
-
-        $(document).click(function(event) {             
-          if(!$(event.target).closest('#drop').length && !$(event.target).closest('#dropdiv').length) {
-            if($('#drop').is(":visible")) {
-              $('#drop').addClass('close')
-              console.log('h')
-            }
-          }        
-        })
-
-        $('.doink').click(function (e){             
-          $('#drop').removeClass('open')
-          $('#drop').addClass('close')
-          $('#dropdiv').removeClass('open')           
-           // var dataCurrent = this.value.origin;
-           //  console.log(this)
-           //  console.log(dataCurrent)
-        });
 
 
     // (function ($) { 
