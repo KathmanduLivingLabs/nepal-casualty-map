@@ -229,6 +229,13 @@ Map
             background-color: #008cba;
             border-color: #007095;
             transition: background-color 300ms ease-out;
+            /*Turn off highlight*/
+            /*-webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;*/
         }
 
         .button1 h2 {
@@ -263,6 +270,13 @@ Map
         #dropdiv:hover {
             background-color: #d7eabd;
             transition: background-color 300ms ease-out;            
+            /*Turn off highlight*/
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .f-dropdown li {

@@ -1,9 +1,9 @@
-// var o = 0;
-// var expend = document.getElementById('expend');
-// var statename = document.getElementById('statename');
-// var statename2 = document.getElementById('statename2');
-// var legend_name = document.getElementById('legend_name');
-
+var totalBTU = document.getElementById('totalBTU');
+var statename = document.getElementById('dropdiv');
+var flight = document.getElementById('flight');
+var world = document.getElementById('world');
+var marty = document.getElementById('marty');
+var power = document.getElementById('power');
 
 // Initial Script
 
@@ -44,16 +44,14 @@ $( document ).ready(function() {
     $('#drop').removeClass('open')
     $('#drop').addClass('close')
     $('#dropdiv').removeClass('open')           
-     var dataCurrent = this.value;
-      console.log(this)
-      console.log(dataCurrent)
-
+    var i = this.value;
+    onClicky(i);     
+      
   });
   $(document).click(function(event) {             
     if(!$(event.target).closest('#drop').length && !$(event.target).closest('#dropdiv').length) {
       if($('#drop').is(":visible")) {
         $('#drop').addClass('close')
-        console.log('h')
       }
     }        
   })
@@ -62,7 +60,14 @@ $( document ).ready(function() {
 });
 }(jQuery));  
 
-
+function onClicky(i) {
+  statename.innerHTML = '<h4>' + data[i].state + '</h4>';
+  totalBTU.innerHTML = '<h1>' + data[i].btu + ' BTU</h1>';
+  flight.innerHTML = 'Fly a Boeing 747 from ' + data[i].origin + ' to ' +  data[i].destination;
+  world.innerHTML = data[i].earth;
+  marty.innerHTML = data[i].marty;
+  power.innerHTML = '<h1>' + data[i].wattage + ' W</h1>';
+}
 
 
 

@@ -16,7 +16,7 @@ var data = [
     "destination":"St. Louis MO",
     "future":138,
     "dynamite":189133,
-    "id":1
+    "id":0
   },
   {
     "state":"Alaska",
@@ -33,7 +33,7 @@ var data = [
     "destination":"Charlotte NC",
     "future":271,
     "dynamite":371158,
-    "id":2
+    "id":1
   },
   {
     "state":"Arizona",
@@ -50,7 +50,7 @@ var data = [
     "destination":"Boston, MA",
     "future":105,
     "dynamite":143932,
-    "id":3
+    "id":2
   },
   {
     "state":"Arkansas",
@@ -67,7 +67,7 @@ var data = [
     "destination":"St. Louis MO",
     "future":138,
     "dynamite":189133,
-    "id":4
+    "id":3
   },
   {
     "state":"California",
@@ -84,7 +84,7 @@ var data = [
     "destination":"Baltimore, MD",
     "future":94,
     "dynamite":129050,
-    "id":5
+    "id":4
   },
   {
     "state":"Colorado",
@@ -101,7 +101,7 @@ var data = [
     "destination":"Washington, DC",
     "future":117,
     "dynamite":160702,
-    "id":6
+    "id":5
   },
   {
     "state":"Connecticut",
@@ -118,7 +118,7 @@ var data = [
     "destination":"Boston, MA",
     "future":106,
     "dynamite":144376,
-    "id":7
+    "id":6
   },
   {
     "state":"Delaware",
@@ -135,7 +135,7 @@ var data = [
     "destination":"Washington, DC",
     "future":112,
     "dynamite":153372,
-    "id":8
+    "id":7
   },
   {
     "state":"District of Columbia",
@@ -152,7 +152,7 @@ var data = [
     "destination":"Albany, NY",
     "future":70,
     "dynamite":95732,
-    "id":9
+    "id":8
   },
   {
     "state":"Florida",
@@ -169,7 +169,7 @@ var data = [
     "destination":"Washington, DC",
     "future":111,
     "dynamite":151373,
-    "id":10
+    "id":9
   },
   {
     "state":"Georgia",
@@ -186,7 +186,7 @@ var data = [
     "destination":"Detroit, MI",
     "future":125,
     "dynamite":171585,
-    "id":11
+    "id":10
   },
   {
     "state":"Hawaii",
@@ -203,7 +203,7 @@ var data = [
     "destination":"Boston, MA",
     "future":104,
     "dynamite":142821,
-    "id":12
+    "id":11
   },
   {
     "state":"Idaho",
@@ -220,7 +220,7 @@ var data = [
     "destination":"Detroit, MI",
     "future":127,
     "dynamite":173584,
-    "id":13
+    "id":12
   },
   {
     "state":"Illinois",
@@ -237,7 +237,7 @@ var data = [
     "destination":"Washington, DC",
     "future":118,
     "dynamite":161146,
-    "id":14
+    "id":13
   },
   {
     "state":"Indiana",
@@ -254,7 +254,7 @@ var data = [
     "destination":"St. Louis MO",
     "future":140,
     "dynamite":191243,
-    "id":15
+    "id":14
   },
   {
     "state":"Iowa",
@@ -271,7 +271,7 @@ var data = [
     "destination":"St. Louis MO",
     "future":138,
     "dynamite":188577,
-    "id":16
+    "id":15
   },
   {
     "state":"Kansas",
@@ -288,7 +288,7 @@ var data = [
     "destination":"St. Louis MO",
     "future":138,
     "dynamite":188799,
-    "id":17
+    "id":16
   },
   {
     "state":"Kentucky",
@@ -305,7 +305,7 @@ var data = [
     "destination":"Des Moines IA",
     "future":151,
     "dynamite":206347,
-    "id":18
+    "id":17
   },
   {
     "state":"Louisiana",
@@ -322,7 +322,7 @@ var data = [
     "destination":"Pittsburgh, PA",
     "future":177,
     "dynamite":241996,
-    "id":19
+    "id":18
   },
   {
     "state":"Maine",
@@ -339,7 +339,7 @@ var data = [
     "destination":"Washington, DC",
     "future":121,
     "dynamite":166144,
-    "id":20
+    "id":19
   },
   {
     "state":"Maryland",
@@ -356,7 +356,7 @@ var data = [
     "destination":"Washington, DC",
     "future":115,
     "dynamite":157592,
-    "id":21
+    "id":20
   },
   {
     "state":"Massachusetts",
@@ -373,7 +373,7 @@ var data = [
     "destination":"Boston, MA",
     "future":105,
     "dynamite":143599,
-    "id":22
+    "id":21
   },
   {
     "state":"Michigan",
@@ -390,7 +390,7 @@ var data = [
     "destination":"Washington, DC",
     "future":117,
     "dynamite":159480,
-    "id":23
+    "id":22
   },
   {
     "state":"Minnesota",
@@ -407,7 +407,7 @@ var data = [
     "destination":"Detroit, MI",
     "future":128,
     "dynamite":175806,
-    "id":24
+    "id":23
   },
   {
     "state":"Mississippi",
@@ -424,7 +424,7 @@ var data = [
     "destination":"Richmond, VA",
     "future":153,
     "dynamite":209234,
-    "id":25
+    "id":24
   },
   {
     "state":"Missouri",
@@ -441,7 +441,7 @@ var data = [
     "destination":"Portland, ME",
     "future":140,
     "dynamite":192242,
-    "id":26
+    "id":25
   },
   {
     "state":"Montana",
@@ -458,7 +458,7 @@ var data = [
     "destination":"Columbus OH",
     "future":159,
     "dynamite":217564,
-    "id":27
+    "id":26
   },
   {
     "state":"Nebraska",
@@ -475,7 +475,7 @@ var data = [
     "destination":"Des Moines IA",
     "future":150,
     "dynamite":205791,
-    "id":28
+    "id":27
   },
   {
     "state":"Nevada",
@@ -492,7 +492,7 @@ var data = [
     "destination":"Washington, DC",
     "future":106,
     "dynamite":145598,
-    "id":29
+    "id":28
   },
   {
     "state":"New Hampshire",
@@ -509,7 +509,7 @@ var data = [
     "destination":"Washington, DC",
     "future":112,
     "dynamite":153039,
-    "id":30
+    "id":29
   },
   {
     "state":"New Jersey",
@@ -526,7 +526,7 @@ var data = [
     "destination":"Detroit, MI",
     "future":128,
     "dynamite":175028,
-    "id":31
+    "id":30
   },
   {
     "state":"New Mexico",
@@ -543,7 +543,7 @@ var data = [
     "destination":"Detroit, MI",
     "future":125,
     "dynamite":170808,
-    "id":32
+    "id":31
   },
   {
     "state":"New York",
@@ -560,7 +560,7 @@ var data = [
     "destination":"Indianapolis, IN",
     "future":86,
     "dynamite":117722,
-    "id":33
+    "id":32
   },
   {
     "state":"North Carolina",
@@ -577,7 +577,7 @@ var data = [
     "destination":"Washington, DC",
     "future":113,
     "dynamite":154816,
-    "id":34
+    "id":33
   },
   {
     "state":"North Dakota",
@@ -594,7 +594,7 @@ var data = [
     "destination":"Charleston WV",
     "future":230,
     "dynamite":314629,
-    "id":35
+    "id":34
   },
   {
     "state":"Ohio",
@@ -611,7 +611,7 @@ var data = [
     "destination":"Detroit, MI",
     "future":125,
     "dynamite":171474,
-    "id":36
+    "id":35
   },
   {
     "state":"Oklahoma",
@@ -628,7 +628,7 @@ var data = [
     "destination":"Columbus OH",
     "future":159,
     "dynamite":217786,
-    "id":37
+    "id":36
   },
   {
     "state":"Oregon",
@@ -645,7 +645,7 @@ var data = [
     "destination":"Washington, DC",
     "future":115,
     "dynamite":157481,
-    "id":38
+    "id":37
   },
   {
     "state":"Pennsylvania",
@@ -662,7 +662,7 @@ var data = [
     "destination":"Washington, DC",
     "future":115,
     "dynamite":157148,
-    "id":39
+    "id":38
   },
   {
     "state":"Rhode Island",
@@ -679,7 +679,7 @@ var data = [
     "destination":"Baltimore, MD",
     "future":92,
     "dynamite":125385,
-    "id":40
+    "id":39
   },
   {
     "state":"South Carolina",
@@ -696,7 +696,7 @@ var data = [
     "destination":"Louisville KY",
     "future":134,
     "dynamite":184024,
-    "id":41
+    "id":40
   },
   {
     "state":"South Dakota",
@@ -713,7 +713,7 @@ var data = [
     "destination":"Norfolk, VA",
     "future":162,
     "dynamite":221451,
-    "id":42
+    "id":41
   },
   {
     "state":"Tennessee",
@@ -730,7 +730,7 @@ var data = [
     "destination":"St. Louis MO",
     "future":139,
     "dynamite":189910,
-    "id":43
+    "id":42
   },
   {
     "state":"Texas",
@@ -747,10 +747,10 @@ var data = [
     "destination":"St. Louis MO",
     "future":139,
     "dynamite":190576,
-    "id":44
+    "id":43
   },
   {
-    "state":"USA",
+    "state":"U.S. Average",
     "code":"US",
     "mil_btu":148.6,
     "btu":148600000,
@@ -764,7 +764,7 @@ var data = [
     "destination":"Washington, DC",
     "future":121,
     "dynamite":165033,
-    "id":45
+    "id":44
   },
   {
     "state":"Utah",
@@ -781,7 +781,7 @@ var data = [
     "destination":"Washington, DC",
     "future":115,
     "dynamite":157703,
-    "id":46
+    "id":45
   },
   {
     "state":"Vermont",
@@ -798,7 +798,7 @@ var data = [
     "destination":"Washington, DC",
     "future":113,
     "dynamite":154038,
-    "id":47
+    "id":46
   },
   {
     "state":"Virginia",
@@ -815,7 +815,7 @@ var data = [
     "destination":"Detroit, MI",
     "future":132,
     "dynamite":180026,
-    "id":48
+    "id":47
   },
   {
     "state":"Washington",
@@ -832,7 +832,7 @@ var data = [
     "destination":"Detroit, MI",
     "future":129,
     "dynamite":177138,
-    "id":49
+    "id":48
   },
   {
     "state":"West Virginia",
@@ -849,7 +849,7 @@ var data = [
     "destination":"Montreal",
     "future":147,
     "dynamite":201682,
-    "id":50
+    "id":49
   },
   {
     "state":"Wisconsin",
@@ -866,7 +866,7 @@ var data = [
     "destination":"Washington, DC",
     "future":116,
     "dynamite":159258,
-    "id":51
+    "id":50
   },
   {
     "state":"Wyoming",
@@ -883,6 +883,6 @@ var data = [
     "destination":"Charleston WV",
     "future":232,
     "dynamite":317961,
-    "id":52
+    "id":51
   }
 ]

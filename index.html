@@ -33,7 +33,7 @@ layout: default
     </div>
 
     <div class="row">
-      <div class="large-12 columns green">
+      <div id="totalBTU" class="large-12 columns green">
         <h1>398,400,000 BTU</h1>
       </div>
     </div>
@@ -62,31 +62,31 @@ layout: default
       </div>
     </div>
     
-    <div class="row full-size-blocks  ">
+    <div class="row full-size-blocks">
       <div class="large-12 columns header-color">
         <h3>That's enough energy to:</h3>
       </div>
       <div class="large-12 columns flying1 sub-blocks-full">
         <div id="map"></div>
-        <div class="large-8 inner-text">Fly a Boeing 747 from Chicago to New York City</div>
+        <div id="flight" class="large-8 inner-text">Fly a Boeing 747 from Chicago to New York City</div>
       </div>
     </div>  
 
-    <div class="row full-size-blocks  ">
+    <div class="row full-size-blocks">
       <div class="large-12 columns header-color">
         <h3>And...</h3>
       </div>
       <div class="large-12 columns sub-blocks-full">
-        <div class="large-8 inner-text">Drive around the world 3.1 times</div>
+        <div class="large-8 inner-text">Drive around the world <span id="world">3.1</span> times</div>
       </div>
     </div> 
 
-    <div class="row full-size-blocks ">
+    <div class="row full-size-blocks">
       <div class="large-12 columns header-color">
         <h3>Or to...</h3>
       </div>
       <div class="large-12 columns sub-blocks-full">
-        <div class="large-8 inner-text">Take Marty Back to the Future 312 Times</div>
+        <div class="large-8 inner-text">Take Marty Back to the Future <span id="marty">312</span> Times</div>
       </div>
     </div>   
 <!-- Average Power -->
@@ -96,7 +96,7 @@ layout: default
       </div>
     </div>
     <div class="row">
-      <div class="large-12 columns green">
+      <div class="large-12 columns green" id="power">
         <h1>398,400 W</h1>
       </div>
     </div>
