@@ -5,6 +5,10 @@ var world = document.getElementById('world');
 var marty = document.getElementById('marty');
 var power = document.getElementById('power');
 
+var burritos = document.getElementById('burritos');
+var dynamite = document.getElementById('dynamite');
+var coal = document.getElementById('coal');
+
 // Initial Script
 
 		var map = L.map('map', {
@@ -15,7 +19,7 @@ var power = document.getElementById('power');
       zoomControl: false
 
 		}).fitBounds([
-            [42.461, -70.979],[32.536, -90.4]
+              [38.7, -70.979],[41.2, -80.4]
             ]);
 
 		var cloudmade = L.tileLayer("http://a.tiles.mapbox.com/v3/energy.j3enm2ea/{z}/{x}/{y}.png").addTo(map);
@@ -24,6 +28,9 @@ var power = document.getElementById('power');
     //Load/add the data        
 (function ($) { 
 $( document ).ready(function() {
+
+  addNumbers(data[44].id);
+  console.log(data[44])     
 
   var mySelect = $('#drop');
 
@@ -45,7 +52,7 @@ $( document ).ready(function() {
     $('#drop').addClass('close')
     $('#dropdiv').removeClass('open')           
     var i = this.value;
-    onClicky(i);     
+    addNumbers(i);     
       
   });
   $(document).click(function(event) {             
@@ -55,21 +62,28 @@ $( document ).ready(function() {
       }
     }        
   })
-// onClickyhigh();
+// addNumbershigh();
 
 });
 }(jQuery));  
 
-function onClicky(i) {
+function addNumbers(i) {
   statename.innerHTML = '<h4>' + data[i].state + '</h4>';
-  totalBTU.innerHTML = '<h1>' + data[i].btu + ' BTU</h1>';
+  totalBTU.innerHTML = '<h1>' + numberWithCommas(data[i].btu) + ' BTU</h1>';
   flight.innerHTML = 'Fly a Boeing 747 from ' + data[i].origin + ' to ' +  data[i].destination;
   world.innerHTML = data[i].earth;
-  marty.innerHTML = data[i].marty;
-  power.innerHTML = '<h1>' + data[i].wattage + ' W</h1>';
+  marty.innerHTML = data[i].future;
+  power.innerHTML = '<h1>' + numberWithCommas(data[i].wattage) + ' W</h1>';
+
+  burritos.innerHTML = '<p>' + numberWithCommas(data[i].burritos) + ' burritos</p>';
+  dynamite.innerHTML = '<p>' + numberWithCommas(data[i].dynamite) + ' sticks of dynamite</p>';
+  coal.innerHTML = '<p>' + numberWithCommas(data[i].coal) + ' lbs. of coal</p>';
 }
 
-
+//function to add commas
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
     // (function ($) { 
     //   $(document).ready(function() { 
