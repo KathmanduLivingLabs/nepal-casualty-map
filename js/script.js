@@ -30,7 +30,8 @@ var coal = document.getElementById('coal');
 $( document ).ready(function() {
 
   addNumbers(data[44].id);
-  console.log(data[44])     
+  addMap(data[44].id);
+  // console.log(data[44])     
 
   var mySelect = $('#drop');
 
@@ -52,9 +53,25 @@ $( document ).ready(function() {
     $('#drop').addClass('close')
     $('#dropdiv').removeClass('open')           
     var i = this.value;
-    addNumbers(i);     
-      
+    addNumbers(i); 
+    addMap(i);      
   });
+
+  // triangles work, but only sort of
+i = -1;
+  $('#right-tri-box').click(function (e){                        
+    i += 1;
+    addNumbers(i); 
+    addMap(i);      
+  });
+
+  $('#left-tri-box').click(function (e){                        
+    i -= 1;
+    addNumbers(i); 
+    addMap(i);      
+  });
+
+
   $(document).click(function(event) {             
     if(!$(event.target).closest('#drop').length && !$(event.target).closest('#dropdiv').length) {
       if($('#drop').is(":visible")) {
