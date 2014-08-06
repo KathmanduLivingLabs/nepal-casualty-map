@@ -17,18 +17,14 @@ for (var i = 0; i < routes.features.length; i++) {
 		final_origin = routes.features[x].geometry.coordinates[0];
 		line_length = routes.features[x].geometry.coordinates.length - 1;
 		final_destination = routes.features[x].geometry.coordinates[line_length];
-		console.log(final_origin);
-		console.log(final_destination);
+		// console.log(final_origin);
+		// console.log(final_destination);
 
 
 		var LeafIcon = L.Icon.extend({
 		    options: {
-		        shadowUrl: 'img/leaf-shadow.png',
-		        iconSize:     [38, 95],
-		        shadowSize:   [50, 64],
-		        iconAnchor:   [22, 94],
-		        shadowAnchor: [4, 62],
-		        popupAnchor:  [-3, -76]
+		        iconSize:     [18, 17],
+		        iconAnchor:   [9, 8]
 		    }
 		});
 
@@ -38,11 +34,11 @@ for (var i = 0; i < routes.features.length; i++) {
 			map.removeLayer(firstpolyline);
 		};
  
-		var greenIcon = new LeafIcon({iconUrl: 'img/leaf-green.png'}),
-		    redIcon = new LeafIcon({iconUrl: 'img/leaf-red.png'});
+		var blueIcon = new LeafIcon({iconUrl: 'img/star_blue.png'}),
+		    redIcon = new LeafIcon({iconUrl: 'img/star_red.png'});
 
 		// add origin		
-			origin = L.marker(final_origin, {icon: greenIcon}).addTo(map);		
+			origin = L.marker(final_origin, {icon: blueIcon}).addTo(map);		
 
 		// add destination
 			destination = L.marker(final_destination, {icon: redIcon}).addTo(map);
@@ -59,7 +55,8 @@ for (var i = 0; i < routes.features.length; i++) {
 			color: 'red',
 			weight: 3,
 			opacity: 0.5,
-			smoothFactor: 1
+			smoothFactor: 0,
+			dashArray: '10'
 
 			});
 			firstpolyline.addTo(map);

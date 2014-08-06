@@ -9,14 +9,18 @@ var burritos = document.getElementById('burritos');
 var dynamite = document.getElementById('dynamite');
 var coal = document.getElementById('coal');
 
+var w = -1;
+
+
+
 // Initial Script
 
 		var map = L.map('map', {
-			scrollWheelZoom: false,
-      doubleClickZoom: false,
-      dragging: false,
-      boxZoom: false,
-      zoomControl: false
+			// scrollWheelZoom: false,
+   //    doubleClickZoom: false,
+   //    dragging: false,
+   //    boxZoom: false,
+   //    zoomControl: false
 
 		}).fitBounds([
               [38.7, -70.979],[41.2, -80.4]
@@ -28,6 +32,8 @@ var coal = document.getElementById('coal');
     //Load/add the data        
 (function ($) { 
 $( document ).ready(function() {
+
+
 
   addNumbers(data[44].id);
   addMap(data[44].id);
@@ -53,23 +59,30 @@ $( document ).ready(function() {
     $('#drop').addClass('close')
     $('#dropdiv').removeClass('open')           
     var i = this.value;
+
     addNumbers(i); 
     addMap(i);      
   });
 
   // triangles work, but only sort of
-i = -1;
-  $('#right-tri-box').click(function (e){                        
-    i += 1;
-    addNumbers(i); 
-    addMap(i);      
-  });
 
-  $('#left-tri-box').click(function (e){                        
-    i -= 1;
-    addNumbers(i); 
-    addMap(i);      
-  });
+// Swipe to switch
+  // $("#swipe").swipe({
+  //   swipe:function(event, direction, distance, duration, fingerCount) {
+  //     $(this).text("You swiped " + direction );
+  //   }
+  // });
+
+  $('#right-tri-box').click(ToTheRight);
+  $('#left-tri-box').click(ToTheLeft);
+  
+// CANT FIGURE OUT SWIPE
+  $('#totalBTU').on("swipe", ToTheLeft());
+
+
+
+
+  
 
 
   $(document).click(function(event) {             
@@ -83,6 +96,40 @@ i = -1;
 
 });
 }(jQuery));  
+
+
+function ToTheRight(e){
+  if (w == 51) {
+    w -= 7;
+  } else if (w == 44) {
+    w -= 44;        
+  } else if (w == 43) {
+    w += 2;
+  } else {
+    w += 1;
+  };    
+
+  addNumbers(w); 
+  addMap(w);        
+}
+
+function ToTheLeft(e){      
+  if (w == -1) {
+    w += 52;
+  } else if (w == 0) {
+    w += 44;
+  } else if (w == 44) {
+    w += 7;        
+  } else if (w == 45) {
+    w -= 2;
+  } else {
+    w -= 1;
+  };    
+
+    addNumbers(w); 
+    addMap(w);  
+    console.log('f')
+}
 
 function addNumbers(i) {
   statename.innerHTML = '<h4>' + data[i].state + '</h4>';

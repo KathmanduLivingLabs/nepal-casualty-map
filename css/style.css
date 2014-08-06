@@ -23,7 +23,7 @@ Map
             top:0; 
             height: 100%; 
             width:100%;
-            z-index: -2;
+            /*z-index: -2;*/
         }
 
         .row {
@@ -138,7 +138,7 @@ Map
 
         .third-blocks {
             background-color: rgb(197,225,159);
-            height: 300px;
+            /*height: 300px;*/
         }
 
         .middle-block {
@@ -202,6 +202,15 @@ Map
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+        }
+
+        #totalBTU {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;   
         }
 
         .full-size-blocks {
@@ -315,11 +324,6 @@ Map
             padding-bottom: 1rem;
         }
 
-        .dropdown {
-            padding-left: 0.9375rem;
-            padding-right: 0.9375rem;
-        }
-
         .triple {
             padding-left: 0.28rem;
             padding-right: 0.28rem;
@@ -336,6 +340,12 @@ Map
             padding-left: 0.56rem;
         }
     } /* min-width 641px, medium screens */
-@media only screen and (min-width: 64.063em) { } /* min-width 1025px, large screens */
+@media only screen and (min-width: 64.063em) { 
+        .dropdown {
+            padding-left: 0.9375rem;
+            padding-right: 0.9375rem;
+        }
+
+    } /* min-width 1025px, large screens */
 
 
