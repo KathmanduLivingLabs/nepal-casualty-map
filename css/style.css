@@ -23,7 +23,7 @@ Map
             top:0; 
             height: 100%; 
             width:100%;
-            /*z-index: -2;*/
+            z-index: -2;
         }
 
         .row {
@@ -123,7 +123,7 @@ Map
 
         .sub-blocks-full {
             padding-left: 0px;
-            height: 300px;
+            height: 500px;
         }
 
         .subheadline {
@@ -313,6 +313,44 @@ Map
 
         .close {
             left: -99999px !important;            
+        }
+
+        /*Marty McFly*/
+        #back2future {
+            /*background-image:url('/img/backandclock.jpg');*/
+            background-image:url('/img/b2g.jpg');
+            background-position: bottom right;
+            background-repeat: repeat-x;
+            /*overflow:hidden;*/
+        }
+
+        #delorean {
+            position: absolute;
+            bottom: 15px;
+            width: 394px;
+            height: 137px;
+            left: 15px;
+            overflow:hidden !important;
+        }
+        #clock {
+            position: absolute;
+            bottom: 60px;            
+            right: 15px;    
+            padding-left: 15px
+;        }
+        #lightning {
+            position: absolute;
+            top: -20px;            
+            right: 257px;   
+
+        }
+
+        #road {
+            position: absolute;
+            bottom: 0px;
+            height: 125px;
+            background-color: rgb(51,51,51);
+
         }
 
 

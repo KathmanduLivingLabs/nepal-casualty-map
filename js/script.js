@@ -16,11 +16,11 @@ var w = -1;
 // Initial Script
 
 		var map = L.map('map', {
-			// scrollWheelZoom: false,
-   //    doubleClickZoom: false,
-   //    dragging: false,
-   //    boxZoom: false,
-   //    zoomControl: false
+			scrollWheelZoom: false,
+      doubleClickZoom: false,
+      dragging: false,
+      boxZoom: false,
+      zoomControl: false
 
 		}).fitBounds([
               [38.7, -70.979],[41.2, -80.4]
@@ -76,8 +76,8 @@ $( document ).ready(function() {
   $('#right-tri-box').click(ToTheRight);
   $('#left-tri-box').click(ToTheLeft);
   
-// CANT FIGURE OUT SWIPE
-  $('#totalBTU').on("swipe", ToTheLeft());
+// CANT FIGURE OUT SWIPE :(
+  // $('#totalBTU').on("swipe", ToTheLeft());
 
 
 
