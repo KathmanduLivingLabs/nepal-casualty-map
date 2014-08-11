@@ -24,6 +24,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/d3style.css">
 
 
 <!-- /End Merged CSS -->
@@ -101,7 +102,7 @@
           </div>
         </div>
         <div class="middle-block"><p><span id="burritos"></span><span class="has-tip tip-bottom" data-tooltip title="Info"> burritos</span></p></div>
-        <div class="third-blocks bottom"></div>
+        <div id="burrito-fill" class="third-blocks bottom"></div>
       </div>
       <div class="large-4 medium-4 columns triple">
         <div class="third-blocks top">
@@ -227,9 +228,9 @@
     <!-- Foundation Libraries -->
       <script src="js/vendor/jquery.js"></script>
       <script src="js/foundation.min.js"></script>
-<!--       // <script src="http://d3js.org/d3.v3.min.js"></script>
-      // <script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
-      // <script src="http://d3js.org/topojson.v1.min.js"></script> -->
+      <script src="http://d3js.org/d3.v3.min.js"></script>
+      <script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+      <script src="http://d3js.org/topojson.v1.min.js"></script>
       <script>
         $(document).foundation();
       </script>

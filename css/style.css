@@ -138,7 +138,8 @@ Map
 
         .third-blocks {
             background-color: rgb(197,225,159);
-            height: 300px
+            height: 300px;
+            position: relative;
         }
 
         .third-blocks.top {
