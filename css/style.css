@@ -138,11 +138,49 @@ Map
 
         .third-blocks {
             background-color: rgb(197,225,159);
-            /*height: 300px;*/
+            height: 300px
         }
+
+        .third-blocks.top {
+            height: 190px;
+            padding-top: 20px;
+            position: relative;
+        }
+
+        .third-blocks.top div {
+            margin: 0 auto;
+            /*width: 51px;*/
+        }
+        .triple:first-child .third-blocks.top div {
+            margin: 0 auto;
+            /*width: 228px;*/
+        }
+        .triple:last-child .third-blocks.top div {
+            margin: 0 auto;
+            /*width: 112px;*/
+            padding-top: 10px;
+        }
+
+        .third-blocks.top div img{
+            /*width: 100%;*/
+            margin: 0 auto;
+            display: block;
+            height: auto;
+        }
+
+        .unit {
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            padding-bottom: 10px;
+            font-family: 'Avenir LT W02 35 Light',verdana,sans-serif;
+        }
+
 
         .middle-block {
             background-color: rgb(168,212,110) !important;
+            height: 50px;
+            padding-top: 5px;
         }
 
         .middle-block p {
@@ -153,6 +191,7 @@ Map
             padding-bottom: 10px;
             font-size: 18px;
             font-weight: bold;
+            font-family: 'Avenir LT W02 35 Light',verdana,sans-serif;
         }
 
         .green {

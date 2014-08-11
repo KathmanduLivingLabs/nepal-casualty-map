@@ -38,10 +38,10 @@ for (var i = 0; i < routes.features.length; i++) {
 		    redIcon = new LeafIcon({iconUrl: 'img/star_red.png'});
 
 		// add origin		
-			origin = L.marker(final_origin, {icon: blueIcon}).addTo(map);		
+			origin = L.marker(final_origin, {icon: redIcon}).addTo(map);		
 
 		// add destination
-			destination = L.marker(final_destination, {icon: redIcon}).addTo(map);
+			destination = L.marker(final_destination, {icon: blueIcon}).addTo(map);
 		
 		//resize bounds
 			map.fitBounds([

@@ -37,6 +37,7 @@ $( document ).ready(function() {
 
   addNumbers(data[44].id);
   addMap(data[44].id);
+  addD3(data[44].id);
   // console.log(data[44])     
 
   var mySelect = $('#drop');
@@ -62,6 +63,7 @@ $( document ).ready(function() {
 
     addNumbers(i); 
     addMap(i);      
+    addD3(i);
   });
 
   // triangles work, but only sort of
@@ -139,9 +141,9 @@ function addNumbers(i) {
   marty.innerHTML = data[i].future;
   power.innerHTML = '<h1>' + numberWithCommas(data[i].wattage) + ' W</h1>';
 
-  burritos.innerHTML = '<p>' + numberWithCommas(data[i].burritos) + ' burritos</p>';
-  dynamite.innerHTML = '<p>' + numberWithCommas(data[i].dynamite) + ' sticks of dynamite</p>';
-  coal.innerHTML = '<p>' + numberWithCommas(data[i].coal) + ' lbs. of coal</p>';
+  burritos.innerHTML = numberWithCommas(data[i].burritos);
+  dynamite.innerHTML = numberWithCommas(data[i].dynamite);
+  coal.innerHTML = numberWithCommas(data[i].coal)
 }
 
 //function to add commas
