@@ -1,0 +1,428 @@
+/********************************************
+
+    Styles to be added to energy.gov in order 
+    to allow it to look however you want it.
+    Reminder: make it responsive
+
+********************************************/
+
+
+/*+++++++++++++++++++++++++++
+Map
+++++++++++++++++++++++++++++++++++++++*/
+/* #master_container {
+    font-family: 'Avenir LT W02 35 Light',verdana,sans-serif;
+    text-transform: none !important;
+    position: relative;
+    width: 100%;
+    height: 800px;
+ }*/
+
+        #map { 
+            position:absolute; 
+            top:0; 
+            height: 100%; 
+            width:100%;
+            z-index: -2;
+        }
+
+        .row {
+            margin-bottom: 10px;
+        }
+
+        .row .green-text    {
+            color: rgb(140,198,63);
+        }
+
+        .row .white-text    {
+            color: #fff;
+        }
+
+        /*Typography*/
+
+        .row h1, .row h2, .row h3, .row h4 {
+            text-align: center;
+            border:none
+        }
+
+        .row h1 {
+            font-size: 36px;
+            letter-spacing: 10px;
+            color: rgb(51,51,51);
+            line-height: normal;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;            
+            text-decoration: none !important;
+        }
+
+        .row h2 {
+            font-size: 38px;
+            color: #fff;
+            text-transform: none;
+            line-height: normal;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            font-family: "Avenir LT W02 35 Light",verdana,sans-serif;
+            letter-spacing: .1rem;
+        }
+
+        .row h3 {
+            font-size: 26px;
+            color: #fff;
+            margin-top: 0.5rem;
+            margin-bottom: 0.6rem;
+            text-transform: none;
+            line-height: normal;
+        }
+
+        .row h4 {
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .row .inner-text {
+            font-size: 28px;
+            text-transform: uppercase;
+            font-family: "Avenir LT W02 85 Heavy",verdana,sans-serif;
+            letter-spacing: .1rem;
+            line-height: normal;    
+            padding-top: 15px;
+            padding-left: 0.9375rem;
+        }
+
+        .inner-text p {
+            text-align: center;
+        }
+
+        #select-text h4 {
+            color: #fff;
+        }       
+
+        .subheadline p {
+            text-align: center;
+            font-size: 20px;            
+            margin: 0;
+            line-height: normal;
+            padding-top: .3rem; 
+            padding-bottom: .3rem;
+            font-family: "Avenir LT W02 35 Light",verdana,sans-serif;
+        }       
+
+    /* The Colors duke, the colors*/
+        .header-color {
+            background-color: rgb(140,198,63);
+        }
+
+        .headline {
+            background-color: rgb(51,51,51)
+        }
+
+    /*Other*/
+
+        .sub-blocks-full {
+            padding-left: 0px;
+            height: 500px;
+        }
+
+        .subheadline {
+            background-color: rgb(197,225,159); 
+        }
+
+        .triple {
+            padding-left: 0rem;
+            padding-right: 0rem;
+            padding-bottom: .5rem;
+        }
+
+        .third-blocks {
+            background-color: rgb(197,225,159);
+            height: 300px
+        }
+
+        .third-blocks.top {
+            height: 190px;
+            padding-top: 20px;
+            position: relative;
+        }
+
+        .third-blocks.top div {
+            margin: 0 auto;
+            /*width: 51px;*/
+        }
+        .triple:first-child .third-blocks.top div {
+            margin: 0 auto;
+            /*width: 228px;*/
+        }
+        .triple:last-child .third-blocks.top div {
+            margin: 0 auto;
+            /*width: 112px;*/
+            padding-top: 10px;
+        }
+
+        .third-blocks.top div img{
+            /*width: 100%;*/
+            margin: 0 auto;
+            display: block;
+            height: auto;
+        }
+
+        .unit {
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            padding-bottom: 10px;
+            font-family: 'Avenir LT W02 35 Light',verdana,sans-serif;
+        }
+
+
+        .middle-block {
+            background-color: rgb(168,212,110) !important;
+            height: 50px;
+            padding-top: 5px;
+        }
+
+        .middle-block p {
+            margin-bottom: 0px;
+            text-align: center;
+            color: rgb(12,15,8);
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Avenir LT W02 35 Light',verdana,sans-serif;
+        }
+
+        .green {
+            background-color: rgb(197,225,159); 
+        }
+
+        .outside {
+            height: 74px;
+            background-color: rgb(140,198,63);
+            transition: background-color 300ms ease-out;
+        }
+
+        .outside:hover {
+            cursor: pointer;
+            background-color: #fff;
+            background-color: rgb(197,225,159);
+            transition: background-color 300ms ease-out;
+
+        }
+
+        .triangle {
+            position: relative;
+            top: 20px;
+            border-top: 17px solid transparent;
+            border-bottom: 17px solid transparent; 
+            width: 0; 
+            height: 0;          
+        }
+
+        #right-tri {            
+            left: 10px;
+            border-left: 35px solid #fff; 
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        #left-tri {
+            left: 8px;          
+            border-right: 35px solid #fff; 
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        #totalBTU {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;   
+        }
+
+        .full-size-blocks {
+            border: 1px solid rgb(151,203,81);
+            /*height:300 px;*/
+        }       
+
+        .dropdown {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        /*
+        .button1:hover {
+            cursor: pointer;
+            background-color: rgb(197,225,159);  
+        }
+
+        .button1 h1:hover {
+            text-decoration: none !important;
+        }*/
+        .button1 {
+            width: 100%;
+            border-style: solid;
+            border-width: 0px;
+            cursor: pointer;
+            line-height: normal;
+            /*margin: 0 0 1.25rem;*/
+            position: relative;
+            text-decoration: none !important;
+            text-align: center;
+            -webkit-appearance: none;
+            -webkit-border-radius: 0;
+            display: inline-block;
+            /*padding-top: 1rem;
+            padding-right: 2rem;
+            padding-bottom: 1.0625rem;
+            padding-left: 2rem;*/            
+            background-color: #008cba;
+            border-color: #007095;
+            transition: background-color 300ms ease-out;
+            /*Turn off highlight*/
+            /*-webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;*/
+        }
+
+        .button1 h2 {
+            text-transform: uppercase !important;
+            /*color: rgb(51,51,51)*/
+
+        }
+
+        .inner-text p {
+        margin-bottom: 10px !important; 
+        }
+
+        .button1:hover {
+            cursor: pointer;
+            background-color: rgb(0,112,149); 
+            transition: background-color 300ms ease-out;
+        }
+
+        /*Scroll bar*/
+
+        ul#drop {
+            max-height: 200px;
+            overflow: scroll;
+        }
+
+        #dropdiv {
+            cursor: pointer;
+            transition: background-color 300ms ease-out;
+
+        }
+
+        #dropdiv:hover {
+            background-color: #d7eabd;
+            transition: background-color 300ms ease-out;            
+            /*Turn off highlight*/
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .f-dropdown li {
+            padding-left: 5px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+        .f-dropdown {
+            left: 15px !important;
+        }
+
+        .close {
+            left: -99999px !important;            
+        }
+
+        /*Marty McFly*/
+        #back2future {
+            /*background-image:url('/img/backandclock.jpg');*/
+            background-image:url('/img/b2g.jpg');
+            background-position: bottom right;
+            background-repeat: repeat-x;
+            /*overflow:hidden;*/
+        }
+
+        #delorean {
+            position: absolute;
+            bottom: 15px;
+            width: 394px;
+            height: 137px;
+            left: 15px;
+            overflow:hidden !important;
+        }
+        #clock {
+            position: absolute;
+            bottom: 60px;            
+            right: 15px;    
+            padding-left: 15px
+;        }
+        #lightning {
+            position: absolute;
+            top: -20px;            
+            right: 257px;   
+
+        }
+
+        #road {
+            position: absolute;
+            bottom: 0px;
+            height: 125px;
+            background-color: rgb(51,51,51);
+
+        }
+
+
+@media only screen and (min-width: 40.063em) { 
+        .row h1 {
+            font-size: 52px;        
+            letter-spacing: 15px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .triple {
+            padding-left: 0.28rem;
+            padding-right: 0.28rem;
+            padding-bottom: 0rem;
+        }
+
+        .triple:first-child {
+            padding-left: 0px;   
+            padding-right: 0.56rem;         
+        }
+
+        .triple:last-child {
+            padding-right: 0px;         
+            padding-left: 0.56rem;
+        }
+    } /* min-width 641px, medium screens */
+@media only screen and (min-width: 64.063em) { 
+        .dropdown {
+            padding-left: 0.9375rem;
+            padding-right: 0.9375rem;
+        }
+
+    } /* min-width 1025px, large screens */
+
+
