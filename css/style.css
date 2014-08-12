@@ -364,20 +364,38 @@ Map
             /*overflow:hidden;*/
         }
 
+        #del_flame {
+            position: absolute;
+            height: 86%;
+            width: 100%;
+        }
+
         #delorean {
             position: absolute;
-            bottom: 15px;
+            bottom: 0px;
             width: 394px;
             height: 137px;
-            left: 15px;
-            overflow:hidden !important;
+            left: 150px;
+            z-index: 11;
         }
+
+        #flames {
+            position: absolute;
+            width: 216px;
+            height: 58px;            
+            z-index: 10;
+            bottom: -8px;
+            left: 9px;
+            opacity: 0;
+        }
+
         #clock {
             position: absolute;
             bottom: 60px;            
             right: 15px;    
-            padding-left: 15px
-;        }
+            padding-left: 15px;        
+        }
+
         #lightning {
             position: absolute;
             top: -20px;            
