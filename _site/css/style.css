@@ -46,8 +46,8 @@ Map
         }
 
         .row h1 {
-            font-size: 36px;
-            letter-spacing: 10px;
+            font-size: 33px;
+            letter-spacing: 7px;
             color: rgb(51,51,51);
             line-height: normal;
             padding-top: 0.5rem;
@@ -90,6 +90,7 @@ Map
             line-height: normal;    
             padding-top: 15px;
             padding-left: 0.9375rem;
+            color: #fff;
         }
 
         .row .inner-text.large-8 {position: absolute;}
@@ -256,7 +257,7 @@ Map
         }
 
         .full-size-blocks {
-            border: 1px solid rgb(151,203,81);
+            /*border: 1px solid rgb(151,203,81);*/
             overflow: hidden;
         }       
 
@@ -368,13 +369,13 @@ Map
 
         #del_flame {
             position: absolute;
-            height: 86%;
+            height: 100%;
             width: 100%;
         }
 
         #delorean {
             position: absolute;
-            bottom: 0px;
+            bottom: 20px;
             width: 394px;
             height: 137px;
             left: 150px;
@@ -383,11 +384,11 @@ Map
 
         #flames {
             position: absolute;
-            width: 216px;
-            height: 58px;            
+            width: 416px;
+            height: 51px;            
             z-index: 10;
-            bottom: -8px;
-            left: 9px;
+            bottom: 17px;
+            right: 0px;
             opacity: 0;
         }
 
@@ -413,19 +414,24 @@ Map
         }
 
         span.nub {
-            border-color: rgb(140,198,63) !important
+            border-color:#888 ;
         }
 
         .tooltip.tip-top > .nub {
-            border-color: rgb(140,198,63) transparent transparent transparent !important;
+            border-color: #888 transparent transparent transparent  ;
         }
 
         .tooltip.tip-bottom > .nub {
-            border-color:  transparent transparent rgb(140,198,63) transparent !important;
+            border-color:  transparent transparent #888 transparent  ;
         }
 
         .tooltip {
-            background-color: rgb(140,198,63) !important
+            background-color: #888 ;
+        }
+
+        #flight {
+            color: #333 !important;
+            text-shadow: 1px 1px 1px #888888;
         }
 
 
@@ -438,8 +444,8 @@ Map
         }
 
         .triple {
-            padding-left: 0.28rem;
-            padding-right: 0.28rem;
+            padding-left: 0.1rem;
+            padding-right: 0.1rem;
             padding-bottom: 0rem;
         }
 
@@ -458,7 +464,80 @@ Map
             padding-left: 0.9375rem;
             padding-right: 0.9375rem;
         }
-
     } /* min-width 1025px, large screens */
+
+
+@media only screen and (max-width: 480px) { 
+        .row h2 {
+            font-size: 30px;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            letter-spacing: .05rem;
+        }
+        .subheadline p {
+            font-size: 17px;
+            padding-top: .2rem;
+            padding-bottom: .2rem
+        }
+        
+        .row h3 {
+            font-size: 16px;
+            margin-top: .25rem;
+            margin-bottom: .25rem;
+        }
+
+        .middle-block p {
+            padding-top: 03px;
+            padding-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .middle-block {
+            height: 35px !important; 
+        }
+
+        .sub-blocks-full {
+            height: 300px
+        }
+
+        #back2future {
+            height: 450px;
+        }
+
+        .row .inner-text {
+            font-size: 18px !important;
+            line-height: 18px !important; 
+            letter-spacing: 0rem;
+        }
+
+        #delorean {
+            width: 197px;
+            height: 69px;
+        }
+
+        #flames {
+            width: 208px;
+            height: 25px;  
+            bottom: 20px;
+        }
+
+}
+
+
+@media only screen and (max-width: 320px) { 
+    #sub-blocks-full {
+        height: 300px;
+    }
+    .row h1 {
+        font-size: 28px
+    }
+    .row h2 {
+            font-size: 26px;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            letter-spacing: .025rem;
+        }
+}
+
 
 

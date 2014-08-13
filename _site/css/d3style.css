@@ -1,5 +1,5 @@
 .third-blocks-inner {
-	width: 260px;
+	width: 240px;
 	margin: 0 auto;
 	top: 100%;
 	height: 100%;
@@ -19,6 +19,8 @@
 	text-align: center;
 	color: #333;
 	border-top: 1px solid #333;
+	margin-right: 5px;
+	margin-left: 5px;
 }
 .fill {
 		/*background-color: aquamarine;*/
@@ -33,7 +35,7 @@
 	height: 90%;
 	bottom: 0px;
 	position: relative;
-	margin-left: 5px;
+	margin-right: 5px;
 }
 
 div.burritoBar {
@@ -60,16 +62,65 @@ div.coalBar img, div.dynamiteBar img, div.dynamiteBarSingle img, div.burritoBar 
 	width: 100%;
 }
 
+#dyn1 {		
+	display: block;
+}
+#dyn2 {
+	display: none;
+}
 
 
+@media only screen and (max-width: 760px) { 
+	.third-blocks-inner {
+		width: 50%;
+	}
+
+	.third-blocks-inner-half {
+		width: 100%;
+	}
+
+	.third-blocks-inner-half.right {
+		display: none;
+	}
+
+	#dyn1 {
+		display: none;
+	}
+	#dyn2 {
+		display: block;
+	}
+} 
+
+@media only screen and (max-width: 640px) { 
+
+	.third-blocks-inner {
+		width: 240px;
+	}
+
+	.third-blocks-inner-half {
+		width: 50%;
+	}
+
+	.third-blocks-inner-half.right {
+		display: block;
+	}     	
+	.fill-info {
+	/*background-color: grey;*/
+		clear: both;
+		text-align: center;
+		color: #333;
+		border-top: 1px solid #333;
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+	#dyn1 {		
+		display: block;
+	}
+	#dyn2 {
+		display: none;
+	}
+} 
 
 
-@media only screen and (min-width: 40.063em) { 
-
-    } /* min-width 641px, medium screens */
-
-@media only screen and (min-width: 64.063em) { 
-     
-    } /* min-width 1025px, large screens */
 
 

@@ -208,15 +208,15 @@ function UsaCoalfunction(AmericanCoal) {
 
 		usacoal.append("div")
 			.attr("class", "coalBar2")
-			.style("left", "33px")
+			.style("right", "33px")
 			.style("bottom", "60px");
 		usacoal.append("div")
 			.attr("class", "coalBar1")
-			.style("left", "8px")
+			.style("right", "8px")
 			.style("bottom", "60px");
 		usacoal.append("div")
 			.attr("class", "coalBar1")
-			.style("left", "58px")
+			.style("right", "58px")
 			.style("bottom", "60px");
 
 		for (var i = 0; i < 3; i++) {
@@ -231,7 +231,7 @@ function UsaCoalfunction(AmericanCoal) {
 			  		return "coalBar2"
 			  	}    	    	
 	    	})
-	    .style("left", function(d) {
+	    .style("right", function(d) {
 	     	if (i % 2 == 0) {
 					var coalLeft = j * 25;    		
 	    	} else {	
@@ -247,9 +247,9 @@ function UsaCoalfunction(AmericanCoal) {
 	};
 
 	usacoal.selectAll(".coalBar1").append("img")
-			.attr("src", "/img/coal1.jpg")	
-	usacoal.selectAll(".coalBar2").append("img")
 			.attr("src", "/img/coal2.jpg")	
+	usacoal.selectAll(".coalBar2").append("img")
+			.attr("src", "/img/coal1.jpg")	
 }
 
 
@@ -331,7 +331,7 @@ function fullBurrito(b) {
     });
 	d3burrito.append("div")
     .attr("class", "burritoBar")
-    .style("left", "60px")
+    .style("left", "54px")
     .style("bottom", function(d) {
     	var barBottom = i * 25;
     		return barBottom + "px";
@@ -343,7 +343,7 @@ function fullBurrito(b) {
 function middleBurrito(b)  {
 	d3burrito.append("div")
     .attr("class", "burritoBar")
-    .style("left", "30px")
+    .style("left", "27px")
     .style("bottom", function(d) {
     	var barBottom = ((b) * 25);
     		return barBottom + "px";
@@ -368,14 +368,14 @@ function UsaBurritofunction(AmericanBurrito) {
 
 		usaburrito.append("div")
 	    .attr("class", "burritoBar")
-	    .style("left", "0")
+	    .style("right", "0")
 	    .style("bottom", function(d) {
 	    	var barBottom = i * 25;
 	    		return barBottom + "px";
 	    });
 		usaburrito.append("div")
 	    .attr("class", "burritoBar")
-	    .style("left", "60px")
+	    .style("right", "54px")
 	    .style("bottom", function(d) {
 	    	var barBottom = i * 25;
 	    		return barBottom + "px";
@@ -402,7 +402,7 @@ function UsaDynamitefunction(o) {
 		// add the middle
 			usadynamite.append("div")
 	    .attr("class", "dynamiteBar")
-	    .style("left", "25px")
+	    .style("right", "25px")
 	    .style("bottom", function(d) {
 	    	var barBottom = ((q) * 52);
 	    		return barBottom + "px";
@@ -415,14 +415,14 @@ function UsaDynamitefunction(o) {
 
 	usadynamite.append("div")
     .attr("class", "dynamiteBar")
-    .style("left", "10px")
+    .style("right", "10px")
     .style("bottom", function(d) {
     	var barBottom = i * 52;
     		return barBottom + "px";
     });
 	usadynamite.append("div")
     .attr("class", "dynamiteBar")
-    .style("left", "40px")
+    .style("right", "40px")
     .style("bottom", function(d) {
     	var barBottom = i * 52;
     		return barBottom + "px";
@@ -435,7 +435,7 @@ function UsaDynamitefunction(o) {
 		qs = (dynSingle - 1) / 2;
 			usadynamite.append("div")
 		    .attr("class", "dynamiteBarSingle")
-		    .style("left", "80px")
+		    .style("right", "80px")
 		    .style("bottom", function(d) {
 		    	var barBottom = ((qs) * 39);
 		    		return barBottom + "px";

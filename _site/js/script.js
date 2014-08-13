@@ -6,6 +6,7 @@ var marty = document.getElementById('marty');
 var power = document.getElementById('power');
 var burritosDiv = document.getElementById('burritosDiv');
 var dynamiteDiv = document.getElementById('dynamiteDiv');
+var dynamiteDiv2 = document.getElementById('dynamiteDiv2');
 var coalDiv = document.getElementById('coalDiv');
 var burritoInfo = document.getElementById('burrito-info');
 var dynamiteInfo = document.getElementById('dynamite-info');
@@ -147,6 +148,7 @@ function addNumbers(i) {
   burritosDiv.innerHTML = numberWithCommas(data[i].burritos);
   burritoInfo.innerHTML = data[i].state;
   dynamiteDiv.innerHTML = numberWithCommas(data[i].dynamite);
+  dynamiteDiv2.innerHTML = Math.floor(data[i].dynamite / 1000);;
   dynamiteInfo.innerHTML = data[i].state;
   coalDiv.innerHTML = numberWithCommas(data[i].coal)
   coalInfo.innerHTML = data[i].state;

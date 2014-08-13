@@ -3,11 +3,11 @@
   // Move the Clouds
   $(document).ready(function del(){
     $("#flames").
-    delay(1500).
-    animate({opacity:1},500, 'linear').
     delay(2000).
+    animate({opacity:1},100, 'linear').
+    delay(1500).
     animate({opacity:0},500, 'linear'),
-      $("#del_flame").        
+      $("#delorean").        
         delay(1000).
         animate({left:'+=150%'},2000).
         animate({opacity: 0},0).
