@@ -1,13 +1,15 @@
 var totalBTU = document.getElementById('totalBTU');
 var statename = document.getElementById('dropdiv');
 var flight = document.getElementById('flight');
-var world = document.getElementById('world');
+// var world = document.getElementById('world');
 var marty = document.getElementById('marty');
 var power = document.getElementById('power');
-
-var burritos = document.getElementById('burritos');
-var dynamite = document.getElementById('dynamite');
-var coal = document.getElementById('coal');
+var burritosDiv = document.getElementById('burritosDiv');
+var dynamiteDiv = document.getElementById('dynamiteDiv');
+var coalDiv = document.getElementById('coalDiv');
+var burritoInfo = document.getElementById('burrito-info');
+var dynamiteInfo = document.getElementById('dynamite-info');
+var coalInfo = document.getElementById('coal-info');
 
 var w = -1;
 
@@ -34,10 +36,10 @@ var w = -1;
 $( document ).ready(function() {
 
 
-
-  addNumbers(data[44].id);
-  addMap(data[44].id);
-  addD3(data[44].id);
+// should be 44 for us instead of 1 for alaska.
+  addNumbers(data[1].id);
+  addMap(data[1].id);
+  addD3(data[1].id);
   // console.log(data[44])     
 
   var mySelect = $('#drop');
@@ -112,7 +114,8 @@ function ToTheRight(e){
   };    
 
   addNumbers(w); 
-  addMap(w);        
+  addMap(w);     
+  addD3(w);   
 }
 
 function ToTheLeft(e){      
@@ -130,20 +133,23 @@ function ToTheLeft(e){
 
     addNumbers(w); 
     addMap(w);  
-    console.log('f')
+    addD3(w);
 }
 
 function addNumbers(i) {
   statename.innerHTML = '<h4>' + data[i].state + '</h4>';
   totalBTU.innerHTML = '<h1>' + numberWithCommas(data[i].btu) + ' BTU</h1>';
   flight.innerHTML = 'Fly a Boeing 747 from ' + data[i].origin + ' to ' +  data[i].destination;
-  world.innerHTML = data[i].earth;
+  // world.innerHTML = data[i].earth;
   marty.innerHTML = data[i].future;
   power.innerHTML = '<h1>' + numberWithCommas(data[i].wattage) + ' W</h1>';
 
-  burritos.innerHTML = numberWithCommas(data[i].burritos);
-  dynamite.innerHTML = numberWithCommas(data[i].dynamite);
-  coal.innerHTML = numberWithCommas(data[i].coal)
+  burritosDiv.innerHTML = numberWithCommas(data[i].burritos);
+  burritoInfo.innerHTML = data[i].state;
+  dynamiteDiv.innerHTML = numberWithCommas(data[i].dynamite);
+  dynamiteInfo.innerHTML = data[i].state;
+  coalDiv.innerHTML = numberWithCommas(data[i].coal)
+  coalInfo.innerHTML = data[i].state;
 }
 
 //function to add commas
