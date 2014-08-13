@@ -92,6 +92,8 @@ Map
             padding-left: 0.9375rem;
         }
 
+        .row .inner-text.large-8 {position: absolute;}
+
         .inner-text p {
             text-align: center;
         }
@@ -255,7 +257,7 @@ Map
 
         .full-size-blocks {
             border: 1px solid rgb(151,203,81);
-            /*height:300 px;*/
+            overflow: hidden;
         }       
 
         .dropdown {
@@ -408,7 +410,22 @@ Map
             bottom: 0px;
             height: 125px;
             background-color: rgb(51,51,51);
+        }
 
+        span.nub {
+            border-color: rgb(140,198,63) !important
+        }
+
+        .tooltip.tip-top > .nub {
+            border-color: rgb(140,198,63) transparent transparent transparent !important;
+        }
+
+        .tooltip.tip-bottom > .nub {
+            border-color:  transparent transparent rgb(140,198,63) transparent !important;
+        }
+
+        .tooltip {
+            background-color: rgb(140,198,63) !important
         }
 
 
