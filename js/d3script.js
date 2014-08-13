@@ -16,13 +16,13 @@
 // Wish list is to have this run on FIRST click, but not before then! ORRRRR have first load be Alabama instead of USA
 var AmericanBurrito = (Math.floor(data[44].burritos / bS) / 2);
 var AmericanDynamite = data[44].dynamite / dS;
-// var AmericanCoal = (Math.floor(data[44].burritos / bS) / 2);
+var AmericanCoal = Math.floor(data[44].burritos / cS);
 
 // If I wanted to, I could use this but would have to generalize from d3burrito to usaburrito
 // This runs on load?? I think 8/12/14
 UsaBurritofunction(AmericanBurrito);
 UsaDynamitefunction(AmericanDynamite);
-// UsaCoalfunction(AmericanCoal);
+UsaCoalfunction(AmericanCoal);
 
 // This is called and calls everything else.
 function addD3(i) {
@@ -31,7 +31,6 @@ function addD3(i) {
   dynamite = data[i].dynamite;
   coal = data[i].coal;
 
-console.log(dynamite)
 
 	//calculations
 	burritos = Math.floor(data[i].burritos / bS); 
@@ -39,12 +38,12 @@ console.log(dynamite)
 	dynamite = data[i].dynamite / dS;
 	dynBundle = Math.floor(dynamite / 5);
 	dynSingle = Math.floor(dynamite % 5);
-	coal = Math.floor(data[i].coal / cS * 10) / 10;  
+	coal = Math.floor(data[i].coal / cS);  
 
   // Begin by removing previous rect's (can i do it by class?)    
   d3.select("#burrito-fill").selectAll("div").data([]).exit().remove();
 	d3.select("#dynamite-fill").selectAll("div").data([]).exit().remove();
-	// d3.select("#coal-fill").selectAll("div").data([]).exit().remove();
+	d3.select("#coal-fill").selectAll("div").data([]).exit().remove();
 
 	// Do the Burrito Work
 	if (burritos % 2 == 0) {
@@ -90,11 +89,169 @@ console.log(dynamite)
 
 	// Do the Coal Work
 
+	if (coal % 4 == 0) {
+		c = coal / 4;
+	};
+	if (coal % 4 >= 1) {
+		c = Math.floor((coal - 1) / 4); 
+		oneCoal(c);		
+	};
+	if (coal % 4 >= 2) {
+		c = Math.floor((coal - 2) / 4);
+		twoCoal(c);
+		console.log("coal");
+	};
+	if (coal % 4 >= 3) {
+		c = Math.floor((coal - 3) / 4);
+		threeCoal(c);
+	};
+fullCoal(c);
+
+	d3coal.selectAll(".coalBar1").append("img")
+			.attr("src", "/img/coal1.jpg")	
+	d3coal.selectAll(".coalBar2").append("img")
+			.attr("src", "/img/coal2.jpg")	
 }
 
 // /////////////////////////////////////////
 // Functions
 // ////////////////////////////////////////
+// Coal functions 
+
+function fullCoal(c) {
+	for (var i = 0; i < c; i++) {
+		var d = c;
+
+		for (var j = 0; j < 4; j++) {
+				d3coal.append("div")
+	    .attr("class", function(d) {
+			  	if (j % 2 == 0) {
+			  		return "coalBar1"
+			  	} else {
+			  		return "coalBar2"
+			  	}    	    	
+	    	})
+	    .style("left", function(d) {
+	     	if (i % 2 == 0) {
+					var coalLeft = j * 25;    		
+	    	} else {	
+	    		var coalLeft = (j * 25) + 8;    		
+	    	};
+	    		return coalLeft + "px";
+	    })
+	    .style("bottom", function(d) {
+	    	var barBottom = i * 20;    		
+	    		return barBottom + "px";
+	    });
+		};
+	};
+}
+
+function oneCoal(c) {
+	d3coal.append("div")
+		.attr("class", "coalBar2")
+		.style("left", function(d){
+			if (c % 2 == 0) {
+				var coalLeft = 25;
+			} else {
+				var	coalLeft = 33;
+			};
+			return coalLeft + "px";
+		})
+		.style("bottom", function(d) {
+	    	var barBottom = (c) * 20;    		
+	    		return barBottom + "px";
+	    });
+}
+
+function twoCoal(c) {
+	d3coal.append("div")
+		.attr("class", "coalBar1")
+		.style("left", function(d){
+			if (c % 2 == 0) {
+				var coalLeft = 50;
+			} else {
+				var	coalLeft = 58;
+			};
+			return coalLeft + "px";
+		})
+		.style("bottom", function(d) {
+	    	var barBottom = (c) * 20;    		
+	    		return barBottom + "px";
+	    });
+}
+
+function threeCoal(c) {
+	d3coal.append("div")
+		.attr("class", "coalBar1")
+		.style("left", function(d){
+			if (c % 2 == 0) {
+				var coalLeft = 0;
+			} else {
+				var	coalLeft = 8;
+			};
+			return coalLeft + "px";
+		})
+		.style("bottom", function(d) {
+	    	var barBottom = (c) * 20;    		
+	    		return barBottom + "px";
+	    });
+}
+
+function UsaCoalfunction(AmericanCoal) {
+	console.log(AmericanCoal)
+
+	c = Math.floor((AmericanCoal - 3) / 4);
+	console.log("this is American coal c: " + c);
+		
+		// Do the Coal Work
+
+		usacoal.append("div")
+			.attr("class", "coalBar2")
+			.style("left", "33px")
+			.style("bottom", "60px");
+		usacoal.append("div")
+			.attr("class", "coalBar1")
+			.style("left", "8px")
+			.style("bottom", "60px");
+		usacoal.append("div")
+			.attr("class", "coalBar1")
+			.style("left", "58px")
+			.style("bottom", "60px");
+
+		for (var i = 0; i < 3; i++) {
+		var d = c;
+
+		for (var j = 0; j < 4; j++) {
+				usacoal.append("div")
+	    .attr("class", function(d) {
+			  	if (j % 2 == 0) {
+			  		return "coalBar1"
+			  	} else {
+			  		return "coalBar2"
+			  	}    	    	
+	    	})
+	    .style("left", function(d) {
+	     	if (i % 2 == 0) {
+					var coalLeft = j * 25;    		
+	    	} else {	
+	    		var coalLeft = (j * 25) + 8;    		
+	    	};
+	    		return coalLeft + "px";
+	    })
+	    .style("bottom", function(d) {
+	    	var barBottom = i * 20;    		
+	    		return barBottom + "px";
+	    });
+		};
+	};
+
+	usacoal.selectAll(".coalBar1").append("img")
+			.attr("src", "/img/coal1.jpg")	
+	usacoal.selectAll(".coalBar2").append("img")
+			.attr("src", "/img/coal2.jpg")	
+}
+
 
 // Dymamite functions
 function fullDynamite(q) {
@@ -159,9 +316,6 @@ function middleDynamiteSingle(qs)  {
     		return barBottom + "px";
     });
 }
-
-
-// UsaDynamitefunction(AmericanDynamite);
 
 // Burrito Functions
 function fullBurrito(b) {
@@ -234,8 +388,6 @@ function UsaBurritofunction(AmericanBurrito) {
 };
 
 function UsaDynamitefunction(o) {
-console.log(o)
-// var AmericanDynamiteBundle = ((Math.floor(AmericanDynamite / 5)) / 2); //Finished???
 	
 
 	dynBundle = Math.floor(o / 5);
@@ -250,30 +402,27 @@ console.log(o)
 		// add the middle
 			usadynamite.append("div")
 	    .attr("class", "dynamiteBar")
-	    .style("left", "15px")
+	    .style("left", "25px")
 	    .style("bottom", function(d) {
 	    	var barBottom = ((q) * 52);
 	    		return barBottom + "px";
 	    });
 	};
 
-	console.log("this is the letter q: " + q)
-	console.log("Bundles: " + dynBundle)
-	console.log("Singles: " + dynSingle)
 // Add the full
 	for (var i = 0; i < q; i++) {
 	var d = q;
 
 	usadynamite.append("div")
     .attr("class", "dynamiteBar")
-    .style("left", "0")
+    .style("left", "10px")
     .style("bottom", function(d) {
     	var barBottom = i * 52;
     		return barBottom + "px";
     });
 	usadynamite.append("div")
     .attr("class", "dynamiteBar")
-    .style("left", "30px")
+    .style("left", "40px")
     .style("bottom", function(d) {
     	var barBottom = i * 52;
     		return barBottom + "px";
@@ -286,7 +435,7 @@ console.log(o)
 		qs = (dynSingle - 1) / 2;
 			usadynamite.append("div")
 		    .attr("class", "dynamiteBarSingle")
-		    .style("left", "70px")
+		    .style("left", "80px")
 		    .style("bottom", function(d) {
 		    	var barBottom = ((qs) * 39);
 		    		return barBottom + "px";
@@ -319,8 +468,4 @@ console.log(o)
 
 			usadynamite.selectAll(".dynamiteBarSingle").append("img")
 					.attr("src", "/img/dynamite.jpg")
-
-
-
-
 };

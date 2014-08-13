@@ -51,6 +51,11 @@ div.dynamiteBarSingle {
 	width: 16px;
 }
 
+div.coalBar1, div.coalBar2 {
+	position: absolute;
+	width: 25px;
+}
+
 div.coalBar img, div.dynamiteBar img, div.dynamiteBarSingle img, div.burritoBar img {
 	width: 100%;
 }
