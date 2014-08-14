@@ -55,7 +55,7 @@ function addD3(i) {
 	fullBurrito(b);
 
 	d3burrito.selectAll("div").append("img")
-			.attr("src", "/img/burritoSmall.jpg")
+			.attr("src", "img/burritoSmall.jpg")
 
 	// if (burRemainder != 0 ) {
 	// 	partialBurrito(b, burRemainder);	
@@ -79,13 +79,13 @@ function addD3(i) {
 	fullDynamiteSingle(qs);
 
 	d3dynamite.selectAll("div").append("img")
-		.attr("src", "/img/bundle.jpg")
+		.attr("src", "img/bundle.jpg")
 
 		// Remove the above appended jpg, add the below jpg
 	d3dynamite.selectAll(".dynamiteBarSingle").selectAll("img").data([]).exit().remove();
 
 	d3dynamite.selectAll(".dynamiteBarSingle").append("img")
-			.attr("src", "/img/dynamite.jpg")
+			.attr("src", "img/dynamite.jpg")
 
 	// Do the Coal Work
 
@@ -108,9 +108,9 @@ function addD3(i) {
 fullCoal(c);
 
 	d3coal.selectAll(".coalBar1").append("img")
-			.attr("src", "/img/coal1.jpg")	
+			.attr("src", "img/coal1.jpg")	
 	d3coal.selectAll(".coalBar2").append("img")
-			.attr("src", "/img/coal2.jpg")	
+			.attr("src", "img/coal2.jpg")	
 }
 
 // /////////////////////////////////////////
@@ -247,9 +247,9 @@ function UsaCoalfunction(AmericanCoal) {
 	};
 
 	usacoal.selectAll(".coalBar1").append("img")
-			.attr("src", "/img/coal2.jpg")	
+			.attr("src", "img/coal2.jpg")	
 	usacoal.selectAll(".coalBar2").append("img")
-			.attr("src", "/img/coal1.jpg")	
+			.attr("src", "img/coal1.jpg")	
 }
 
 
@@ -384,7 +384,7 @@ function UsaBurritofunction(AmericanBurrito) {
 
 
 	usaburrito.selectAll("div").append("img")
-		.attr("src", "/img/burritoSmall.jpg")
+		.attr("src", "img/burritoSmall.jpg")
 };
 
 function UsaDynamitefunction(o) {
@@ -461,11 +461,11 @@ function UsaDynamitefunction(o) {
 			};
 
 			usadynamite.selectAll("div").append("img")
-				.attr("src", "/img/bundle.jpg")
+				.attr("src", "img/bundle.jpg")
 
 				// Remove the above appended jpg, add the below jpg
 			usadynamite.selectAll(".dynamiteBarSingle").selectAll("img").data([]).exit().remove();
 
 			usadynamite.selectAll(".dynamiteBarSingle").append("img")
-					.attr("src", "/img/dynamite.jpg")
+					.attr("src", "img/dynamite.jpg")
 };
