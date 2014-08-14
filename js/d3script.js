@@ -99,7 +99,6 @@ function addD3(i) {
 	if (coal % 4 >= 2) {
 		c = Math.floor((coal - 2) / 4);
 		twoCoal(c);
-		console.log("coal");
 	};
 	if (coal % 4 >= 3) {
 		c = Math.floor((coal - 3) / 4);
@@ -199,10 +198,8 @@ function threeCoal(c) {
 }
 
 function UsaCoalfunction(AmericanCoal) {
-	console.log(AmericanCoal)
 
 	c = Math.floor((AmericanCoal - 3) / 4);
-	console.log("this is American coal c: " + c);
 		
 		// Do the Coal Work
 
@@ -350,16 +347,6 @@ function middleBurrito(b)  {
     });
 }
 
-// function partialBurrito(b, burRemainder) {
-// 	console.log('g')
-// 	d3burrito.append("div")
-//     .attr("class", "burritoBar")
-//     .style("left", "30px")
-//     .style("bottom", function(d) {
-//     	var barBottom = ((b+1) * 25);
-//     		return barBottom + "px";
-//     });	
-// }
 
 function UsaBurritofunction(AmericanBurrito) {
 

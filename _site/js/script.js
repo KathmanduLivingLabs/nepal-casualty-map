@@ -46,7 +46,6 @@ $( document ).ready(function() {
   addNumbers(data[1].id);
   addMap(data[1].id);
   addD3(data[1].id);
-  // console.log(data[44])     
 
   var mySelect = $('#drop');
 
@@ -163,8 +162,6 @@ function addNumbers(i) {
   burdynamite =   numberWithCommas(Math.abs(data[i].dynamite - data[44].dynamite));
   burcoal =   numberWithCommas(Math.abs(data[i].coal - data[44].coal));
 
-  console.log(burinter)
-
 if (data[i].burritos - data[44].burritos > 0) {
   aboveBelow = "above";
   redBlue = "red";
@@ -187,15 +184,7 @@ cbelow.innerHTML = burcoal + ' lbs. of coal <span class="' + redBlue + '">' + ab
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
-    // (function ($) { 
-    //   $(document).ready(function() { 
-    //     for (var i = 0; i < data.length; i++) {
-    //       console.log(data[i])
-
-    //     };
-    //   });  
-    // }(jQuery));  
+ 
 
 
 
