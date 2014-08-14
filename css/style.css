@@ -183,7 +183,7 @@ Map
 
         .middle-block {
             background-color: rgb(168,212,110) !important;
-            height: 50px;
+            height: 90px;
             padding-top: 5px;
         }
 
@@ -387,7 +387,7 @@ Map
             width: 416px;
             height: 51px;            
             z-index: 10;
-            bottom: 17px;
+            bottom: 20px;
             right: 0px;
             opacity: 0;
         }
@@ -433,6 +433,33 @@ Map
             color: #333 !important;
             text-shadow: 1px 1px 1px #888888;
         }
+    
+    #power p {
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-family: 'Avenir LT W02 35 Light',verdana,sans-serif;
+    }
+
+    #power h1 {
+        padding-bottom: 0px;
+    }
+
+    .middle-block .below-text {
+        font-size: 13px;
+        padding: 0px;
+    }
+
+    .middle-block .below-text span.red {
+        color: red;
+    }
+
+    .middle-block .below-text span.blue {
+        color: blue;
+    }
+
 
 
 @media only screen and (min-width: 40.063em) { 
@@ -493,7 +520,7 @@ Map
         }
 
         .middle-block {
-            height: 35px !important; 
+            height: 75px !important; 
         }
 
         .sub-blocks-full {

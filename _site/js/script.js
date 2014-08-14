@@ -12,6 +12,11 @@ var burritoInfo = document.getElementById('burrito-info');
 var dynamiteInfo = document.getElementById('dynamite-info');
 var coalInfo = document.getElementById('coal-info');
 
+var bbelow  =  document.getElementById('b-below');
+var d1below =  document.getElementById('d1-below');
+var d2below =  document.getElementById('d2-below');
+var cbelow  =  document.getElementById('c-below');
+
 var w = -1;
 
 
@@ -143,7 +148,8 @@ function addNumbers(i) {
   flight.innerHTML = 'Fly a Boeing 747 from ' + data[i].origin + ' to ' +  data[i].destination;
   // world.innerHTML = data[i].earth;
   marty.innerHTML = data[i].future;
-  power.innerHTML = '<h1>' + numberWithCommas(data[i].wattage) + ' W</h1>';
+  power.innerHTML = '<h1>' + numberWithCommas(data[i].wattage) + ' W</h1> <p>You used ' + numberWithCommas(data[i].wattage / 100) + 
+  ' times as much energy as a 100-watt lightbulb this second...and this second...and now. You get the idea.</p>';
 
   burritosDiv.innerHTML = numberWithCommas(data[i].burritos);
   burritoInfo.innerHTML = data[i].state;
@@ -152,6 +158,29 @@ function addNumbers(i) {
   dynamiteInfo.innerHTML = data[i].state;
   coalDiv.innerHTML = numberWithCommas(data[i].coal)
   coalInfo.innerHTML = data[i].state;
+
+  burinter =   numberWithCommas(Math.abs(data[i].burritos - data[44].burritos));
+  burdynamite =   numberWithCommas(Math.abs(data[i].dynamite - data[44].dynamite));
+  burcoal =   numberWithCommas(Math.abs(data[i].coal - data[44].coal));
+
+  console.log(burinter)
+
+if (data[i].burritos - data[44].burritos > 0) {
+  aboveBelow = "above";
+  redBlue = "red";
+} else if (data[i].burritos - data[44].burritos < 0) {
+  aboveBelow = "below"
+  redBlue = "blue";
+} else {
+  aboveBelow = "above" 
+  redBlue = "";
+};
+
+bbelow.innerHTML = burinter + ' burritos <span class="' + redBlue + '">' + aboveBelow + '</span> <br>the U.S. Average.';
+d1below.innerHTML = burdynamite + ' sticks <span class="' + redBlue + '">' + aboveBelow + '</span> <br>the U.S. Average.';
+d2below.innerHTML = burdynamite + ' sticks <span class="' + redBlue + '">' + aboveBelow + '</span> <br>the U.S. Average.';
+cbelow.innerHTML = burcoal + ' lbs. of coal <span class="' + redBlue + '">' + aboveBelow + '</span> <br>the U.S. Average.';
+
 }
 
 //function to add commas
