@@ -375,7 +375,7 @@ Map
 
         #delorean {
             position: absolute;
-            bottom: 20px;
+            bottom: 16px;
             width: 394px;
             height: 137px;
             left: 150px;
@@ -387,7 +387,7 @@ Map
             width: 416px;
             height: 51px;            
             z-index: 10;
-            bottom: 20px;
+            bottom: 16px;
             right: 0px;
             opacity: 0;
         }
@@ -545,7 +545,7 @@ Map
         #flames {
             width: 208px;
             height: 25px;  
-            bottom: 10px;
+            bottom: 20px;
         }
 
 }
