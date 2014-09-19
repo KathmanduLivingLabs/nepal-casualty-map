@@ -15,6 +15,7 @@
 // Add USA
 // Wish list is to have this run on FIRST click, but not before then! ORRRRR have first load be Alabama instead of USA
 var AmericanBurrito = (Math.floor(data[44].burritos / bS) / 2);
+var	AmericanBurRemainder = Math.floor(((data[44].burritos / bS) - Math.floor(data[i].burritos / bS)) * 2);
 var AmericanDynamite = data[44].dynamite / dS;
 var AmericanCoal = Math.floor(data[44].burritos / cS);
 
@@ -27,14 +28,9 @@ UsaCoalfunction(AmericanCoal);
 // This is called and calls everything else.
 function addD3(i) {
 
-  burritos = data[i].burritos;
-  dynamite = data[i].dynamite;
-  coal = data[i].coal;
-
-
 	//calculations
 	burritos = Math.floor(data[i].burritos / bS); 
-	burRemainder = Math.floor(((data[i].burritos / bS) - burritos) * 3);
+	burRemainder = Math.floor(((data[i].burritos / bS) - burritos) * 2);
 	dynamite = data[i].dynamite / dS;
 	dynBundle = Math.floor(dynamite / 5);
 	dynSingle = Math.floor(dynamite % 5);
@@ -47,15 +43,28 @@ function addD3(i) {
 
 	// Do the Burrito Work
 	if (burritos % 2 == 0) {
-		b = burritos / 2;  
+		b = burritos / 2; 
+		o = 0; 
 	} else {
 		b = (burritos - 1) / 2;
+		o = 1;
 		middleBurrito(b);
 	};
 	fullBurrito(b);
 
-	d3burrito.selectAll("div").append("img")
-			.attr("src", "img/burritoSmall.jpg")
+	if (burRemainder == 1) {
+		halfBurrito(b, o);
+
+	};
+	console.log(burRemainder)
+	console.log(burritos)
+	console.log(data[i].burritos)
+
+	d3burrito.selectAll(".burritoBar").append("img")
+			.attr("src", "img/burritoSmall2.jpg")
+
+	d3burrito.selectAll(".burritohalf").append("img")
+			.attr("src", "img/burritohalf.jpg")			
 
 	// if (burRemainder != 0 ) {
 	// 	partialBurrito(b, burRemainder);	
@@ -347,6 +356,23 @@ function middleBurrito(b)  {
     });
 }
 
+function halfBurrito(b, o)  {
+		d3burrito.append("div")
+	    .attr("class", "burritohalf")
+	    .style("left", "36px")
+	    .style("bottom", function(d) {
+
+	    	if (o == 0) {
+	    		var barBottom = (((b) * 25) - 3);
+	    	}
+	    	else {
+	    		var barBottom = (((b) * 25) + 22);
+	    	};    	
+
+	    	
+	    		return barBottom + "px";
+	    });
+};
 
 function UsaBurritofunction(AmericanBurrito) {
 
@@ -369,9 +395,18 @@ function UsaBurritofunction(AmericanBurrito) {
     });    
 	};
 
+usaburrito.append("div")
+    .attr("class", "burritohalf")
+    .style("right", "36px")
+    .style("bottom", function(d) {
+    	var barBottom = (((i) * 25) - 3);    	
+    		return barBottom + "px";
+    });
 
-	usaburrito.selectAll("div").append("img")
-		.attr("src", "img/burritoSmall.jpg")
+	usaburrito.selectAll(".burritoBar").append("img")
+		.attr("src", "img/burritoSmall2.jpg")
+	usaburrito.selectAll(".burritohalf").append("img")
+		.attr("src", "img/burritohalf.jpg")
 };
 
 function UsaDynamitefunction(o) {

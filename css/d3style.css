@@ -43,6 +43,11 @@ div.burritoBar {
     width: 52px;
 }
 
+div.burritohalf {
+	position: absolute;
+    width: 34px;
+}
+
 div.dynamiteBar {
 	position: absolute;
 	width: 26px;
