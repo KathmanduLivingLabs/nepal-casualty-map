@@ -361,7 +361,7 @@ Map
         /*Marty McFly*/
         #back2future {
             /*background-image:url('/img/backandclock.jpg');*/
-            background-image:url('/img/b2g.jpg');
+            background-image:url('img/b2g.jpg');
             background-position: bottom right;
             background-repeat: repeat-x;
             /*overflow:hidden;*/
