@@ -568,3 +568,6 @@ Map
 
 
 
+.has-tip {
+    border-bottom: dotted 1px #fff;
+}
