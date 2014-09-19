@@ -56,9 +56,9 @@ function addD3(i) {
 		halfBurrito(b, o);
 
 	};
-	console.log(burRemainder)
-	console.log(burritos)
-	console.log(data[i].burritos)
+	// console.log(burRemainder)
+	// console.log(burritos)
+	// console.log(data[i].burritos)
 
 	d3burrito.selectAll(".burritoBar").append("img")
 			.attr("src", "img/burritoSmall2.jpg")
