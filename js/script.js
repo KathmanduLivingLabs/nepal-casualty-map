@@ -43,9 +43,9 @@ $( document ).ready(function() {
 
 
 // should be 44 for us instead of 1 for alaska.
-  addNumbers(data[1].id);
-  addMap(data[1].id);
-  addD3(data[1].id);
+  addNumbers(data[44].id);
+  addMap(data[44].id);
+  addD3(data[44].id);
 
   var mySelect = $('#drop');
 
@@ -71,9 +71,9 @@ $( document ).ready(function() {
     addNumbers(i); 
     addMap(i);      
     addD3(i);
-  });
+    var w = i; //why doesn't this work?
 
-  // triangles work, but only sort of
+  });
 
 // Swipe to switch
   // $("#swipe").swipe({
@@ -81,6 +81,13 @@ $( document ).ready(function() {
   //     $(this).text("You swiped " + direction );
   //   }
   // });
+
+// Add left/right navigation
+  $(document).keydown(function ( event ) {
+    if (event.which == 39) {ToTheRight();}
+    else if (event.which == 37) {ToTheLeft(event.which);}
+    ;
+  });
 
   $('#right-tri-box').click(ToTheRight);
   $('#left-tri-box').click(ToTheLeft);
@@ -185,10 +192,3 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
  
-
-
-
-// Each append to a UL an LI for each 50 states (and dc/usa)
-// Append each LI with a number/ID
-// This ID is the same as something in the data, link it by if ID == data.ID {load the array for that item}
-// Sense for a click of a new LI, then run a function .... $('#li').change(function (e){ do the work...map and d3 });
