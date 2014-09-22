@@ -56,9 +56,7 @@ function addD3(i) {
 		halfBurrito(b, o);
 
 	};
-	// console.log(burRemainder)
-	// console.log(burritos)
-	// console.log(data[i].burritos)
+
 
 	d3burrito.selectAll(".burritoBar").append("img")
 			.attr("src", "img/burritoSmall2.jpg")
@@ -395,18 +393,18 @@ function UsaBurritofunction(AmericanBurrito) {
     });    
 	};
 
-usaburrito.append("div")
-    .attr("class", "burritohalf")
-    .style("right", "36px")
-    .style("bottom", function(d) {
-    	var barBottom = (((i) * 25) - 3);    	
-    		return barBottom + "px";
-    });
+// usaburrito.append("div")
+//     .attr("class", "burritohalf")
+//     .style("right", "36px")
+//     .style("bottom", function(d) {
+//     	var barBottom = (((i) * 25) - 3);    	
+//     		return barBottom + "px";
+//     });
 
 	usaburrito.selectAll(".burritoBar").append("img")
 		.attr("src", "img/burritoSmall2.jpg")
-	usaburrito.selectAll(".burritohalf").append("img")
-		.attr("src", "img/burritohalf.jpg")
+	// usaburrito.selectAll(".burritohalf").append("img")
+	// 	.attr("src", "img/burritohalf.jpg")
 };
 
 function UsaDynamitefunction(o) {
