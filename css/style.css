@@ -33,38 +33,38 @@ Map
             z-index: -2;
         }
 
-        .row {
+        .rowDOE {
             margin-bottom: 10px;
         }
 
-        .row .green-text    {
-            color: rgb(140,198,63);
+        .rowDOE .green-text    {
+            color: rgb(140,198,63) !important;
         }
 
-        .row .white-text    {
-            color: #fff;
+        .rowDOE .white-text    {
+            color: #fff !important;
         }
 
         /*Typography*/
 
-        .row h1, .row h2, .row h3, .row h4 {
+        .rowDOE h1, .rowDOE h2, .rowDOE h3, .rowDOE h4 {
             text-align: center;
             border:none
         }
 
-        .row h1 {
+        .rowDOE h1 {
             font-size: 33px;
             letter-spacing: 7px;
-            color: rgb(51,51,51);
+            color: rgb(51,51,51) !important;
             line-height: normal;
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;            
             text-decoration: none !important;
         }
 
-        .row h2 {
+        .rowDOE h2 {
             font-size: 38px;
-            color: #fff;
+            color: #fff !important;
             text-transform: none;
             line-height: normal;
             padding-top: 1rem;
@@ -73,23 +73,24 @@ Map
             letter-spacing: .1rem;
         }
 
-        .row h3 {
+        .rowDOE h3 {
             font-size: 26px;
-            color: #fff;
+            color: #fff !important;
             margin-top: 0.5rem;
             margin-bottom: 0.6rem;
             text-transform: none;
             line-height: normal;
         }
 
-        .row h4 {
+        .rowDOE h4 {
             font-size: 20px;
             text-transform: uppercase;
             margin-top: 0.5rem;
             margin-bottom: 0.4rem;
+            color: rgb(0, 0, 0) !important;
         }
 
-        .row .inner-text {
+        .rowDOE .inner-text {
             font-size: 28px;
             text-transform: uppercase;
             font-family: "Avenir LT W02 85 Heavy",verdana,sans-serif;
@@ -97,27 +98,29 @@ Map
             line-height: normal;    
             padding-top: 15px;
             padding-left: 0.9375rem;
-            color: #fff;
+            color: #fff !important;
         }
 
-        .row .inner-text.large-8 {position: absolute;}
+        .rowDOE .inner-text.large-8 {position: absolute;}
 
         .inner-text p {
             text-align: center;
         }
 
         #select-text h4 {
-            color: #fff;
+            color: #fff !important;
         }       
 
         .subheadline p {
             text-align: center;
             font-size: 20px;            
-            margin: 0;
+            margin: 0 !important;
             line-height: normal;
-            padding-top: .3rem; 
-            padding-bottom: .3rem;
+            color: rgb(68,68,68) !important;
+            padding-top: .3rem !important; 
+            padding-bottom: .3rem !important;
             font-family: "Avenir LT W02 35 Light",verdana,sans-serif;
+            border-bottom: none !important;
         }       
 
     /* The Colors duke, the colors*/
@@ -185,6 +188,7 @@ Map
             text-align: center;
             padding-bottom: 10px;
             font-family: 'Avenir LT W02 35 Light',verdana,sans-serif;
+            color: rgb(68,68,68) !important;
         }
 
 
@@ -194,10 +198,11 @@ Map
             padding-top: 5px;
         }
 
-        .middle-block p {
-            margin-bottom: 0px;
+        .middle-block p {       
+            border-bottom: none !important;     
+            margin:0px !important;
             text-align: center;
-            color: rgb(12,15,8);
+            color: rgb(12,15,8) !important;
             padding-top: 10px;
             padding-bottom: 10px;
             font-size: 18px;
@@ -456,7 +461,7 @@ Map
 
     .middle-block .below-text {
         font-size: 13px;
-        padding: 0px;
+        padding: 0px !important;
     }
 
     .middle-block .below-text span.red {
@@ -470,7 +475,7 @@ Map
 
 
 @media only screen and (min-width: 40.063em) { 
-        .row h1 {
+        .rowDOE h1 {
             font-size: 52px;        
             letter-spacing: 15px;
             padding-top: 1rem;
@@ -502,7 +507,7 @@ Map
 
 
 @media only screen and (max-width: 480px) { 
-        .row h2 {
+        .rowDOE h2 {
             font-size: 30px;
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
@@ -514,7 +519,7 @@ Map
             padding-bottom: .2rem
         }
         
-        .row h3 {
+        .rowDOE h3 {
             font-size: 16px;
             margin-top: .25rem;
             margin-bottom: .25rem;
@@ -538,7 +543,7 @@ Map
             height: 450px;
         }
 
-        .row .inner-text {
+        .rowDOE .inner-text {
             font-size: 18px !important;
             line-height: 18px !important; 
             letter-spacing: 0rem;
@@ -562,10 +567,10 @@ Map
     #sub-blocks-full {
         height: 300px;
     }
-    .row h1 {
+    .rowDOE h1 {
         font-size: 28px
     }
-    .row h2 {
+    .rowDOE h2 {
             font-size: 26px;
             padding-top: 0.25rem;
             padding-bottom: 0.25rem;

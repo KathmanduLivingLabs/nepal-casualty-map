@@ -3,7 +3,7 @@ var statename = document.getElementById('dropdiv');
 var flight = document.getElementById('flight');
 // var world = document.getElementById('world');
 var marty = document.getElementById('marty');
-var power = document.getElementById('power');
+// var power = document.getElementById('power');
 var burritosDiv = document.getElementById('burritosDiv');
 var dynamiteDiv = document.getElementById('dynamiteDiv');
 var dynamiteDiv2 = document.getElementById('dynamiteDiv2');
@@ -154,8 +154,8 @@ function addNumbers(i) {
   flight.innerHTML = 'Fly a Boeing 747 from ' + data[i].origin + ' to ' +  data[i].destination;
   // world.innerHTML = data[i].earth;
   marty.innerHTML = data[i].future;
-  power.innerHTML = '<h1>' + numberWithCommas(data[i].wattage) + ' W</h1> <p>You used ' + numberWithCommas(data[i].wattage / 100) + 
-  ' times as much energy as a 100-watt lightbulb this second...and this second...and now. You get the idea.</p>';
+  // power.innerHTML = '<h1>' + numberWithCommas(data[i].wattage) + ' W</h1> <p>You used ' + numberWithCommas(data[i].wattage / 100) + 
+  // ' times as much energy as a 100-watt lightbulb this second...and this second...and now. You get the idea.</p>';
 
   burritosDiv.innerHTML = numberWithCommas(data[i].burritos);
   burritoInfo.innerHTML = data[i].state;
