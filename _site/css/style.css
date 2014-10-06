@@ -1,3 +1,11 @@
+/*Fold*/
+#fold {
+    z-index: 30000;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
 /*fallback*/
 .fallback {
     display: none;
