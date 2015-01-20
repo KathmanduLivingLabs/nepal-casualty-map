@@ -12,21 +12,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=8" />
 
 
-
-<!-- <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /> -->
-<link rel="stylesheet" type="text/css" href="css/leaflet.css">
+<!-- Could put other css here, such as map css, etc-->
 
 
 <!-- Begin Foundation  -->
-    <link rel="stylesheet" href="css/foundation/foundation.css" />
-    <script src="js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="css/foundation/foundation_doe.css" />
+    <script src="/js/vendor/modernizr.js"></script>
 <!-- End Foundation -->
 
 <!-- Begin Merged CSS -->
 
 
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/d3style.css">
 
 
 <!-- /End Merged CSS -->
@@ -73,34 +70,29 @@
 
 <!-- Javascript references -->
   <!-- Libraries such as jquery, mapbox, highcharts. Can (probably should) be referenced from external setting-->
-  <!-- Leaflet -->
   
-  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-  <script type="text/javascript" src="js/leaflet.js" ></script>
-    <!-- Foundation Libraries -->
-      <script src="js/vendor/jquery.js"></script>
-      <script src="js/foundation2.min.js"></script>
-      <!-- // <script src="http://d3js.org/d3.v3.min.js"></script> -->
-      <script src="js/d3.v3.min.js"></script>      
-      <script>
-      (function ($) { 
-        $(document).foundation();
-}(jQuery));  
-      </script>
-      <script type="text/javascript" src="js/jquery-css-transform.js"></script>
-      <script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
-    <!-- Foundation libraries end -->
+  <!-- Foundation Libraries -->
+    <script src="js/vendor/jquery.js"></script>
+
+    <!-- Foundation 2 is smaller and contains only certain aspects of the full foundation code -->
+    <script src="js/foundation2.min.js"></script>
+
+    <!-- Initiate the foundation js -->
+    <script>
+    (function ($) { 
+      $(document).foundation();
+    }(jQuery));  
+    </script>
+
+  <!-- Foundation libraries end -->
 
   <!-- Data (JSON, etc) -->
   <script type="text/javascript" src="js/data.js"></script>
-  <script type="text/javascript" src="js/routes.js"></script>
 
   <!-- Scripts (get to work) like script.js -->
-  <!-- // <script type="text/javascript" src="js/lineScript.js"></script> -->
+
   <script type="text/javascript" src="js/script.js"></script>
-  <script type="text/javascript" src="js/map.js"></script>
-  <script type="text/javascript" src="js/delorean.js"></script>
-  <script type="text/javascript" src="js/d3script.js"></script>
+
 <!-- /End JS references -->
 
 </body>
