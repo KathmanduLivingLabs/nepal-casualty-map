@@ -15,7 +15,7 @@ NOTE TO SELF, MUST DO MUCH UPDATING OF THIS README IN THE CONTENTS SECTION.
 
 - Clone the repo:
 
-`git clone https://github.com/energyapps/app_frame.git`
+`git clone https://github.com/energyapps/app-frame-foundation.git`
 
 - Rename the folder to your project name
 - On the [EnergyApps Github group](https://github.com/energyapps) create and name a new project repo.
