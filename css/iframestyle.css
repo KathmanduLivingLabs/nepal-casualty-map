@@ -7,9 +7,10 @@
 }
 
 #totalinfo {
-    /*position: absolute;
+    position: absolute;
     top: 0px;
-    left: 0px; */   
+    left: 0px;
+    margin-left: 0px;    
     text-align: left !important;
 }
 
@@ -40,10 +41,12 @@
 }
 
 .contextinfo {
-    margin-bottom: 0px !important;
-    margin-top: 0px !important;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
-
 .nepbuttons {
     background-color: #FFD1AB;
     height: 50px;
