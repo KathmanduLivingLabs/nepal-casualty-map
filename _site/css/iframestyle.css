@@ -14,7 +14,7 @@
     text-align: left !important;
 }
 
-#totalinfo p {
+#totalinfo p, .nepbuttons p {
     font-size: 16px;
     font-family: "Avenir LT W02 35 Light",verdana,sans-serif; 
     line-height: 20px;
@@ -22,6 +22,14 @@
     padding: 0px;
     padding-left: 10px;
     padding-top: 10px;
+}
+
+.nepbuttons p {
+    text-align: center;
+    line-height: 16px;
+    padding-top: 5px;
+    color: #fff;
+    padding-left: 0px;
 }
 
 #totalinfo h1 {
@@ -49,7 +57,7 @@
 }
 .nepbuttons {
     background-color: #FFD1AB;
-    height: 50px;
+    height: 25px;
     float: left;
     cursor: pointer;
     -webkit-touch-callout: none;
