@@ -49,15 +49,15 @@ svg.append("path")
   .attr("d", path);
   
 queue()
-    .defer(d3.json, "data/districts_topo4.json")    
+    .defer(d3.json, "data/districts_topo5.json")    
     .await(ready);
 
-function ready(error, districts_topo4) {
-// console.log(districts_topo4)
+function ready(error, districts_topo5) {
+// console.log(districts_topo5)
   svg.append("g")
       .attr("class", "districts_id")
     .selectAll("path")
-      .data(topojson.feature(districts_topo4, districts_topo4.objects.districts_id).features)
+      .data(topojson.feature(districts_topo5, districts_topo5.objects.districts_id).features)
     .enter().append("path")
       .attr("class", function(d) { 
         return ramp(d,m)
@@ -69,13 +69,13 @@ function ready(error, districts_topo4) {
 
 // Draw the state borders
   svg.append("path")
-      .datum(topojson.mesh(districts_topo4, districts_topo4.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo5, districts_topo5.objects.districts_id, function(a, b) { 
         return a !== b; }))
       .attr("class", "states")
       .attr("d", path)
 
     svg.append("path")
-      .datum(topojson.mesh(districts_topo4, districts_topo4.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo5, districts_topo5.objects.districts_id, function(a, b) { 
         return a == b; }))
       .attr("class", "country")
       .attr("d", path)      
@@ -138,7 +138,8 @@ function tooltip(d) {
   svg
     .append("text")
     .attr("class","tip-text")
-    .text(function(d){return district})
+    .text(function(d){
+      return district})
     .attr("transform", function() { 
       return "translate(" + tip_text + ")"; });
 
@@ -169,39 +170,38 @@ function remover() {
   d3.selectAll(".tip-text3").remove();     
 }
 
+function rebuild() {
+  d3.selectAll(".districts_id").remove();
+  d3.selectAll(".country").remove();
+  d3.selectAll(".states").remove();
+  queue()
+    .defer(d3.json, "data/districts_topo5.json")
+    .await(ready);
+}
+
 
 // WHAT YOU DO WHEN YOU CLICK TO CHANGE THE MAP
 var deathmap = document.getElementById("deathmap");
 var injurymap = document.getElementById("injurymap");
 
 deathmap.onmousedown = function () {
-  if (m === 1) {
-      deathmap.className = "large-6 medium-6 small-6 nepbuttons active"
-      injurymap.className = "large-6 medium-6 small-6 nepbuttons"
-      m-=1;
-      // d3.selectAll('g').data([]).exit().remove();
-      d3.selectAll(".districts_id").remove();
-      d3.selectAll(".country").remove();
-      d3.selectAll(".states").remove();
-    queue()
-      .defer(d3.json, "data/districts_topo4.json")
-      .await(ready);
+  if (m != 0) {
+      deathmap.className = "large-6 medium-6 small-6 nepbuttons active";
+      injurymap.className = "large-6 medium-6 small-6 nepbuttons";
+      m = 0;
+
+    rebuild();    
   };    
 };
 
 injurymap.onmousedown = function () {
-    if (m === 0) {
-      deathmap.className = "large-6 medium-6 small-6  nepbuttons"
-      injurymap.className = "large-6 medium-6 small-6 nepbuttons active"
-      m+=1;
-      // d3.selectAll('g').data([]).exit().remove();
-      d3.selectAll(".districts_id").remove();
-      d3.selectAll(".country").remove();
-      d3.selectAll(".states").remove();
-    queue()
-      .defer(d3.json, "data/districts_topo4.json")
-      .await(ready);
-    };
+  if (m != 1) {
+    deathmap.className = "large-6 medium-6 small-6  nepbuttons";
+    injurymap.className = "large-6 medium-6 small-6 nepbuttons active";
+    m = 1;
+
+    rebuild();
+  };
 };
 
 d3.select(self.frameElement).style("height", height + "px");
