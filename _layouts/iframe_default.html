@@ -24,7 +24,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="css/iframestyle.css">
-
+<link rel="stylesheet" type="text/css" href="css/sharedstyle.css">
 
 <!-- /End Merged CSS -->
 
@@ -86,14 +86,29 @@
 
   <!-- Foundation libraries end -->
 
-  <!-- Data (JSON, etc) -->
-  <script type="text/javascript" src="js/data.js"></script>
+  <!--various libraries -->
+  <script type="text/javascript" src="js/d3.js"></script>
+  <script type="text/javascript" src="js/query.js"></script>
+  <script type="text/javascript" src="js/geoprojections.js"></script>
+  <script type="text/javascript" src="js/topojson.js"></script>
 
   <!-- Scripts (get to work) like script.js -->
-
+  <script type="text/javascript" src="js/iframescript.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
 
 <!-- /End JS references -->
+
+<!-- Google Analytics  -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48744808-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 </body>
 </html>
