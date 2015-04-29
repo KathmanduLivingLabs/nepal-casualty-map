@@ -84,8 +84,8 @@
     </div>
     <div class="rowDOE">
       <div class="large-6 columnsDOE large-centered">
-        <div class="large-6 nepbuttons"><h3>Deaths</h3></div>
-        <div class="large-6 nepbuttons active"><h3>Injuries</h3></div>
+        <div id="deathmap" class="large-6 nepbuttons active"><h3>Deaths</h3></div>
+        <div id="injurymap" class="large-6 nepbuttons"><h3>Injuries</h3></div>
       </div>
 
     </div>
@@ -145,7 +145,7 @@
 
 .graticule {
   fill: none;
-  stroke: #ce008d;
+  stroke: #FF030D;
   stroke-opacity:0.5;
   stroke-width: 0.5px;
 }
@@ -242,7 +242,7 @@ queue()
     .await(ready);
 
 function ready(error, districts_topo3) {
-
+console.log(districts_topo3)
   svg.append("g")
       .attr("class", "districts_id")
     .selectAll("path")
@@ -262,22 +262,16 @@ function ready(error, districts_topo3) {
         return a !== b; }))
       .attr("class", "states")
       .attr("d", path)
-      // .on("mouseover", function() { console.log('test')});
 }
 
 function tooltip(d) {
   var dead = d.properties.dead;
   var injured = d.properties.injured;
   var district = d.properties.district;
-  console.log(dead)
-  console.log(injured)
-  console.log(district)
 
   centroid = path.centroid(d);
 
   centroid_adjusted = [(centroid[0]-(tipHeight)),(centroid[1]-(tipWidth-50))];
-
-  console.log(centroid_adjusted)
 
         // tip_text  = [(centroid_adjusted[0] -50),(centroid_adjusted[1])];
         tip_text = [(centroid_adjusted[0] + (tipWidth /2)),(centroid_adjusted[1] + 20)];
@@ -329,6 +323,35 @@ function remover() {
       d3.selectAll(".tip-text2").remove();        
       d3.selectAll(".tip-text3").remove();     
     }
+
+var deathmap = document.getElementById("deathmap");
+var injurymap = document.getElementById("injurymap");
+
+deathmap.onmousedown = function () {
+  if (m === 1) {
+      deathmap.className = "large-6 nepbuttons active"
+      injurymap.className = "large-6 nepbuttons"
+      m-=1;
+      d3.selectAll('g').data([]).exit().remove();
+      // d3.selectAll(".districts_id").remove();
+    queue()
+      .defer(d3.json, "data/districts_topo3.json")
+      .await(ready);
+  };    
+};
+
+injurymap.onmousedown = function () {
+    if (m === 0) {
+      deathmap.className = "large-6 nepbuttons"
+      injurymap.className = "large-6 nepbuttons active"
+      m+=1;
+      d3.selectAll('g').data([]).exit().remove();
+      // d3.selectAll(".districts_id").remove();
+    queue()
+      .defer(d3.json, "data/districts_topo3.json")
+      .await(ready);
+    };
+};
 
 d3.select(self.frameElement).style("height", height + "px");
 
