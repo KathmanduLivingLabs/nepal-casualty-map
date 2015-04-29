@@ -88,58 +88,86 @@ function tooltip(d) {
 
   centroid = path.centroid(d);
 
-  centroid_adjusted = [(centroid[0]-(tipHeight)),(centroid[1]-(tipWidth-50))];
+  // Set the top or bottom tooltip
+  if (width > 900) {
+    if (centroid[1] < 250) {
+      centroid_adjusted = [(centroid[0]-(tipHeight)),(centroid[1]+25)];
+    } else {
+      centroid_adjusted = [(centroid[0]-(tipHeight)),(centroid[1]-(tipWidth-50))];
+    };        
+  }
+  // else if (width > 700) {  
+  //   if (centroid[1] < 225) {
+  //     // centroid_adjusted = [(centroid[0]-radius - 5),(centroid[1]+25)];
+  //   } else {
+  //     // centroid_adjusted = [(centroid[0]-radius - 5),(centroid[1]-(2 * radius + 80))];
+  //   };
+  // }
+  else if (width > 480) {
+    if (centroid[0] < (width+100) / 2) {
+      centroid_adjusted = [(centroid[0]-(tipHeight)),(centroid[1]+25)];
+    } else {
+      centroid_adjusted = [(centroid[0]-(tipHeight)),(centroid[1]-(tipWidth-50))];
+    };
+  } 
+  // else {
+  //   if (centroid[0] < 200) {
+  //     centroid_adjusted = [(width - 175),(5)];        
+  //   } else {
+  //     centroid_adjusted = [(5),(5)];               
+  //   };
+  // };
 
-        // tip_text  = [(centroid_adjusted[0] -50),(centroid_adjusted[1])];
-        tip_text = [(centroid_adjusted[0] + (tipWidth /2)),(centroid_adjusted[1] + 20)];
-        tip_text2  = [(centroid_adjusted[0] + (tipWidth /2)),(centroid_adjusted[1] + 40)];
-        tip_text3  = [(centroid_adjusted[0] + (tipWidth /2)),(centroid_adjusted[1] + 60)];
+  // tip_text  = [(centroid_adjusted[0] -50),(centroid_adjusted[1])];
+  tip_text = [(centroid_adjusted[0] + (tipWidth /2)),(centroid_adjusted[1] + 20)];
+  tip_text2  = [(centroid_adjusted[0] + (tipWidth /2)),(centroid_adjusted[1] + 40)];
+  tip_text3  = [(centroid_adjusted[0] + (tipWidth /2)),(centroid_adjusted[1] + 60)];
         
-      var tooltipContainer = svg.append("g")
-        .attr("id", "tooltip")
-      .append("rect")
-              .attr("transform", function() { 
-          return "translate(" + centroid_adjusted + ")"; })
-        .attr("width", (tipWidth))
-        .attr("height", (tipHeight))
-        .attr("rx", 6)
-        .attr("ry", 6)
-        // .attr("fill", "brown");
+  var tooltipContainer = svg.append("g")
+    .attr("id", "tooltip")
+  .append("rect")
+  .attr("transform", function() { 
+    return "translate(" + centroid_adjusted + ")"; })
+  .attr("width", (tipWidth))
+  .attr("height", (tipHeight))
+  .attr("rx", 6)
+  .attr("ry", 6)
+  // .attr("fill", "brown");
 
 // tip title
-      svg
-        .append("text")
-        .attr("class","tip-text")
-        .text(function(d){return district})
-        .attr("transform", function() { 
-          return "translate(" + tip_text + ")"; });
+  svg
+    .append("text")
+    .attr("class","tip-text")
+    .text(function(d){return district})
+    .attr("transform", function() { 
+      return "translate(" + tip_text + ")"; });
 
-      svg
-        .append("text")
-        .attr("class","tip-text2")
-        .text(function(d){
-            return "Total dead: " + dead;
-        })
-        .attr("transform", function() { 
-          return "translate(" + tip_text2 + ")"; });
-        
-        svg
-        .append("text")
-        .attr("class","tip-text3")
-        .text(function(d){
-            return "Total injuries: " + injured;
-        })
-        .attr("transform", function() { 
-          return "translate(" + tip_text3 + ")"; });           
+  svg
+    .append("text")
+    .attr("class","tip-text2")
+    .text(function(d){
+        return "Total dead: " + dead;
+    })
+    .attr("transform", function() { 
+      return "translate(" + tip_text2 + ")"; });
+    
+    svg
+    .append("text")
+    .attr("class","tip-text3")
+    .text(function(d){
+        return "Total injuries: " + injured;
+    })
+    .attr("transform", function() { 
+      return "translate(" + tip_text3 + ")"; });           
 }      
 // d3.selectAll("g").on('mouseover', tooltip);
 
 function remover() {
-      d3.select("#tooltip").remove();
-      d3.selectAll(".tip-text").remove();
-      d3.selectAll(".tip-text2").remove();        
-      d3.selectAll(".tip-text3").remove();     
-    }
+  d3.select("#tooltip").remove();
+  d3.selectAll(".tip-text").remove();
+  d3.selectAll(".tip-text2").remove();        
+  d3.selectAll(".tip-text3").remove();     
+}
 
 
 // WHAT YOU DO WHEN YOU CLICK TO CHANGE THE MAP
