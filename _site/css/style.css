@@ -1,3 +1,40 @@
+#totalinfo {
+    position: absolute;
+    top: 0px;
+    left: 0px;    
+    text-align: left !important;
+}
+
+#totalinfo p {
+    font-size: 20px;
+    font-family: "Avenir LT W02 35 Light",verdana,sans-serif; 
+    line-height: 20px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+#totalinfo h1 {
+    font-size: 38px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    letter-spacing: 0px;
+    text-align: left !important;
+}
+
+.contextinfo p {
+    font-size: 13px;
+    line-height: 13px;
+    margin: 0px;
+}
+
+.contextinfo {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
+
 .nepbuttons {
     background-color: #FFD1AB;
     height: 50px;
