@@ -24,18 +24,8 @@ var ramp = function(d, m) {
   return qclass;
 }
 
-// var projection = d3.geo.albers()
-//     .scale(1280)
-//     .translate([width / 2, height / 2]);
+// Projection parameters are located in the individual scripts for each endpoint (indexscript, iframescript)
 
-var scale = 6400;
-var yaw = -84.5;
-var pitch = 11.1 ;
-var roll = 0;
-// var scale = 5750;
-// var yaw = -87;
-// var pitch = 11.1 ;
-// var roll = 0;
 var graticulex = 1;
 var graticuley = 1; 
 
