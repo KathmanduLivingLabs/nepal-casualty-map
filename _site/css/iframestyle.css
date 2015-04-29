@@ -15,7 +15,7 @@
 }
 
 #totalinfo p {
-    font-size: 20px;
+    font-size: 16px;
     font-family: "Avenir LT W02 35 Light",verdana,sans-serif; 
     line-height: 20px;
     margin: 0px;
@@ -25,8 +25,8 @@
 }
 
 #totalinfo h1 {
-    font-size: 26px;
-    line-height: 24px;
+    font-size: 19px;
+    line-height: 19px;
     margin: 0px;
     padding: 0px;
     padding-left: 10px;
