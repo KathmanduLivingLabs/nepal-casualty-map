@@ -1,3 +1,60 @@
+.nepbuttons {
+    background-color: #FF4033;
+    height: 50px;
+    float: left;
+    cursor: pointer;
+}
+
+.nepbuttons.active {
+    background-color: #FFD1AB;
+}
+
+.nepbuttons:hover {
+    background-color: #FFBB81;
+}
+
+#tooltip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  fill: #fff;
+  fill-opacity: 0.8;
+  border-radius: 2px;
+  stroke-width: 1px;
+  stroke: #333;
+}
+
+.tip-text {
+  fill: #333;
+  font-size: 16px;
+  font-family: "Avenir LT W02 85 Heavy",verdana,sans-serif; 
+  text-anchor: middle; 
+  letter-spacing: 1px;
+}
+
+.tip-text2 {
+  fill: #333;
+  font-size: 14px;
+  font-family: "Avenir LT W02 35 Light",verdana,sans-serif; 
+  text-anchor: middle; 
+}
+
+.tip-text3 {
+  fill: #333;
+  font-size: 14px;
+  font-family: "Avenir LT W02 35 Light",verdana,sans-serif; 
+  text-anchor: middle; 
+}
+
+.closer {
+cursor: pointer;
+}
+
+.closer :hover {
+  font-family: "Avenir LT W02 85 Heavy",verdana,sans-serif !important;  
+}
+
+
 /*Fold*/
 #fold {
     z-index: 30000;
@@ -49,6 +106,10 @@ Map
 
         .rowDOE .green-text    {
             color: rgb(140,198,63) !important;
+        }
+
+        .rowDOE .color-text    {
+            color: #FF030D !important;
         }
 
         .rowDOE .white-text    {
@@ -150,7 +211,7 @@ Map
         }
 
         .subheadline {
-            background-color: rgb(197,225,159); 
+            background-color: #FFD1AB; 
         }
 
         .triple {

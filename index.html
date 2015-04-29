@@ -18,17 +18,34 @@ layout: default
 
     <div class="rowDOE">
       <div class="large-12 columnsDOE headline">
-        <center><h2>This is the <span class="green-text">foundation</span> template</h2></center>
+        <center><h2>Mapping the casualties of the <span class="color-text">earthquake</span> in Nepal</h2></center>
       </div>
       <div class="large-12 columnsDOE subheadline">
-        <p> This is interesting and <span class="has-tip tip-bottom" data-tooltip title="We define total per capita energy consumption as someone's annual transportation and residential energy needs combined.">important</span> information.</p>
+        <p> Hover over each district to see how it was affected.</p>
       </div>
+    </div>
+    <div class="rowDOE">
+      <div class="large-6 columnsDOE large-centered">
+        <div class="large-6 nepbuttons"><h3>Deaths</h3></div>
+        <div class="large-6 nepbuttons active"><h3>Injuries</h3></div>
+      </div>
+
+    </div>
+    <div class="rowDOE" id="map">
+
+      
+
     </div>
 
 </div>    
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
+#map {
+  position: relative;
+  top: 0px;
+  z-index: 1000;
+}
 
 .districts_id {
   fill: none;
@@ -37,6 +54,7 @@ layout: default
 .states {
   fill: none;
   /*stroke: #fff;*/
+  stroke-width: 2px;
   stroke: #ddd;
   stroke-linejoin: round;
 }
@@ -51,15 +69,21 @@ layout: default
 .q7-9 { fill:rgb(8,81,156); }
 .q8-9 { fill:rgb(8,48,107); }*/
 
-.q0 { fill:rgb(255,255,255); }
-.q1 { fill:rgb(222,235,247); }
-.q2 { fill:rgb(198,219,239); }
-.q3 { fill:rgb(158,202,225); }
-.q4 { fill:rgb(107,174,214); }
-.q5 { fill:rgb(66,146,198); }
-.q6 { fill:rgb(33,113,181); }
-.q7 { fill:rgb(8,81,156); }
-.q8 { fill:rgb(8,48,107); }
+/*.q0 {fill:rgb(255,255,178)} */
+/*.q1 {fill:rgb(254,217,118)} */
+/*.q2 {fill:rgb(254,178,76)} */
+/*.q3 {fill:rgb(253,141,60)} */
+/*.q4 {fill:rgb(252,78,42)} */
+/*.q5 {fill:rgb(227,26,28)} */
+/*.q6 {fill:rgb(177,0,38)}*/
+
+.q0 {fill:#FFFFFF} 
+.q1 {fill:#FFE8D5} 
+.q2 {fill:#FFD1AB} 
+.q3 {fill:#FFBB81} 
+.q4 {fill:#FF7D5A} 
+.q5 {fill:#FF4033} 
+.q6 {fill:#FF030D}
 
 .graticule {
   fill: none;
@@ -69,21 +93,18 @@ layout: default
 }
 </style>
 <body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="http://d3js.org/queue.v1.min.js"></script>
-<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
-<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="js/d3.js"></script>
+<script src="js/query.js"></script>
+<script src="js/geoprojections.js"></script>
+<script src="js/topojson.js"></script>
 
 <script>
 
 var width = 960,
     height = 600;
 
-var rateById = d3.map();
-
-var quantize = d3.scale.quantize()
-    .domain([0, 2000])
-    .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
+var tipWidth = 150,
+    tipHeight = 70;
 
 // Ramp paraemters, first for dead, then for injuries
 var rampameters = [[0,10,50,100,500,1000,2000],[0,10,50,100,500,1000,4000]]
@@ -100,7 +121,6 @@ var ramp = function(d, m) {
   };
   
   for (var i = 0; i < rampameters[m].length; i++) {
-    console.log(rampameters[m][i])
     if (o <= rampameters[m][i]) {
       var qclass = "q" + i;
       break;
@@ -119,8 +139,8 @@ var scale = 5500;
 var yaw = -85.00;
 var pitch = 10;
 var roll = 0;
-var centerx = -10;
-var centery = 55;
+var centerx = 0;
+var centery = 0;
 var tilt = 0;
 var precision = 0.1 ;
 var graticulex = 1;
@@ -145,7 +165,7 @@ var graticule = d3.geo.graticule()
 var path = d3.geo.path()
     .projection(projection);
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("body").select("#map").append("svg")
     .attr("width", width)
     .attr("height", height);
 
@@ -154,37 +174,106 @@ svg.append("path")
   .attr("class", "graticule")
   .attr("d", path);
   
-
 queue()
     // .defer(d3.json, "/mbostock/raw/4090846/us.json")
     .defer(d3.json, "data/districts_topo3.json")
     // .defer(d3.tsv, "data/unemployment.tsv", function(d) { rateById.set(d.id, +d.rate); }) //match ID to rate?
-    .defer(d3.csv, "data/casualty2904151130.csv", function(d) {
-      rateById.set(d.distID, +d.injured); 
-    }) //match ID to rate?
+    // .defer(d3.csv, "data/casualty2904151130.csv", function(d) {
+    // .defer(d3.csv, "data/casualty2904151130.csv", function(d) {
+      // rateById.set(d.distID, +d.injured);}) //match ID to rate?
     .await(ready);
 
 function ready(error, districts_topo3) {
+
   svg.append("g")
       .attr("class", "districts_id")
     .selectAll("path")
       .data(topojson.feature(districts_topo3, districts_topo3.objects.districts_id).features)
     .enter().append("path")
       .attr("class", function(d) { 
-        // console.log(quantize(rateById.get(d.id)))
         return ramp(d,m)
         // return quantize(rateById.get(d.id)); 
       })
-      .attr("d", path);
+      .attr("d", path)
+      .on("mouseover", tooltip)
+      .on("mouseout", remover);
 
 // Draw the state borders
   svg.append("path")
       .datum(topojson.mesh(districts_topo3, districts_topo3.objects.districts_id, function(a, b) { 
         return a !== b; }))
       .attr("class", "states")
-      .attr("d", path);
+      .attr("d", path)
+      // .on("mouseover", function() { console.log('test')});
 }
 
+function tooltip(d) {
+  var dead = d.properties.dead;
+  var injured = d.properties.injured;
+  var district = d.properties.district;
+  console.log(dead)
+  console.log(injured)
+  console.log(district)
+
+  centroid = path.centroid(d);
+
+  centroid_adjusted = [(centroid[0]-(tipHeight)),(centroid[1]-(tipWidth-50))];
+
+  console.log(centroid_adjusted)
+
+        // tip_text  = [(centroid_adjusted[0] -50),(centroid_adjusted[1])];
+        tip_text = [(centroid_adjusted[0] + (tipWidth /2)),(centroid_adjusted[1] + 20)];
+        tip_text2  = [(centroid_adjusted[0] + (tipWidth /2)),(centroid_adjusted[1] + 40)];
+        tip_text3  = [(centroid_adjusted[0] + (tipWidth /2)),(centroid_adjusted[1] + 60)];
+        
+      var tooltipContainer = svg.append("g")
+        .attr("id", "tooltip")
+      .append("rect")
+              .attr("transform", function() { 
+          return "translate(" + centroid_adjusted + ")"; })
+        .attr("width", (tipWidth))
+        .attr("height", (tipHeight))
+        .attr("rx", 6)
+        .attr("ry", 6)
+        // .attr("fill", "brown");
+
+// tip title
+      svg
+        .append("text")
+        .attr("class","tip-text")
+        .text(function(d){return district})
+        .attr("transform", function() { 
+          return "translate(" + tip_text + ")"; });
+
+      svg
+        .append("text")
+        .attr("class","tip-text2")
+        .text(function(d){
+            return "Total dead: " + dead;
+        })
+        .attr("transform", function() { 
+          return "translate(" + tip_text2 + ")"; });
+        
+        svg
+        .append("text")
+        .attr("class","tip-text3")
+        .text(function(d){
+            return "Total injuries: " + injured;
+        })
+        .attr("transform", function() { 
+          return "translate(" + tip_text3 + ")"; });           
+}      
+// d3.selectAll("g").on('mouseover', tooltip);
+
+function remover() {
+      d3.select("#tooltip").remove();
+      d3.selectAll(".tip-text").remove();
+      d3.selectAll(".tip-text2").remove();        
+      d3.selectAll(".tip-text3").remove();     
+    }
+
 d3.select(self.frameElement).style("height", height + "px");
+
+
 
 </script>
