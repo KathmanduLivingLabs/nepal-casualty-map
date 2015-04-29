@@ -1,3 +1,9 @@
+.headline h2 {
+  border-bottom: 1px solid #CCCCCC;
+  color: #000000 !important;
+  font-size: 24px !important;
+}
+
 #totalinfo {
     position: absolute;
     top: 0px;
