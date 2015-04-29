@@ -265,8 +265,8 @@ var injurymap = document.getElementById("injurymap");
 
 deathmap.onmousedown = function () {
   if (m === 1) {
-      deathmap.className = "large-6 nepbuttons active"
-      injurymap.className = "large-6 nepbuttons"
+      deathmap.className = "large-6 medium-6 small-6 nepbuttons active"
+      injurymap.className = "large-6 medium-6 small-6 nepbuttons"
       m-=1;
       // d3.selectAll('g').data([]).exit().remove();
       d3.selectAll(".districts_id").remove();
@@ -280,8 +280,8 @@ deathmap.onmousedown = function () {
 
 injurymap.onmousedown = function () {
     if (m === 0) {
-      deathmap.className = "large-6 nepbuttons"
-      injurymap.className = "large-6 nepbuttons active"
+      deathmap.className = "large-6 medium-6 small-6  nepbuttons"
+      injurymap.className = "large-6 medium-6 small-6 nepbuttons active"
       m+=1;
       // d3.selectAll('g').data([]).exit().remove();
       d3.selectAll(".districts_id").remove();
