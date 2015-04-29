@@ -37,11 +37,11 @@ layout: default
 .states {
   fill: none;
   /*stroke: #fff;*/
-  stroke: #000;
+  stroke: #ddd;
   stroke-linejoin: round;
 }
 
-.q0-9 { fill:rgb(247,251,255); }
+/*.q0-9 { fill:rgb(247,251,255); }
 .q1-9 { fill:rgb(222,235,247); }
 .q2-9 { fill:rgb(198,219,239); }
 .q3-9 { fill:rgb(158,202,225); }
@@ -49,7 +49,17 @@ layout: default
 .q5-9 { fill:rgb(66,146,198); }
 .q6-9 { fill:rgb(33,113,181); }
 .q7-9 { fill:rgb(8,81,156); }
-.q8-9 { fill:rgb(8,48,107); }
+.q8-9 { fill:rgb(8,48,107); }*/
+
+.q0 { fill:rgb(255,255,255); }
+.q1 { fill:rgb(222,235,247); }
+.q2 { fill:rgb(198,219,239); }
+.q3 { fill:rgb(158,202,225); }
+.q4 { fill:rgb(107,174,214); }
+.q5 { fill:rgb(66,146,198); }
+.q6 { fill:rgb(33,113,181); }
+.q7 { fill:rgb(8,81,156); }
+.q8 { fill:rgb(8,48,107); }
 
 .graticule {
   fill: none;
@@ -72,8 +82,32 @@ var width = 960,
 var rateById = d3.map();
 
 var quantize = d3.scale.quantize()
-    .domain([0, .15])
+    .domain([0, 2000])
     .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
+
+// Ramp paraemters, first for dead, then for injuries
+var rampameters = [[0,10,50,100,500,1000,2000],[0,10,50,100,500,1000,4000]]
+
+//m = 0 is dead map, m = 1 is injured map;
+var m = 0;
+
+// define the color ramp function
+var ramp = function(d, m) {
+  if (m === 0) {
+    var o = d.properties.dead;
+  } else if (m === 1) {
+    var o = d.properties.injured;
+  };
+  
+  for (var i = 0; i < rampameters[m].length; i++) {
+    console.log(rampameters[m][i])
+    if (o <= rampameters[m][i]) {
+      var qclass = "q" + i;
+      break;
+    };
+  };
+  return qclass;
+}
 
 // var projection = d3.geo.albers()
 //     .scale(1280)
@@ -81,10 +115,10 @@ var quantize = d3.scale.quantize()
 
 var distance = 5;
 // var scale = 5500;
-var scale = 1000;
-var yaw = -82.00;
-var pitch = 20;
-var roll = 10;
+var scale = 5500;
+var yaw = -85.00;
+var pitch = 10;
+var roll = 0;
 var centerx = -10;
 var centery = 55;
 var tilt = 0;
@@ -123,23 +157,29 @@ svg.append("path")
 
 queue()
     // .defer(d3.json, "/mbostock/raw/4090846/us.json")
-    .defer(d3.json, "data/districts_topo1.json")
-    .defer(d3.tsv, "data/unemployment.tsv", function(d) { rateById.set(d.id, +d.rate); }) //match ID to rate?
+    .defer(d3.json, "data/districts_topo3.json")
+    // .defer(d3.tsv, "data/unemployment.tsv", function(d) { rateById.set(d.id, +d.rate); }) //match ID to rate?
+    .defer(d3.csv, "data/casualty2904151130.csv", function(d) {
+      rateById.set(d.distID, +d.injured); 
+    }) //match ID to rate?
     .await(ready);
 
-function ready(error, districts_topo1) {
+function ready(error, districts_topo3) {
   svg.append("g")
       .attr("class", "districts_id")
     .selectAll("path")
-      .data(topojson.feature(districts_topo1, districts_topo1.objects.districts_id).features)
+      .data(topojson.feature(districts_topo3, districts_topo3.objects.districts_id).features)
     .enter().append("path")
-      .attr("class", function(d) { return quantize(rateById.get(d.id)); })
+      .attr("class", function(d) { 
+        // console.log(quantize(rateById.get(d.id)))
+        return ramp(d,m)
+        // return quantize(rateById.get(d.id)); 
+      })
       .attr("d", path);
 
 // Draw the state borders
   svg.append("path")
-      .datum(topojson.mesh(districts_topo1, districts_topo1.objects.districts_id, function(a, b) { 
-        console.log('test')
+      .datum(topojson.mesh(districts_topo3, districts_topo3.objects.districts_id, function(a, b) { 
         return a !== b; }))
       .attr("class", "states")
       .attr("d", path);
