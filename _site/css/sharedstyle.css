@@ -1,0 +1,47 @@
+#map {
+  position: relative;
+  /*top: 0px;*/
+  z-index: 1000;
+  margin: 0 auto;
+}
+
+.districts_id {
+  fill:none;
+}
+/*
+svg {
+  fill: #d3d3d3;
+}*/
+
+.states {
+  fill: none;
+  /*stroke: #fff;*/
+  stroke-width: 0.5px;
+  stroke: #d3d3d3;
+  stroke-linejoin: round;
+
+}
+
+.country {
+  fill: none;
+  /*stroke: #fff;*/
+  stroke-width: 2px;
+  stroke: #FFE8D5;
+  stroke-linejoin: round;
+
+}
+
+.q0 {fill:#FFFFFF} 
+.q1 {fill:#FFE8D5} 
+.q2 {fill:#FFD1AB} 
+.q3 {fill:#FFBB81} 
+.q4 {fill:#FF7D5A} 
+.q5 {fill:#FF4033} 
+.q6 {fill:#FF030D}
+
+.graticule {
+  fill: #d3d3d3;
+  stroke: #FF030D;
+  stroke-opacity:0.5;
+  stroke-width: 0.5px;
+}
