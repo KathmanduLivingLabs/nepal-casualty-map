@@ -75,12 +75,12 @@
   <div id="master_container" class="m_container">        
 
     <div class="rowDOE">
-      <!-- <div class="large-12 columnsDOE headline">
+      <div class="large-12 columnsDOE headline">
         <center><h2>Mapping the casualties of the <span class="color-text">earthquake</span> in Nepal</h2></center>
-      </div> -->
-      <!-- <div class="large-12 columnsDOE subheadline">
+      </div>
+      <div class="large-12 columnsDOE subheadline">
         <p> Hover over each district to see how it was affected.</p>
-      </div> -->
+      </div>
     </div>
     <div class="rowDOE">
       <div class="large-6 medium-6 small-6 columnsDOE large-centered medium-centered small-centered">
@@ -107,9 +107,8 @@
 <style>
 #map {
   position: relative;
-  /*top: 0px;*/
+  top: 0px;
   z-index: 1000;
-  margin: 0 auto;
 }
 
 .districts_id {
@@ -161,8 +160,8 @@ svg {
 
 <script>
 
-var width = 650,
-    height = 385;
+var width = 1000,
+    height = 400;
 
 var tipWidth = 150,
     tipHeight = 70;
@@ -194,14 +193,14 @@ var ramp = function(d, m) {
 //     .scale(1280)
 //     .translate([width / 2, height / 2]);
 
-// var scale = 5750;
-// var yaw = -84.5;
-// var pitch = 11.1 ;
-// var roll = 0;
-var scale = 5750;
-var yaw = -87;
+var scale = 6400;
+var yaw = -84.5;
 var pitch = 11.1 ;
 var roll = 0;
+// var scale = 5750;
+// var yaw = -87;
+// var pitch = 11.1 ;
+// var roll = 0;
 var graticulex = 1;
 var graticuley = 1; 
 
@@ -357,16 +356,7 @@ d3.select(self.frameElement).style("height", height + "px");
 
 
 </script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-48744808-4', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
       <!-- /End Merged Content -->
 
