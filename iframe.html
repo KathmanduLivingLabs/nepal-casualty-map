@@ -32,12 +32,12 @@ layout: iframe_default
     </div>
     <div class="rowDOE" id="map">      
       <div id="totalinfo" class="large-4 medium-4 small-4 rowDOE topinfo">
-        <p>As of <span class="date">April 28, 2015 0700 hrs</span></p>
-        <h1>Total Deaths: 4,256</h1>
-        <h1>Total Injuries: 7,477</h1>
+        <p>As of <span class="date">April 29, 2015 1105 NST</span></p>
+        <h1>Total Deaths: 5,006</h1>
+        <h1>Total Injuries: 10,194</h1>
       </div>
       <div class="contextinfo">
-        <p>Data Updated: April 28, 2015 0700 hrs</p>
+        <p>Data Updated: April 29, 2015 1105 NST</p>
         <p>Source: Nepal National Information Technology Center. Download the data <a href="https://docs.google.com/spreadsheets/d/1Q3QSx1_p78T4_qo_JVj5vEQtzuCFWP2AfxYnVBSNzLQ/pubhtml">here</a>. </p>
         <!-- <p>Produced by <a href="http://kathmandulivinglabs.org/">Kathmandu Living Labs</a>.</p> -->
       </div>
@@ -171,15 +171,15 @@ svg.append("path")
   .attr("d", path);
   
 queue()
-    .defer(d3.json, "data/districts_topo3.json")    
+    .defer(d3.json, "data/districts_topo4.json")    
     .await(ready);
 
-function ready(error, districts_topo3) {
-console.log(districts_topo3)
+function ready(error, districts_topo4) {
+console.log(districts_topo4)
   svg.append("g")
       .attr("class", "districts_id")
     .selectAll("path")
-      .data(topojson.feature(districts_topo3, districts_topo3.objects.districts_id).features)
+      .data(topojson.feature(districts_topo4, districts_topo4.objects.districts_id).features)
     .enter().append("path")
       .attr("class", function(d) { 
         return ramp(d,m)
@@ -191,13 +191,13 @@ console.log(districts_topo3)
 
 // Draw the state borders
   svg.append("path")
-      .datum(topojson.mesh(districts_topo3, districts_topo3.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo4, districts_topo4.objects.districts_id, function(a, b) { 
         return a !== b; }))
       .attr("class", "states")
       .attr("d", path)
 
     svg.append("path")
-      .datum(topojson.mesh(districts_topo3, districts_topo3.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo4, districts_topo4.objects.districts_id, function(a, b) { 
         return a == b; }))
       .attr("class", "country")
       .attr("d", path)      
@@ -278,7 +278,7 @@ deathmap.onmousedown = function () {
       d3.selectAll(".country").remove();
       d3.selectAll(".states").remove();
     queue()
-      .defer(d3.json, "data/districts_topo3.json")
+      .defer(d3.json, "data/districts_topo4.json")
       .await(ready);
   };    
 };
@@ -293,7 +293,7 @@ injurymap.onmousedown = function () {
       d3.selectAll(".country").remove();
       d3.selectAll(".states").remove();
     queue()
-      .defer(d3.json, "data/districts_topo3.json")
+      .defer(d3.json, "data/districts_topo4.json")
       .await(ready);
     };
 };
