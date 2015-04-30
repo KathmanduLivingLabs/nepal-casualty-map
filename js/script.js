@@ -113,11 +113,11 @@ function tooltip(d) {
     var tipWidth = 150;
   } else if (m === 1) {
     var tip1 = "Total dead: " + dead;
-    var tip2 = "Percent of population killed: " + deadpercent;
+    var tip2 = "Percent of population killed: " + deadpercent + "%";
     var tipWidth = 250;
   } else if (m === 3) {
     var tip1 = "Total injured: " + injured;
-    var tip2 = "Percent of population injured: " + injuredpercent;
+    var tip2 = "Percent of population injured: " + injuredpercent + "%";
     var tipWidth = 250;
   } else { 
     var tip1 = "Homes completely destroyed: " + completehouse;
