@@ -102,43 +102,46 @@ function tooltip(d) {
   var dead = d.properties.dead;
   var injured = d.properties.injured;
   var district = d.properties.district;
-  console.log("OthComplete: " + d.properties.OthComplete)
-  console.log("OthPartial: " + d.properties.OthPartial)
-  console.log("deadpercent: " + d.properties.deadpercent)
-  console.log("injuredpercent: " + d.properties.injuredpercent)
+  var deadpercent = d.properties.deadpercent;
+  var injuredpercent = d.properties.injuredpercent;
+  var completehouse = d.properties.OthComplete;
+  var partialhouse = d.properties.OthPartial;
 
+  if (m === 0 || m === 2) {
+    var tip1 = "Total dead: " + dead;
+    var tip2 = "Total injured: " + injured;
+    var tipWidth = 150;
+  } else if (m === 1) {
+    var tip1 = "Total dead: " + dead;
+    var tip2 = "Percent of population killed: " + deadpercent;
+    var tipWidth = 250;
+  } else if (m === 3) {
+    var tip1 = "Total injured: " + injured;
+    var tip2 = "Percent of population injured: " + injuredpercent;
+    var tipWidth = 250;
+  } else { 
+    var tip1 = "Homes completely destroyed: " + completehouse;
+    var tip2 = "Homes partially destroyed: " + partialhouse;
+    var tipWidth = 250;
+  };
 
   centroid = path.centroid(d);
 
   // Set the top or bottom tooltip
   if (width > 900) {
     if (centroid[1] < 250) {
-      centroid_adjusted = [(centroid[0]-(tipHeight)),(centroid[1]+25)];
+      centroid_adjusted = [(centroid[0]-(tipWidth / 2)),(centroid[1]+25)];
     } else {
-      centroid_adjusted = [(centroid[0]-(tipHeight)),(centroid[1]-(tipWidth-50))];
+      centroid_adjusted = [(centroid[0]-(tipWidth / 2)),(centroid[1]-(tipHeight + 20))];
     };        
   }
-  // else if (width > 700) {  
-  //   if (centroid[1] < 225) {
-  //     // centroid_adjusted = [(centroid[0]-radius - 5),(centroid[1]+25)];
-  //   } else {
-  //     // centroid_adjusted = [(centroid[0]-radius - 5),(centroid[1]-(2 * radius + 80))];
-  //   };
-  // }
   else if (width > 480) {
     if (centroid[0] < (width+100) / 2) {
-      centroid_adjusted = [(centroid[0]-(tipHeight)),(centroid[1]+25)];
+      centroid_adjusted = [(centroid[0]-(tipWidth / 2)),(centroid[1]+25)];
     } else {
-      centroid_adjusted = [(centroid[0]-(tipHeight)),(centroid[1]-(tipWidth-50))];
+      centroid_adjusted = [(centroid[0]-(tipWidth / 2)),(centroid[1]-(tipHeight + 50))];
     };
   } 
-  // else {
-  //   if (centroid[0] < 200) {
-  //     centroid_adjusted = [(width - 175),(5)];        
-  //   } else {
-  //     centroid_adjusted = [(5),(5)];               
-  //   };
-  // };
 
   // tip_text  = [(centroid_adjusted[0] -50),(centroid_adjusted[1])];
   tip_text = [(centroid_adjusted[0] + (tipWidth /2)),(centroid_adjusted[1] + 20)];
@@ -169,7 +172,7 @@ function tooltip(d) {
     .append("text")
     .attr("class","tip-text2")
     .text(function(d){
-        return "Total dead: " + dead;
+        return tip1;
     })
     .attr("transform", function() { 
       return "translate(" + tip_text2 + ")"; });
@@ -178,7 +181,7 @@ function tooltip(d) {
     .append("text")
     .attr("class","tip-text3")
     .text(function(d){
-        return "Total injuries: " + injured;
+        return tip2;
     })
     .attr("transform", function() { 
       return "translate(" + tip_text3 + ")"; });           
