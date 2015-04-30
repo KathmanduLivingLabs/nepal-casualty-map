@@ -1,3 +1,13 @@
+/*Define the choropleth colors*/
+.r0{fill:rgb(241,238,246)} ;
+.r1{fill:rgb(208,209,230)} ;
+.r2{fill:rgb(166,189,219)} ;
+.r3{fill:rgb(116,169,207)} ;
+.r4{fill:rgb(54,144,192)} ;
+.r5{fill:rgb(5,112,176)} ;
+.r6{fill:rgb(3,78,123)};
+
+
 .headline h2 {
   border-bottom: 1px solid #CCCCCC;
   color: #000000 !important;
@@ -44,25 +54,9 @@
     margin-left: 10px;
     margin-bottom: 10px;
 }
-.nepbuttons p {
-    font-size: 16px;
-    font-family: "Avenir LT W02 35 Light",verdana,sans-serif; 
-    line-height: 20px;
-    margin: 0px;
-    padding: 0px;
-    padding-left: 10px;
-    padding-top: 10px;
-}
 
-.nepbuttons p {
-    text-align: center;
-    line-height: 16px;
-    padding-top: 5px;
-    color: #fff;
-    padding-left: 0px;
-}
 .nepbuttons {
-    background-color: #FFBB81;
+    background-color: #FFD1AB;
     height: 50px;
     float: left;
     cursor: pointer;
@@ -79,7 +73,7 @@
 }
 
 .nepbuttons:hover {
-    background-color: #FFD1AB;
+    background-color: #FFBB81;
 }
 
 .districts_id, .states {

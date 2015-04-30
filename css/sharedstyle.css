@@ -45,3 +45,8 @@ svg {
   stroke-opacity:0.5;
   stroke-width: 0.5px;
 }
+
+.no-bottom-margin {
+  margin-bottom: 0px !important;
+}
+

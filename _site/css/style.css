@@ -44,9 +44,25 @@
     margin-left: 10px;
     margin-bottom: 10px;
 }
+.nepbuttons p {
+    font-size: 16px;
+    font-family: "Avenir LT W02 35 Light",verdana,sans-serif; 
+    line-height: 20px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
 
+.nepbuttons p {
+    text-align: center;
+    line-height: 16px;
+    padding-top: 5px;
+    color: #fff;
+    padding-left: 0px;
+}
 .nepbuttons {
-    background-color: #FFD1AB;
+    background-color: #FFBB81;
     height: 50px;
     float: left;
     cursor: pointer;
@@ -63,7 +79,7 @@
 }
 
 .nepbuttons:hover {
-    background-color: #FFBB81;
+    background-color: #FFD1AB;
 }
 
 .districts_id, .states {

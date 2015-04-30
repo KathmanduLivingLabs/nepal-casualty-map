@@ -2,7 +2,14 @@ var tipWidth = 150,
     tipHeight = 70;
 
 // Ramp paraemters, first for dead, then for injuries
-var rampameters = [[0,10,50,100,500,1000,2000],[0,10,50,100,500,1000,4000]]
+var rampameters = [
+  [0,10,50,100,500,1000,2000], //deaths
+  [0,0.001,0.01,0.05,0.1,0.3,0.75], //percentage killed
+  [0,10,50,100,500,1000,4000], //injuries
+  [0,0.001,0.05,0.1,0.3,0.5,2], //percentage injured
+  [0,100,500,100,5000,10000,50000], //Complete houses
+  [0,100,500,100,5000,10000,50000] //partial houses
+  ];
 
 //m = 0 is dead map, m = 1 is injured map;
 var m = 0;
@@ -12,8 +19,18 @@ var ramp = function(d, m) {
   if (m === 0) {
     var o = d.properties.dead;
   } else if (m === 1) {
+    var o = d.properties.deadpercent;
+  } else if (m === 2) {
     var o = d.properties.injured;
-  };
+    // if (o.properties.district = "Rasuwa ") {console.log('FART')};
+    // console.log(d.properties)
+  } else if (m === 3) {
+    var o = d.properties.injuredpercent;    
+  } else if (m === 4) {    
+    var o = d.properties.OthComplete;
+  } else if (m === 5) {
+    var o = d.properties.OthPartial;
+  }
   
   for (var i = 0; i < rampameters[m].length; i++) {
     if (o <= rampameters[m][i]) {
@@ -49,15 +66,15 @@ svg.append("path")
   .attr("d", path);
   
 queue()
-    .defer(d3.json, "data/districts_topo5.json")    
+    .defer(d3.json, "data/districts_topo7.json")    
     .await(ready);
 
-function ready(error, districts_topo5) {
-// console.log(districts_topo5)
+function ready(error, districts_topo7) {
+// console.log(districts_topo7)
   svg.append("g")
       .attr("class", "districts_id")
     .selectAll("path")
-      .data(topojson.feature(districts_topo5, districts_topo5.objects.districts_id).features)
+      .data(topojson.feature(districts_topo7, districts_topo7.objects.districts_id).features)
     .enter().append("path")
       .attr("class", function(d) { 
         return ramp(d,m)
@@ -69,13 +86,13 @@ function ready(error, districts_topo5) {
 
 // Draw the state borders
   svg.append("path")
-      .datum(topojson.mesh(districts_topo5, districts_topo5.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo7, districts_topo7.objects.districts_id, function(a, b) { 
         return a !== b; }))
       .attr("class", "states")
       .attr("d", path)
 
     svg.append("path")
-      .datum(topojson.mesh(districts_topo5, districts_topo5.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo7, districts_topo7.objects.districts_id, function(a, b) { 
         return a == b; }))
       .attr("class", "country")
       .attr("d", path)      
@@ -85,6 +102,11 @@ function tooltip(d) {
   var dead = d.properties.dead;
   var injured = d.properties.injured;
   var district = d.properties.district;
+  console.log("OthComplete: " + d.properties.OthComplete)
+  console.log("OthPartial: " + d.properties.OthPartial)
+  console.log("deadpercent: " + d.properties.deadpercent)
+  console.log("injuredpercent: " + d.properties.injuredpercent)
+
 
   centroid = path.centroid(d);
 
@@ -175,7 +197,7 @@ function rebuild() {
   d3.selectAll(".country").remove();
   d3.selectAll(".states").remove();
   queue()
-    .defer(d3.json, "data/districts_topo5.json")
+    .defer(d3.json, "data/districts_topo7.json")
     .await(ready);
 }
 
@@ -183,22 +205,90 @@ function rebuild() {
 // WHAT YOU DO WHEN YOU CLICK TO CHANGE THE MAP
 var deathmap = document.getElementById("deathmap");
 var injurymap = document.getElementById("injurymap");
+var deathpctmap = document.getElementById("deathpctmap");
+var injurypctmap = document.getElementById("injurypctmap");
+var completehouse = document.getElementById("completehouse");
+var partialhouse = document.getElementById("partialhouse");
 
 deathmap.onmousedown = function () {
   if (m != 0) {
-      deathmap.className = "large-6 medium-6 small-6 nepbuttons active";
-      injurymap.className = "large-6 medium-6 small-6 nepbuttons";
+      deathmap.className = "large-2 medium-2 small-2 nepbuttons active";
+      injurymap.className = "large-2 medium-2 small-2 nepbuttons";
+      deathpctmap.className = "large-2 medium-2 small-2 nepbuttons";
+      injurypctmap.className = "large-2 medium-2 small-2 nepbuttons";
+      completehouse.className = "large-2 medium-2 small-2  nepbuttons";
+      partialhouse.className = "large-2 medium-2 small-2 nepbuttons";
       m = 0;
 
     rebuild();    
   };    
 };
 
-injurymap.onmousedown = function () {
+deathpctmap.onmousedown = function () {
   if (m != 1) {
-    deathmap.className = "large-6 medium-6 small-6  nepbuttons";
-    injurymap.className = "large-6 medium-6 small-6 nepbuttons active";
+    deathmap.className = "large-2 medium-2 small-2  nepbuttons";
+    injurymap.className = "large-2 medium-2 small-2 nepbuttons";
+    deathpctmap.className = "large-2 medium-2 small-2 nepbuttons active";
+    injurypctmap.className = "large-2 medium-2 small-2 nepbuttons";
+    completehouse.className = "large-2 medium-2 small-2  nepbuttons";
+    partialhouse.className = "large-2 medium-2 small-2 nepbuttons";
     m = 1;
+
+    rebuild();
+  };
+};
+
+injurymap.onmousedown = function () {
+  if (m != 2) {
+    deathmap.className = "large-2 medium-2 small-2  nepbuttons";
+    injurymap.className = "large-2 medium-2 small-2 nepbuttons active";
+    deathpctmap.className = "large-2 medium-2 small-2 nepbuttons";
+    injurypctmap.className = "large-2 medium-2 small-2 nepbuttons";
+    completehouse.className = "large-2 medium-2 small-2  nepbuttons";
+    partialhouse.className = "large-2 medium-2 small-2 nepbuttons";
+    m = 2;
+
+    rebuild();
+  };
+};
+
+injurypctmap.onmousedown = function () {
+  if (m != 3) {
+    deathmap.className = "large-2 medium-2 small-2  nepbuttons";
+    injurymap.className = "large-2 medium-2 small-2 nepbuttons";
+    deathpctmap.className = "large-2 medium-2 small-2 nepbuttons";
+    injurypctmap.className = "large-2 medium-2 small-2 nepbuttons active";
+    completehouse.className = "large-2 medium-2 small-2  nepbuttons";
+    partialhouse.className = "large-2 medium-2 small-2 nepbuttons";
+    m = 3;
+
+    rebuild();
+  };
+};
+
+completehouse.onmousedown = function () {
+  if (m != 4) {
+    deathmap.className = "large-2 medium-2 small-2  nepbuttons";
+    injurymap.className = "large-2 medium-2 small-2 nepbuttons";
+    deathpctmap.className = "large-2 medium-2 small-2 nepbuttons";
+    injurypctmap.className = "large-2 medium-2 small-2 nepbuttons";
+    completehouse.className = "large-2 medium-2 small-2  nepbuttons active";
+    partialhouse.className = "large-2 medium-2 small-2 nepbuttons";
+    m = 4;
+
+    rebuild();
+  };
+};
+
+partialhouse.onmousedown = function () {
+  if (m != 5) {
+    deathmap.className = "large-2 medium-2 small-2  nepbuttons";
+    injurymap.className = "large-2 medium-2 small-2 nepbuttons";
+    deathpctmap.className = "large-2 medium-2 small-2 nepbuttons";
+    injurypctmap.className = "large-2 medium-2 small-2 nepbuttons ";
+    completehouse.className = "large-2 medium-2 small-2  nepbuttons";
+    partialhouse.className = "large-2 medium-2 small-2 nepbuttons active";
+    m = 5;
 
     rebuild();
   };

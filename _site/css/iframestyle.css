@@ -14,7 +14,7 @@
     text-align: left !important;
 }
 
-#totalinfo p, .nepbuttons p {
+#totalinfo p {
     font-size: 16px;
     font-family: "Avenir LT W02 35 Light",verdana,sans-serif; 
     line-height: 20px;
@@ -25,11 +25,15 @@
 }
 
 .nepbuttons p {
+    font-size: 14px;
+    font-family: "Avenir LT W02 35 Light",verdana,sans-serif; 
+    line-height: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
     text-align: center;
     line-height: 16px;
-    padding-top: 5px;
     color: #fff;
-    padding-left: 0px;
 }
 
 #totalinfo h1 {
@@ -56,8 +60,8 @@
     margin-bottom: 10px;
 }
 .nepbuttons {
-    background-color: #FFD1AB;
-    height: 25px;
+    background-color: #FFBB81;
+    height: 60px;
     float: left;
     cursor: pointer;
     -webkit-touch-callout: none;
@@ -73,7 +77,7 @@
 }
 
 .nepbuttons:hover {
-    background-color: #FFBB81;
+    background-color: #FFD1AB;
 }
 
 .districts_id, .states {

@@ -10,7 +10,10 @@
 <head profile="http://www.w3.org/1999/xhtml/vocab">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" />
-
+<title>Nepal Earthquake Casualty Map</title>
+<meta property="og:title" content="Nepal Earthquake Casualty Map" />
+<meta property="og:url" content="http://kathmandulivinglabs.github.io/nepal-casualty-map/" />
+<meta property="og:description" content="Mapping the casualties of the earthquake in Nepal. Data updated daily." />
 
 <!-- Could put other css here, such as map css, etc-->
 
@@ -23,8 +26,9 @@
 <!-- Begin Merged CSS -->
 
 
-<link rel="stylesheet" type="text/css" href="css/iframestyle.css">
+<link rel="stylesheet" type="text/css" href="css/treatmentstyle.css">
 <link rel="stylesheet" type="text/css" href="css/sharedstyle.css">
+
 
 <!-- /End Merged CSS -->
 
@@ -60,56 +64,7 @@
 
       <!-- Begin Merged Markup.html partial Content -->
       
-        <!-- Fallback info -->
-<!--     <div class="rowDOE fallback">
-      <div class="large-12 columnsDOE" style="background-color: #fbedc2; height:40px; padding-top:11px;">
-        <center>Want to view this interactive graphic in all its glory? Upgrade to a modern browser!</center>
-      </div>
-    </div>
-    <div class="fallback">
-      <img src="img/consumption_fallback.jpg">
-    </div> -->
-           
-
-            <!-- <select id="mySelect"></select> -->
-  <div id="master_container" class="m_container">        
-
-    <div class="rowDOE no-bottom-margin">
-      <!-- <div class="large-12 columnsDOE headline">
-        <center><h2>Mapping the casualties of the <span class="color-text">earthquake</span> in Nepal</h2></center>
-      </div> -->
-      <!-- <div class="large-12 columnsDOE subheadline">
-        <p> Hover over each district to see how it was affected.</p>
-      </div> -->      
-  
-      <div class="large-12 medium-12 small-12 large-centered medium-centered small-centered">
-        <div id="deathmap" class="large-2 medium-2 small-2 nepbuttons active"><p>Deaths<p></div>
-        <div id="deathpctmap" class="large-2 medium-2 small-2 nepbuttons"><p>Percentage of Population Killed</p></div>
-        <div id="injurymap" class="large-2 medium-2 small-2 nepbuttons"><p>Injuries</p></div>        
-        <div id="injurypctmap" class="large-2 medium-2 small-2 nepbuttons"><p>Percentage of Population Injured<p></div>
-        <div id="completehouse" class="large-2 medium-2 small-2 nepbuttons"><p>Houses Destroyed</p></div>
-        <div id="partialhouse" class="large-2 medium-2 small-2 nepbuttons"><p>Houses Partially Destroyed<p></div>
-      </div>
-    </div>
-    <div class="rowDOE" id="map">      
-      <div id="totalinfo" class="large-4 medium-4 small-4 rowDOE topinfo">
-        <p>As of <span class="date">April 30, 2015 1200 NST</span></p>
-        <!-- <p>As of <span class="has-tip tip-bottom" data-tooltip title="April 29, 2015 1415 GMT">April 29, 2015 2000 NST</span></p> -->
-        <h1>Total Deaths: 5,492</h1>
-        <h1>Total Injuries: 11,117</h1>
-      </div>
-      <div class="contextinfo">
-        <p>Data Updated: April 30, 2015 1200 NST</p>
-        <p>Source: Nepal National Information Technology Center. Download the data <a href="https://docs.google.com/spreadsheets/d/1Q3QSx1_p78T4_qo_JVj5vEQtzuCFWP2AfxYnVBSNzLQ/pubhtml">here</a>. </p>
-        <!-- <p>Produced by <a href="http://kathmandulivinglabs.org/">Kathmandu Living Labs</a>.</p> -->
-      </div>
-    </div>
-    <!-- <div class="rowDOE contextinfo">
-      <p>Data Updated: April 28, 2015 0700 hrs</p>
-      <p>Source: Nepal National Information Technology Center. Download the data <a href="https://docs.google.com/spreadsheets/d/1Q3QSx1_p78T4_qo_JVj5vEQtzuCFWP2AfxYnVBSNzLQ/pubhtml">here</a>. </p>
-    </div> -->
-
-</div>    
+        {{ content }}
 
       <!-- /End Merged Content -->
 
@@ -134,16 +89,16 @@
     </script>
 
   <!-- Foundation libraries end -->
-
   <!--various libraries -->
-  <script type="text/javascript" src="js/d3.js"></script>
-  <script type="text/javascript" src="js/query.js"></script>
-  <script type="text/javascript" src="js/geoprojections.js"></script>
-  <script type="text/javascript" src="js/topojson.js"></script>
+  <script src="js/d3.js"></script>
+  <script src="js/query.js"></script>
+  <script src="js/geoprojections.js"></script>
+  <script src="js/topojson.js"></script>
+
 
   <!-- Scripts (get to work) like script.js -->
-  <script type="text/javascript" src="js/iframescript.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/treatment_prescript.js"></script>
+  <script type="text/javascript" src="js/treatment_script.js"></script>
 
 <!-- /End JS references -->
 
@@ -158,6 +113,5 @@
   ga('send', 'pageview');
 
 </script>
-
 </body>
 </html>
