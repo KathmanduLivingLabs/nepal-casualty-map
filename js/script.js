@@ -5,7 +5,7 @@ var tipWidth = 150,
 var rampameters = [
   [0,10,50,100,500,1000,2000], //deaths
   [0,0.001,0.01,0.05,0.1,0.3,0.75], //percentage killed
-  [0,10,50,100,500,1000,4000], //injuries
+  [0,50,100,500,1000,2000,5000], //injuries
   [0,0.001,0.05,0.1,0.3,0.5,2], //percentage injured
   [0,100,500,100,5000,10000,50000], //Complete houses
   [0,100,500,100,5000,10000,50000] //partial houses
@@ -66,15 +66,15 @@ svg.append("path")
   .attr("d", path);
   
 queue()
-    .defer(d3.json, "data/districts_topo7.json")    
+    .defer(d3.json, "data/districts_topo8.json")    
     .await(ready);
 
-function ready(error, districts_topo7) {
-// console.log(districts_topo7)
+function ready(error, districts_topo8) {
+// console.log(districts_topo8)
   svg.append("g")
       .attr("class", "districts_id")
     .selectAll("path")
-      .data(topojson.feature(districts_topo7, districts_topo7.objects.districts_id).features)
+      .data(topojson.feature(districts_topo8, districts_topo8.objects.districts_id).features)
     .enter().append("path")
       .attr("class", function(d) { 
         return ramp(d,m)
@@ -86,13 +86,13 @@ function ready(error, districts_topo7) {
 
 // Draw the state borders
   svg.append("path")
-      .datum(topojson.mesh(districts_topo7, districts_topo7.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo8, districts_topo8.objects.districts_id, function(a, b) { 
         return a !== b; }))
       .attr("class", "states")
       .attr("d", path)
 
     svg.append("path")
-      .datum(topojson.mesh(districts_topo7, districts_topo7.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo8, districts_topo8.objects.districts_id, function(a, b) { 
         return a == b; }))
       .attr("class", "country")
       .attr("d", path)      
@@ -200,7 +200,7 @@ function rebuild() {
   d3.selectAll(".country").remove();
   d3.selectAll(".states").remove();
   queue()
-    .defer(d3.json, "data/districts_topo7.json")
+    .defer(d3.json, "data/districts_topo8.json")
     .await(ready);
 }
 
