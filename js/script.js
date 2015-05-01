@@ -3,7 +3,7 @@ var tipWidth = 150,
 
 // Ramp paraemters, first for dead, then for injuries
 var rampameters = [
-  [0,10,50,100,500,1000,2000], //deaths
+  [0,10,100,250,750,1500,3000], //deaths
   [0,0.001,0.01,0.05,0.1,0.3,0.75], //percentage killed
   [0,50,100,500,1000,2000,5000], //injuries
   [0,0.001,0.05,0.1,0.3,0.5,2], //percentage injured
@@ -66,15 +66,15 @@ svg.append("path")
   .attr("d", path);
   
 queue()
-    .defer(d3.json, "data/districts_topo8.json")    
+    .defer(d3.json, "data/districts_topo9.json")    
     .await(ready);
 
-function ready(error, districts_topo8) {
-// console.log(districts_topo8)
+function ready(error, districts_topo9) {
+// console.log(districts_topo9)
   svg.append("g")
       .attr("class", "districts_id")
     .selectAll("path")
-      .data(topojson.feature(districts_topo8, districts_topo8.objects.districts_id).features)
+      .data(topojson.feature(districts_topo9, districts_topo9.objects.districts_id).features)
     .enter().append("path")
       .attr("class", function(d) { 
         return ramp(d,m)
@@ -86,13 +86,13 @@ function ready(error, districts_topo8) {
 
 // Draw the state borders
   svg.append("path")
-      .datum(topojson.mesh(districts_topo8, districts_topo8.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo9, districts_topo9.objects.districts_id, function(a, b) { 
         return a !== b; }))
       .attr("class", "states")
       .attr("d", path)
 
     svg.append("path")
-      .datum(topojson.mesh(districts_topo8, districts_topo8.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo9, districts_topo9.objects.districts_id, function(a, b) { 
         return a == b; }))
       .attr("class", "country")
       .attr("d", path)      
@@ -200,7 +200,7 @@ function rebuild() {
   d3.selectAll(".country").remove();
   d3.selectAll(".states").remove();
   queue()
-    .defer(d3.json, "data/districts_topo8.json")
+    .defer(d3.json, "data/districts_topo9.json")
     .await(ready);
 }
 
