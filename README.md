@@ -1,6 +1,6 @@
 ## About
 
-This map show Casualties from the April 25th earthquake in Nepal. Casualty data can be found [here](https://docs.google.com/spreadsheets/d/1Q3QSx1_p78T4_qo_JVj5vEQtzuCFWP2AfxYnVBSNzLQ/pubhtml), 
+This map show Casualties from the April 25th earthquake in Nepal. Casualty data can be found [here](https://docs.google.com/spreadsheets/d/1Q3QSx1_p78T4_qo_JVj5vEQtzuCFWP2AfxYnVBSNzLQ/pubhtml), Population data from Nepal Census 2011. 
 
 This app frame is built using the [Foundation](http://foundation.zurb.com/) responsive framework and jeykll pages.
 
@@ -9,6 +9,12 @@ This app frame is built using the [Foundation](http://foundation.zurb.com/) resp
 - Download and install [Topojson](https://github.com/mbostock/topojson), which requires [Node.js](http://www.google.com.np/search?q=node+homebrew&oq=node+homebrew&aqs=chrome..69i57j0l5.2838j0j7&sourceid=chrome&es_sm=91&ie=UTF-8&gws_rd=ssl).
 	npm install -g topojson
 - GIT access to KTMLivingLabs
+
+## Beginning steps
+1. Clone the repo: `git clone https://github.com/energyapps/app-frame-foundation.git`
+2. Get access to google docs by asking Dan Wood. 
+3. Build the Jekyll _site/ folder by running jekyll build in the home directory. I recommend running jekyll build --watch, which automatically rebuilds your _site folder whenever you change something in the directory.
+4. Run the jekyll server by running jekyll serve. You can now see your page at [localhost:4000](localhost:4000)
 
 ## Steps to update the data
 1. See if data has been updated [here](https://docs.google.com/spreadsheets/d/1Q3QSx1_p78T4_qo_JVj5vEQtzuCFWP2AfxYnVBSNzLQ/pubhtml).
@@ -21,9 +27,9 @@ This app frame is built using the [Foundation](http://foundation.zurb.com/) resp
 
 	topojson -o districts_topo.json --id-property 'distID, distID' --external-properties=casualty_YY_MM_DD_HH.csv --properties='district=district' --properties='dead=dead' --properties='injured=injured' --properties='GovComplete=GovComplete' --properties='GovPartial=GovPartial' --properties='OthComplete=OthComplete' --properties='OthPartial=OthPartial' --properties='population=population' --properties='deadpercent=deadpercent' --properties='injuredpercent=injuredpercent' -- districts_id.json;
 
-8. Update date in index.html, iframe.html
-9. Update casualty totals in index.html, iframe.html
-10. Check to make sure that the correct numbers are showing on the map, and there are no errors, on localhost:4000
-11. push to gh-pages on github.
+8. Update date in index.html, iframe.html (2 places on each page)
+9. Update casualty totals in index.html, iframe.html 
+10. Check to make sure that the correct numbers are showing on the map, and there are no errors, on [localhost:4000](localhost:4000). (i.e. make sure that jekyll has rebuilt the _site/ directory.)
+11. push to gh-pages on github using this commit message "data update Month D, YYYY HHMM NST"
 
-### Updated: 5/2/15 Nepal
+### Updated: 5/2/15 1500 NST
