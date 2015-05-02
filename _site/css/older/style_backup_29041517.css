@@ -1,0 +1,715 @@
+.topinfo {
+    float: left;
+}
+
+/*.headline h2 {
+  border-bottom: 1px solid #CCCCCC;
+  color: #000000 !important;
+  font-size: 24px !important;
+  font-size: 
+}*/
+
+#totalinfo {
+    /*position: absolute;
+    top: 0px;
+    left: 0px; */   
+    text-align: left !important;
+}
+
+#totalinfo p {
+    font-size: 20px;
+    font-family: "Avenir LT W02 35 Light",verdana,sans-serif; 
+    line-height: 20px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#totalinfo h1 {
+    font-size: 26px;
+    line-height: 24px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    letter-spacing: 0px;
+    text-align: left !important;
+}
+
+.contextinfo p {
+    font-size: 13px;
+    line-height: 13px;
+    margin: 0px;
+}
+
+.contextinfo {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
+
+.nepbuttons {
+    background-color: #FFD1AB;
+    height: 50px;
+    float: left;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.nepbuttons.active {
+    background-color: #FF4033;
+}
+
+.nepbuttons:hover {
+    background-color: #FFBB81;
+}
+
+.districts_id, .states {
+    cursor: pointer;
+}
+
+#tooltip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  fill: #fff;
+  fill-opacity: 0.8;
+  border-radius: 2px;
+  stroke-width: 1px;
+  stroke: #333;
+}
+
+.tip-text {
+  fill: #333;
+  font-size: 16px;
+  font-family: "Avenir LT W02 85 Heavy",verdana,sans-serif; 
+  text-anchor: middle; 
+  letter-spacing: 1px;
+}
+
+.tip-text2 {
+  fill: #333;
+  font-size: 14px;
+  font-family: "Avenir LT W02 35 Light",verdana,sans-serif; 
+  text-anchor: middle; 
+}
+
+.tip-text3 {
+  fill: #333;
+  font-size: 14px;
+  font-family: "Avenir LT W02 35 Light",verdana,sans-serif; 
+  text-anchor: middle; 
+}
+
+.closer {
+cursor: pointer;
+}
+
+.closer :hover {
+  font-family: "Avenir LT W02 85 Heavy",verdana,sans-serif !important;  
+}
+
+
+/*Fold*/
+#fold {
+    z-index: 30000;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+/*fallback*/
+.fallback {
+    display: none;
+  }
+
+.f-dropdown li {
+    color: rgb(68,68,68) !important;
+}
+
+/********************************************
+
+    Styles to be added to energy.gov in order 
+    to allow it to look however you want it.
+    Reminder: make it responsive
+
+********************************************/
+
+
+/*+++++++++++++++++++++++++++
+Map
+++++++++++++++++++++++++++++++++++++++*/
+/* #master_container {
+    font-family: 'Avenir LT W02 35 Light',verdana,sans-serif;
+    text-transform: none !important;
+    position: relative;
+    width: 100%;
+    height: 800px;
+ }*/
+
+        /*#map { 
+            position:absolute; 
+            top:0; 
+            height: 100%; 
+            width:100%;
+            z-index: -2;
+        }*/
+
+        .rowDOE {
+            margin-bottom: 10px;
+        }
+
+        .rowDOE .green-text    {
+            color: rgb(140,198,63) !important;
+        }
+
+        .rowDOE .color-text    {
+            color: #FF030D !important;
+        }
+
+        .rowDOE .white-text    {
+            color: #fff !important;
+        }
+
+        /*Typography*/
+
+        .rowDOE h1, .rowDOE h2, .rowDOE h3, .rowDOE h4 {
+            text-align: center;
+            border:none
+        }
+
+        .rowDOE h1 {
+            font-size: 33px;
+            letter-spacing: 7px;
+            color: rgb(51,51,51) !important;
+            line-height: normal;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;            
+            text-decoration: none !important;
+        }
+
+        .rowDOE h2 {
+            font-size: 38px;
+            color: #fff !important;
+            text-transform: none;
+            line-height: normal;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            font-family: "Avenir LT W02 35 Light",verdana,sans-serif;
+            letter-spacing: .1rem;
+        }
+
+        .rowDOE h3 {
+            font-size: 26px;
+            color: #fff !important;
+            margin-top: 0.5rem;
+            margin-bottom: 0.6rem;
+            text-transform: none;
+            line-height: normal;
+        }
+
+        .rowDOE h4 {
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            margin-bottom: 0.4rem;
+            color: rgb(0, 0, 0) !important;
+        }
+
+        .rowDOE .inner-text {
+            font-size: 28px;
+            text-transform: uppercase;
+            font-family: "Avenir LT W02 85 Heavy",verdana,sans-serif;
+            letter-spacing: .1rem;
+            line-height: normal;    
+            padding-top: 15px;
+            padding-left: 0.9375rem;
+            color: #fff !important;
+        }
+
+        .rowDOE .inner-text.large-8 {position: absolute;}
+
+        .inner-text p {
+            text-align: center;
+        }
+
+        #select-text h4 {
+            color: #fff !important;
+        }       
+
+        .subheadline p {
+            text-align: center;
+            font-size: 20px;            
+            margin: 0 !important;
+            line-height: normal;
+            color: rgb(68,68,68) !important;
+            padding-top: .3rem !important; 
+            padding-bottom: .3rem !important;
+            font-family: "Avenir LT W02 35 Light",verdana,sans-serif;
+            border-bottom: none !important;
+        }       
+
+    /* The Colors duke, the colors*/
+        .header-color {
+            background-color: rgb(140,198,63);
+        }
+
+        .headline {
+            background-color: rgb(51,51,51)
+        }
+
+    /*Other*/
+
+        .sub-blocks-full {
+            padding-left: 0px;
+            height: 500px;
+        }
+
+        .subheadline {
+            background-color: #FFD1AB; 
+        }
+
+        .triple {
+            padding-left: 0rem;
+            padding-right: 0rem;
+            padding-bottom: .5rem;
+        }
+
+        .third-blocks {
+            background-color: rgb(197,225,159);
+            height: 240px;
+            position: relative;
+        }
+
+        .third-blocks.top {
+            height: 190px;
+            padding-top: 20px;
+            position: relative;
+        }
+
+        .third-blocks.top div {
+            margin: 0 auto;
+            /*width: 51px;*/
+        }
+        .triple:first-child .third-blocks.top div {
+            margin: 0 auto;
+            /*width: 228px;*/
+        }
+        .triple:last-child .third-blocks.top div {
+            margin: 0 auto;
+            /*width: 112px;*/
+            padding-top: 10px;
+        }
+
+        .third-blocks.top div img{
+            /*width: 100%;*/
+            margin: 0 auto;
+            display: block;
+            height: auto;
+        }
+
+        .unit {
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            padding-bottom: 10px;
+            font-family: 'Avenir LT W02 35 Light',verdana,sans-serif;
+            color: rgb(68,68,68) !important;
+        }
+
+
+        .middle-block {
+            background-color: rgb(168,212,110) !important;
+            height: 90px;
+            padding-top: 5px;
+        }
+
+        .middle-block p {       
+            border-bottom: none !important;     
+            margin:0px !important;
+            text-align: center;
+            color: rgb(12,15,8) !important;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Avenir LT W02 35 Light',verdana,sans-serif;
+        }
+
+        .green {
+            background-color: rgb(197,225,159); 
+        }
+
+        .outside {
+            height: 74px;
+            background-color: rgb(140,198,63);
+            transition: background-color 300ms ease-out;
+        }
+
+        .outside:hover {
+            cursor: pointer;
+            background-color: #fff;
+            background-color: rgb(197,225,159);
+            transition: background-color 300ms ease-out;
+
+        }
+
+        .triangle {
+            position: relative;
+            top: 20px;
+            border-top: 17px solid transparent;
+            border-bottom: 17px solid transparent; 
+            width: 0; 
+            height: 0;          
+        }
+
+        #right-tri {            
+            left: 10px;
+            border-left: 35px solid #fff; 
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        #left-tri {
+            left: 8px;          
+            border-right: 35px solid #fff; 
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        #totalBTU {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;   
+        }
+
+        .full-size-blocks {
+            /*border: 1px solid rgb(151,203,81);*/
+            overflow: hidden;
+        }       
+
+        .dropdown {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        /*
+        .button1:hover {
+            cursor: pointer;
+            background-color: rgb(197,225,159);  
+        }
+
+        .button1 h1:hover {
+            text-decoration: none !important;
+        }*/
+        .button1 {
+            width: 100%;
+            border-style: solid;
+            border-width: 0px;
+            cursor: pointer;
+            line-height: normal;
+            /*margin: 0 0 1.25rem;*/
+            position: relative;
+            text-decoration: none !important;
+            text-align: center;
+            -webkit-appearance: none;
+            -webkit-border-radius: 0;
+            display: inline-block;
+            /*padding-top: 1rem;
+            padding-right: 2rem;
+            padding-bottom: 1.0625rem;
+            padding-left: 2rem;*/            
+            background-color: #008cba;
+            border-color: #007095;
+            transition: background-color 300ms ease-out;
+            /*Turn off highlight*/
+            /*-webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;*/
+        }
+
+        .button1 h2 {
+            text-transform: uppercase !important;
+            /*color: rgb(51,51,51)*/
+
+        }
+
+        .inner-text p {
+        margin-bottom: 10px !important; 
+        }
+
+        .button1:hover {
+            cursor: pointer;
+            background-color: rgb(0,112,149); 
+            transition: background-color 300ms ease-out;
+        }
+
+        /*Scroll bar*/
+
+        ul#drop {
+            max-height: 200px;
+            overflow: scroll;
+        }
+
+        #dropdiv {
+            cursor: pointer;
+            transition: background-color 300ms ease-out;
+
+        }
+
+        #dropdiv:hover {
+            background-color: #d7eabd;
+            transition: background-color 300ms ease-out;            
+            /*Turn off highlight*/
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .f-dropdown li {
+            padding-left: 5px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+        .f-dropdown {
+            left: 15px !important;
+        }
+
+        .close {
+            left: -99999px !important;            
+        }
+
+        /*Marty McFly*/
+        #back2future {
+            /*background-image:url('/img/backandclock.jpg');*/
+            background-image:url('../img/b2g.jpg');
+            background-position: bottom right;
+            background-repeat: repeat-x;
+            /*overflow:hidden;*/
+        }
+
+        #del_flame {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        #delorean {
+            position: absolute;
+            bottom: 10px;
+            width: 394px;
+            height: 137px;
+            left: 150px;
+            z-index: 11;
+        }
+
+        #flames {
+            position: absolute;
+            width: 416px;
+            height: 51px;            
+            z-index: 10;
+            bottom: 10px;
+            right: 0px;
+            opacity: 0;
+        }
+
+        #clock {
+            position: absolute;
+            bottom: 60px;            
+            right: 15px;    
+            padding-left: 15px;        
+        }
+
+        #lightning {
+            position: absolute;
+            top: -20px;            
+            right: 257px;   
+
+        }
+
+        #road {
+            position: absolute;
+            bottom: 0px;
+            height: 125px;
+            background-color: rgb(51,51,51);
+        }
+
+        span.nub {
+            border-color:#888 ;
+        }
+
+        .tooltip.tip-top > .nub {
+            border-color: #888 transparent transparent transparent  ;
+        }
+
+        .tooltip.tip-bottom > .nub {
+            border-color:  transparent transparent #888 transparent  ;
+        }
+
+        .tooltip {
+            background-color: #888 ;
+        }
+
+        #flight {
+            color: #333 !important;
+            text-shadow: 1px 1px 1px #888888;
+        }
+    
+    #power p {
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-family: 'Avenir LT W02 35 Light',verdana,sans-serif;
+    }
+
+    #power h1 {
+        padding-bottom: 0px;
+    }
+
+    .middle-block .below-text {
+        font-size: 13px;
+        padding: 0px !important;
+    }
+
+    .middle-block .below-text span.red {
+        color: red;
+    }
+
+    .middle-block .below-text span.blue {
+        color: blue;
+    }
+
+
+
+@media only screen and (min-width: 40.063em) { 
+        .rowDOE h1 {
+            font-size: 52px;        
+            letter-spacing: 15px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .triple {
+            padding-left: 0.1rem;
+            padding-right: 0.1rem;
+            padding-bottom: 0rem;
+        }
+
+        .triple:first-child {
+            padding-left: 0px;   
+            padding-right: 0.56rem;         
+        }
+
+        .triple:last-child {
+            padding-right: 0px;         
+            padding-left: 0.56rem;
+        }
+    } /* min-width 641px, medium screens */
+@media only screen and (min-width: 64.063em) { 
+        .dropdown {
+            padding-left: 0.9375rem;
+            padding-right: 0.9375rem;
+        }
+    } /* min-width 1025px, large screens */
+
+
+@media only screen and (max-width: 480px) { 
+        .rowDOE h2 {
+            font-size: 30px;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            letter-spacing: .05rem;
+        }
+        .subheadline p {
+            font-size: 17px;
+            padding-top: .2rem;
+            padding-bottom: .2rem
+        }
+        
+        .rowDOE h3 {
+            font-size: 16px;
+            margin-top: .25rem;
+            margin-bottom: .25rem;
+        }
+
+        .middle-block p {
+            padding-top: 03px !important;
+            padding-bottom: 5px !important;
+            font-size: 14px;
+        }
+
+        .middle-block {
+            height: 75px !important; 
+        }
+
+        .sub-blocks-full {
+            height: 300px
+        }
+
+        #back2future {
+            height: 450px;
+        }
+
+        .rowDOE .inner-text {
+            font-size: 18px !important;
+            line-height: 18px !important; 
+            letter-spacing: 0rem;
+        }
+
+        #delorean {
+            width: 197px;
+            height: 69px;
+        }
+
+        #flames {
+            width: 208px;
+            height: 25px;  
+            bottom: 10px;
+        }
+
+}
+
+
+@media only screen and (max-width: 320px) { 
+    #sub-blocks-full {
+        height: 300px;
+    }
+    .rowDOE h1 {
+        font-size: 28px
+    }
+    .rowDOE h2 {
+            font-size: 26px;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            letter-spacing: .025rem;
+        }
+}
+
+
+
+.has-tip {
+    border-bottom: dotted 1px #fff;
+}
