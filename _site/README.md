@@ -1,6 +1,6 @@
 ## About
 
-This map show Casualties from the April 25th earthquake in Nepal. Casualty data can be found [here](https://docs.google.com/spreadsheets/d/1Q3QSx1_p78T4_qo_JVj5vEQtzuCFWP2AfxYnVBSNzLQ/pubhtml), Population data from Nepal Census 2011. 
+This map show Casualties from the April 25th earthquake in Nepal. Casualty data can be found [here](https://docs.google.com/spreadsheets/d/1Q3QSx1_p78T4_qo_JVj5vEQtzuCFWP2AfxYnVBSNzLQ/pubhtml), Population data from [Nepal Census 2011](http://cbs.gov.np/atlas/tables.html?chapter=2&table=2.1). 
 
 This app frame is built using the [Foundation](http://foundation.zurb.com/) responsive framework and jeykll pages.
 
