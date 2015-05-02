@@ -66,15 +66,15 @@ svg.append("path")
   .attr("d", path);
   
 queue()
-    .defer(d3.json, "data/districts_topo9.json")    
+    .defer(d3.json, "data/districts_topo.json")    
     .await(ready);
 
-function ready(error, districts_topo9) {
-// console.log(districts_topo9)
+function ready(error, districts_topo) {
+// console.log(districts_topo)
   svg.append("g")
       .attr("class", "districts_id")
     .selectAll("path")
-      .data(topojson.feature(districts_topo9, districts_topo9.objects.districts_id).features)
+      .data(topojson.feature(districts_topo, districts_topo.objects.districts_id).features)
     .enter().append("path")
       .attr("class", function(d) { 
         return ramp(d,m)
@@ -86,13 +86,13 @@ function ready(error, districts_topo9) {
 
 // Draw the state borders
   svg.append("path")
-      .datum(topojson.mesh(districts_topo9, districts_topo9.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo, districts_topo.objects.districts_id, function(a, b) { 
         return a !== b; }))
       .attr("class", "states")
       .attr("d", path)
 
     svg.append("path")
-      .datum(topojson.mesh(districts_topo9, districts_topo9.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo, districts_topo.objects.districts_id, function(a, b) { 
         return a == b; }))
       .attr("class", "country")
       .attr("d", path)      
@@ -200,7 +200,7 @@ function rebuild() {
   d3.selectAll(".country").remove();
   d3.selectAll(".states").remove();
   queue()
-    .defer(d3.json, "data/districts_topo9.json")
+    .defer(d3.json, "data/districts_topo.json")
     .await(ready);
 }
 
