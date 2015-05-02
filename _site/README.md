@@ -20,7 +20,6 @@ This app frame is built using the [Foundation](http://foundation.zurb.com/) resp
 7. Run topojson in your /data/ folder using the following script, inputting your csv name as shown:
 
 	topojson -o districts_topo.json --id-property 'distID, distID' --external-properties=casualty_YY_MM_DD_HH.csv --properties='district=district' --properties='dead=dead' --properties='injured=injured' --properties='GovComplete=GovComplete' --properties='GovPartial=GovPartial' --properties='OthComplete=OthComplete' --properties='OthPartial=OthPartial' --properties='population=population' --properties='deadpercent=deadpercent' --properties='injuredpercent=injuredpercent' -- districts_id.json;
-	bounds: 80.0601425170899 26.347515106201172 88.204010
 
 8. Update date in index.html, iframe.html
 9. Update casualty totals in index.html, iframe.html
