@@ -3,12 +3,12 @@ var tipWidth = 150,
 
 // Ramp paraemters, first for dead, then for injuries
 var rampameters = [
-  [0,10,100,250,750,1500,3000], //deaths
-  [0,0.001,0.01,0.05,0.1,0.3,1], //percentage killed
-  [0,50,100,500,1000,2000,5000], //injuries
-  [0,0.001,0.05,0.1,0.3,0.5,2], //percentage injured
-  [0,100,500,100,5000,10000,50000], //Complete houses
-  [0,100,500,100,5000,10000,50000] //partial houses
+  [0,10,100,250,750,1500,3200], //deaths
+  [0,0.001,0.01,0.05,0.1,0.3,5], //percentage killed
+  [0,50,100,500,1000,2000,10000], //injuries
+  [0,0.001,0.05,0.1,0.3,0.5,5], //percentage injured
+  [0,100,500,1000,7500,20000,100000], //Complete houses
+  [0,100,500,1000,7500,20000,100000] //partial houses
   ];
 
 //m = 0 is dead map, m = 1 is injured map;
