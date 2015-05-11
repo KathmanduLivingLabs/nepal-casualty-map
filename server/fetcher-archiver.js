@@ -14,7 +14,7 @@ request("https://docs.google.com/spreadsheets/d/1tGQlS3lIW077sOUIJ1qO0Rtaz34V-Cx
     
     fs.writeFile(archiveFilename, data, function(err){
         if(err) throw err;
-        console.log("done! data archived in "+ archiveFilename);
+        console.log("data archived in "+ archiveFilename);
     });
 
     fs.writeFile("update-info.json", JSON.stringify(updateTimestamp), function(err){
