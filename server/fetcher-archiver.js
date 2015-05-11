@@ -3,10 +3,12 @@ var request = require("request");
 
 request("https://docs.google.com/spreadsheets/d/1tGQlS3lIW077sOUIJ1qO0Rtaz34V-CxKEySFQ2W2CgA/export?format=csv&gid=1901101589", function(error, response, data){
     if (error || response.statusCode !== 200) return "error: "+ response.statusCode;
-
     var csvLinesArray = data.trim().replace(/\"/g,"").split("\n");
+    var line8 = csvLinesArray[8].split(",");
     var updateTimestamp = {
-        "update-date": csvLinesArray[1].split(",")[2].split("-")[1]
+        "update-date": csvLinesArray[1].split(",")[2].split("-")[1],
+        "lost": Number(line8[4]+line8[5]),
+        "injured": Number(line8[6]+line8[7])
     };
     var archiveFilename = "data-"+updateTimestamp["update-date"].replace(/:/g,".").replace(/ /g,"-")+"-NST.csv";
     
