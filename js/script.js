@@ -299,4 +299,17 @@ partialhouse.onmousedown = function () {
 
 d3.select(self.frameElement).style("height", height + "px");
 
-
+$(document).ready(function(){
+      $.ajax({
+        url: "data/update-info.json",
+        success: function(data){
+            $("#totalinfo").each(function(){
+              $(this).find(".date").text(data["update-date"]);
+              $($(this).find("h1")[0]).text("Total Deaths: " + data["lost"]);
+              $($(this).find("h1")[1]).text("Total Injuries: " + data["injured"]);
+            });
+            $($(".contextinfo").find("p")[0]).text("Data Updated: " + data["update-date"]);
+        },
+        dataType: "json"
+      });
+    });

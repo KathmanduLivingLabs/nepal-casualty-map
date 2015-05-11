@@ -49,21 +49,5 @@ layout: iframe_default
       <p>Source: Nepal National Information Technology Center. Download the data <a href="https://docs.google.com/spreadsheets/d/1Q3QSx1_p78T4_qo_JVj5vEQtzuCFWP2AfxYnVBSNzLQ/pubhtml">here</a>. </p>
     </div> -->
 
-    <script type="text/javascript">
-      $(document).ready(function(){
-      $.ajax({
-        url: "data/update-info.json",
-        success: function(data){
-            $("#totalinfo").each(function(){
-              $(this).find(".date").text(data["update-date"]);
-              $($(this).find("h1")[0]).text("Total Deaths: " + data["lost"]);
-              $($(this).find("h1")[1]).text("Total Injuries: " + data["injured"]);
-            });
-            $($(".contextinfo").find("p")[0]).text("Data Updated: " + data["update-date"]);
-        },
-        dataType: "json"
-      });
-    });
-      </script>
 
 </div>    
