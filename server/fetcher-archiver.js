@@ -7,8 +7,8 @@ request("https://docs.google.com/spreadsheets/d/1tGQlS3lIW077sOUIJ1qO0Rtaz34V-Cx
     var line8 = csvLinesArray[8].split(",");
     var updateTimestamp = {
         "update-date": csvLinesArray[1].split(",")[2].split("-")[1],
-        "lost": Number(line8[4]+line8[5]),
-        "injured": Number(line8[6]+line8[7])
+        "lost": line8[4]+","+line8[5],
+        "injured": line8[6]+","+line8[7]
     };
     var archiveFilename = "data-"+updateTimestamp["update-date"].replace(/:/g,".").replace(/ /g,"-")+"-NST.csv";
     
