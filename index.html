@@ -36,14 +36,30 @@ layout: default
     </div>
     <div class="rowDOE" id="map">
       <div id="totalinfo">
-        <p>As of <span class="date">May 11, 2015 22:00 NST</span></p>
-        <h1>Total Deaths: 8,019</h1>  
-        <h1>Total Injuries: 17,866</h1>
+        <p>As of <span class="date"></span></p>
+        <h1></h1>  
+        <h1></h1>
       </div>
       <div class="contextinfo">
-        <p>Data Updated: May 11, 2015 09:00 NST</p>
+        <p></p>
         <p>Source: Nepal National Information Technology Center and 2011 Census. <a href="https://docs.google.com/spreadsheets/d/1Q3QSx1_p78T4_qo_JVj5vEQtzuCFWP2AfxYnVBSNzLQ/pubhtml">Download the data</a>.</p>
         <p>Produced for <a href="http://kathmandulivinglabs.org/">Kathmandu Living Labs</a>. Find more Nepal Earthquake related maps <a href="http://kathmandulivinglabs.github.io/quake-maps/">here</a>.</p>
       </div>
+    
+      <script type="text/javascript">
+      $.ajax({
+        url: "data/update-info.json",
+        success: function(data){
+            $("#totalinfo").each(function(){
+              $(this).find(".date").text(data["update-date"]);
+              $($(this).find("h1")[0]).text("Total Deaths: " + data["lost"]);
+              $($(this).find("h1")[1]).text("Total Injuries: " + data["injured"]);
+            });
+            $($(".contextinfo").find("p")[0]).text("Data Updated: " + data["update-date"]);
+        },
+        dataType: "json"
+      });
+      </script>
+
     </div>
 </div>

@@ -9,9 +9,15 @@ request("https://docs.google.com/spreadsheets/d/1tGQlS3lIW077sOUIJ1qO0Rtaz34V-Cx
         "update-date": csvLinesArray[1].split(",")[2].split("-")[1]
     };
     var archiveFilename = "data-"+updateTimestamp["update-date"].replace(/:/g,".").replace(/ /g,"-")+"-NST.csv";
-    fs.writeFile(archiveFilename, JSON.stringify(updateTimestamp), function(err){
+    
+    fs.writeFile(archiveFilename, data, function(err){
         if(err) throw err;
         console.log("done! data archived in "+ archiveFilename);
+    });
+
+    fs.writeFile("update-info.json", JSON.stringify(updateTimestamp), function(err){
+        if(err) throw err;
+        console.log("update info in "+ archiveFilename);
     });
 });
 
