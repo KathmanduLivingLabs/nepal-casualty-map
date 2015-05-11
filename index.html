@@ -47,6 +47,7 @@ layout: default
       </div>
     
       <script type="text/javascript">
+      $(document).ready(function(){
       $.ajax({
         url: "data/update-info.json",
         success: function(data){
@@ -59,6 +60,7 @@ layout: default
         },
         dataType: "json"
       });
+    });
       </script>
 
     </div>
