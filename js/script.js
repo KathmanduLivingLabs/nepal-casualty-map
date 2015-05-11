@@ -22,22 +22,22 @@ var ramp = function(d, m) {
     var o = d.properties.deadpercent;
   } else if (m === 2) {
     var o = d.properties.injured;
-    // if (o.properties.district = "Rasuwa ") {console.log('FART')};
-    // console.log(d.properties)
   } else if (m === 3) {
     var o = d.properties.injuredpercent;    
   } else if (m === 4) {    
     var o = d.properties.OthComplete;
   } else if (m === 5) {
     var o = d.properties.OthPartial;
-  }
-  
+  } 
+
   for (var i = 0; i < rampameters[m].length; i++) {
     if (o <= rampameters[m][i]) {
       var qclass = "q" + i;
       break;
     };
   };
+
+
   return qclass;
 }
 
@@ -70,7 +70,6 @@ queue()
     .await(ready);
 
 function ready(error, districts_topo) {
-// console.log(districts_topo)
   svg.append("g")
       .attr("class", "districts_id")
     .selectAll("path")
@@ -159,7 +158,7 @@ function tooltip(d) {
   .attr("ry", 6)
   // .attr("fill", "brown");
 
-// tip title
+ // tip title
   svg
     .append("text")
     .attr("class","tip-text")
@@ -204,112 +203,27 @@ function rebuild() {
     .await(ready);
 }
 
-
-// WHAT YOU DO WHEN YOU CLICK TO CHANGE THE MAP
-var deathmap = document.getElementById("deathmap");
-var injurymap = document.getElementById("injurymap");
-var deathpctmap = document.getElementById("deathpctmap");
-var injurypctmap = document.getElementById("injurypctmap");
-var completehouse = document.getElementById("completehouse");
-var partialhouse = document.getElementById("partialhouse");
-
-deathmap.onmousedown = function () {
-  if (m != 0) {
-      deathmap.className = "large-2 medium-2 small-2 nepbuttons active";
-      injurymap.className = "large-2 medium-2 small-2 nepbuttons";
-      deathpctmap.className = "large-2 medium-2 small-2 nepbuttons";
-      injurypctmap.className = "large-2 medium-2 small-2 nepbuttons";
-      completehouse.className = "large-2 medium-2 small-2  nepbuttons";
-      partialhouse.className = "large-2 medium-2 small-2 nepbuttons";
-      m = 0;
-
-    rebuild();    
-  };    
-};
-
-deathpctmap.onmousedown = function () {
-  if (m != 1) {
-    deathmap.className = "large-2 medium-2 small-2  nepbuttons";
-    injurymap.className = "large-2 medium-2 small-2 nepbuttons";
-    deathpctmap.className = "large-2 medium-2 small-2 nepbuttons active";
-    injurypctmap.className = "large-2 medium-2 small-2 nepbuttons";
-    completehouse.className = "large-2 medium-2 small-2  nepbuttons";
-    partialhouse.className = "large-2 medium-2 small-2 nepbuttons";
-    m = 1;
-
-    rebuild();
-  };
-};
-
-injurymap.onmousedown = function () {
-  if (m != 2) {
-    deathmap.className = "large-2 medium-2 small-2  nepbuttons";
-    injurymap.className = "large-2 medium-2 small-2 nepbuttons active";
-    deathpctmap.className = "large-2 medium-2 small-2 nepbuttons";
-    injurypctmap.className = "large-2 medium-2 small-2 nepbuttons";
-    completehouse.className = "large-2 medium-2 small-2  nepbuttons";
-    partialhouse.className = "large-2 medium-2 small-2 nepbuttons";
-    m = 2;
-
-    rebuild();
-  };
-};
-
-injurypctmap.onmousedown = function () {
-  if (m != 3) {
-    deathmap.className = "large-2 medium-2 small-2  nepbuttons";
-    injurymap.className = "large-2 medium-2 small-2 nepbuttons";
-    deathpctmap.className = "large-2 medium-2 small-2 nepbuttons";
-    injurypctmap.className = "large-2 medium-2 small-2 nepbuttons active";
-    completehouse.className = "large-2 medium-2 small-2  nepbuttons";
-    partialhouse.className = "large-2 medium-2 small-2 nepbuttons";
-    m = 3;
-
-    rebuild();
-  };
-};
-
-completehouse.onmousedown = function () {
-  if (m != 4) {
-    deathmap.className = "large-2 medium-2 small-2  nepbuttons";
-    injurymap.className = "large-2 medium-2 small-2 nepbuttons";
-    deathpctmap.className = "large-2 medium-2 small-2 nepbuttons";
-    injurypctmap.className = "large-2 medium-2 small-2 nepbuttons";
-    completehouse.className = "large-2 medium-2 small-2  nepbuttons active";
-    partialhouse.className = "large-2 medium-2 small-2 nepbuttons";
-    m = 4;
-
-    rebuild();
-  };
-};
-
-partialhouse.onmousedown = function () {
-  if (m != 5) {
-    deathmap.className = "large-2 medium-2 small-2  nepbuttons";
-    injurymap.className = "large-2 medium-2 small-2 nepbuttons";
-    deathpctmap.className = "large-2 medium-2 small-2 nepbuttons";
-    injurypctmap.className = "large-2 medium-2 small-2 nepbuttons ";
-    completehouse.className = "large-2 medium-2 small-2  nepbuttons";
-    partialhouse.className = "large-2 medium-2 small-2 nepbuttons active";
-    m = 5;
-
-    rebuild();
-  };
-};
+// Button Layer Switching
+$('.nepbuttons').click(function() {
+  $('.active').removeClass('active')
+  $(this).addClass('active');
+  m = parseInt($(this).attr('mindex')) 
+  rebuild();
+});
 
 d3.select(self.frameElement).style("height", height + "px");
 
 $(document).ready(function(){
-      $.ajax({
-        url: "data/update-info.json",
-        success: function(data){
-            $("#totalinfo").each(function(){
-              $(this).find(".date").text(data["update-date"]);
-              $($(this).find("h1")[0]).text("Total Deaths: " + data["lost"]);
-              $($(this).find("h1")[1]).text("Total Injuries: " + data["injured"]);
-            });
-            $($(".contextinfo").find("p")[0]).text("Data Updated: " + data["update-date"]);
-        },
-        dataType: "json"
-      });
-    });
+  $.ajax({
+    url: "data/update-info.json",
+    success: function(data){
+        $("#totalinfo").each(function(){
+          $(this).find(".date").text(data["update-date"]);
+          $($(this).find("h1")[0]).text("Total Deaths: " + data["lost"]);
+          $($(this).find("h1")[1]).text("Total Injuries: " + data["injured"]);
+        });
+        $($(".contextinfo").find("p")[0]).text("Data Updated: " + data["update-date"]);
+    },
+    dataType: "json"
+  });
+});
