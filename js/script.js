@@ -213,7 +213,7 @@ $('.nepbuttons').click(function() {
 
 d3.select(self.frameElement).style("height", height + "px");
 
-$(document).ready(function(){
+/*$(document).ready(function(){    //moved to /server/fetcher-archiver.js 
   $.ajax({
     url: "data/update-info.json",
     success: function(data){
@@ -225,5 +225,5 @@ $(document).ready(function(){
         $($(".contextinfo").find("p")[0]).text("Data Updated: " + data["update-date"]);
     },
     dataType: "json"
-  });
+  });*/ 
 });
