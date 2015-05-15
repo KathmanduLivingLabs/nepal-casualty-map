@@ -225,5 +225,5 @@ d3.select(self.frameElement).style("height", height + "px");
         $($(".contextinfo").find("p")[0]).text("Data Updated: " + data["update-date"]);
     },
     dataType: "json"
-  });*/ 
-});
+  }); 
+});*/
