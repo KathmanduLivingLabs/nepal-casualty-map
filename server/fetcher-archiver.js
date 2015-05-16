@@ -36,7 +36,7 @@ request("https://docs.google.com/spreadsheets/d/1tGQlS3lIW077sOUIJ1qO0Rtaz34V-Cx
     var csvLinesArray = data.trim().replace(/\"/g,"").split("\n");
     var line8 = csvLinesArray[8].split(",");
     updateTimestamp = {
-        "update-date": csvLinesArray[1].split(",")[2].split("-")[1],
+        "update-date": csvLinesArray[1].split(",")[2].split("-")[1].replace("AM","NST").replace("PM","NST"),
         "lost": line8[4]+","+line8[5],
         "injured": line8[6]+","+line8[7]
     };
@@ -45,7 +45,7 @@ request("https://docs.google.com/spreadsheets/d/1tGQlS3lIW077sOUIJ1qO0Rtaz34V-Cx
     updateFile("../index.html");
     updateFile("../iframe.html");
 
-    var archiveFilename = "data-"+updateTimestamp["update-date"].replace(/:/g,".").replace(/ /g,"-")+"-NST.csv";
+    var archiveFilename = "data-"+updateTimestamp["update-date"].replace(/:/g,".").replace(/ /g,"-")+".csv";
     
     fs.writeFile(archiveFilename, data, function(err){
         if(err) throw err;
