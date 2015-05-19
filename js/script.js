@@ -1,3 +1,9 @@
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
+
 var tipWidth = 150,
     tipHeight = 70;
 
@@ -107,20 +113,20 @@ function tooltip(d) {
   var partialhouse = d.properties.OthPartial;
 
   if (m === 0 || m === 2) {
-    var tip1 = "Total dead: " + dead;
-    var tip2 = "Total injured: " + injured;
+    var tip1 = "Total dead: " + numberWithCommas(dead);
+    var tip2 = "Total injured: " + numberWithCommas(injured);
     var tipWidth = 150;
   } else if (m === 1) {
-    var tip1 = "Total dead: " + dead;
-    var tip2 = "Percent of population killed: " + deadpercent + "%";
+    var tip1 = "Total dead: " + numberWithCommas(dead);
+    var tip2 = "Percent of population killed: " + numberWithCommas(deadpercent) + "%";
     var tipWidth = 250;
   } else if (m === 3) {
-    var tip1 = "Total injured: " + injured;
-    var tip2 = "Percent of population injured: " + injuredpercent + "%";
+    var tip1 = "Total injured: " + numberWithCommas(injured);
+    var tip2 = "Percent of population injured: " + numberWithCommas(injuredpercent) + "%";
     var tipWidth = 250;
   } else { 
-    var tip1 = "Homes completely destroyed: " + completehouse;
-    var tip2 = "Homes partially destroyed: " + partialhouse;
+    var tip1 = "Homes completely destroyed: " + numberWithCommas(completehouse);
+    var tip2 = "Homes partially destroyed: " + numberWithCommas(partialhouse);
     var tipWidth = 250;
   };
 
