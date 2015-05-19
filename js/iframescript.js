@@ -1,7 +1,7 @@
 var width = 650,
     height = 320;
 
-var scale = 3750;
+var scale = 3500;
 var yaw = -87;
-var pitch = 12.1 ;
+var pitch = 12.0 ;
 var roll = 0;
