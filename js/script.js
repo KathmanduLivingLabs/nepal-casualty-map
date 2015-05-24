@@ -219,6 +219,24 @@ $('.nepbuttons').click(function() {
 
 d3.select(self.frameElement).style("height", height + "px");
 
+/**slug generator**/
+$(document).ready(function(){
+  window.addEventListener("popstate", function(e) {
+    $(document.getElementById(e.state.pagelabel?e.state.pagelabel:"deathmap")).click();
+  });
+
+  $(".nepbuttons").click(function(e){
+    var pagelabel = $(this).attr("id");
+    window.history.pushState({pagelabel: pagelabel}, null, "#"+pagelabel);
+  });
+
+  var uriKey = window.decodeURIComponent(window.location.href).split("#")[1];
+        if(uriKey){
+            $(document.getElementById(uriKey)).click();
+        }
+});
+/****/
+
 /*$(document).ready(function(){    //moved to /server/fetcher-archiver.js 
   $.ajax({
     url: "data/update-info.json",
