@@ -34,11 +34,11 @@ fs.readFile(filename, {
 request("https://docs.google.com/spreadsheets/d/1tGQlS3lIW077sOUIJ1qO0Rtaz34V-CxKEySFQ2W2CgA/export?format=csv&gid=1901101589", function(error, response, data){
     if (error || response.statusCode !== 200) return "error: "+ response.statusCode;
     var csvLinesArray = data.trim().replace(/\"/g,"").split("\n");
-    var line8 = csvLinesArray[8].split(",");
+    var line9 = csvLinesArray[9].split(",");
     updateTimestamp = {
         "update-date": csvLinesArray[1].split(",")[2].split("-")[1].replace("AM","NST").replace("PM","NST"),
-        "lost": line8[4]+","+line8[5],
-        "injured": line8[6]+","+line8[7]
+        "lost": line9[4]+","+line9[5],
+        "injured": line9[6]+","+line9[7]
     };
 
 
